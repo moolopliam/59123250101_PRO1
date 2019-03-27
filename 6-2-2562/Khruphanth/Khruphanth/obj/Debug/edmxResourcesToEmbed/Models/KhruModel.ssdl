@@ -1,0 +1,703 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="ComCSDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Account">
+    <Key>
+      <PropertyRef Name="AId" />
+    </Key>
+    <Property Name="AId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="AUsername" Type="varchar" MaxLength="50" />
+    <Property Name="APassword" Type="varchar" MaxLength="50" />
+    <Property Name="AStatus" Type="char" MaxLength="1" />
+  </EntityType>
+  <EntityType Name="Course">
+    <Key>
+      <PropertyRef Name="CId" />
+    </Key>
+    <Property Name="CId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CTName" Type="varchar" MaxLength="100" />
+    <Property Name="CEName" Type="varchar" MaxLength="100" />
+    <Property Name="CYear" Type="int" />
+    <Property Name="CSDegreeNameTH" Type="varchar" MaxLength="100" />
+    <Property Name="CSDegreeNameEN" Type="varchar" MaxLength="100" />
+    <Property Name="CSCredit" Type="int" />
+    <Property Name="CSCurriculum" Type="text" />
+    <Property Name="CSGraJob" Type="text" />
+    <Property Name="CsGeneralCategory" Type="int" />
+    <Property Name="CsComputerCategory" Type="int" />
+  </EntityType>
+  <EntityType Name="Department">
+    <Key>
+      <PropertyRef Name="DeId" />
+    </Key>
+    <Property Name="DeId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="DeName" Type="varchar" MaxLength="50" />
+    <Property Name="DeCredit" Type="int" />
+  </EntityType>
+  <EntityType Name="FStatus">
+    <Key>
+      <PropertyRef Name="FStatusId" />
+    </Key>
+    <Property Name="FStatusId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FStatusName" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Job">
+    <Key>
+      <PropertyRef Name="JId" />
+    </Key>
+    <Property Name="JId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="JName" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="OldED">
+    <Key>
+      <PropertyRef Name="OldOIdEd" />
+    </Key>
+    <Property Name="OldOIdEd" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="OOldEdName" Type="varchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="project_list">
+    <Key>
+      <PropertyRef Name="project_id" />
+    </Key>
+    <Property Name="project_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="project_name" Type="varchar" MaxLength="100" />
+    <Property Name="project_name_e" Type="varchar" MaxLength="100" />
+    <Property Name="stu_id" Type="varchar" MaxLength="12" />
+    <Property Name="type_id" Type="int" />
+    <Property Name="TeaId" Type="varchar" MaxLength="10" />
+    <Property Name="Data_Post" Type="varchar" MaxLength="15" />
+    <Property Name="File" Type="varchar" MaxLength="50" />
+    <Property Name="Detail" Type="text" />
+    <Property Name="LinkWeb" Type="nchar" MaxLength="200" />
+    <Property Name="LinkVideo" Type="text" />
+    <Property Name="Rate" Type="int" />
+  </EntityType>
+  <EntityType Name="RefProvince">
+    <Key>
+      <PropertyRef Name="ProvinceId" />
+    </Key>
+    <Property Name="ProvinceId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ProvinceName" Type="varchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="Relation">
+    <Key>
+      <PropertyRef Name="RID" />
+    </Key>
+    <Property Name="RID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="RSubjId" Type="int" />
+    <Property Name="RCId" Type="int" />
+  </EntityType>
+  <EntityType Name="SelectedEmployee">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="SelectedEmployeeIDs" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Status">
+    <Key>
+      <PropertyRef Name="SIdStatus" />
+    </Key>
+    <Property Name="SIdStatus" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="SStatusName" Type="varchar" MaxLength="150" />
+    <Property Name="SRefProvince" Type="int" />
+  </EntityType>
+  <EntityType Name="Student">
+    <Key>
+      <PropertyRef Name="StuId" />
+    </Key>
+    <Property Name="StuId" Type="varchar" MaxLength="12" Nullable="false" />
+    <Property Name="StuPassword" Type="varchar" MaxLength="10" />
+    <Property Name="StuTitle" Type="int" />
+    <Property Name="StuFName" Type="varchar" MaxLength="50" />
+    <Property Name="StuLName" Type="varchar" MaxLength="50" />
+    <Property Name="StuSex" Type="varchar" MaxLength="10" />
+    <Property Name="StuBDate" Type="varchar" MaxLength="20" />
+    <Property Name="StuEmail" Type="varchar" MaxLength="150" />
+    <Property Name="StuTel" Type="varchar" MaxLength="20" />
+    <Property Name="StuHomeNo" Type="varchar" MaxLength="10" />
+    <Property Name="StuMoo" Type="varchar" MaxLength="2" />
+    <Property Name="StuRoad" Type="varchar" MaxLength="50" />
+    <Property Name="StuTambon" Type="varchar" MaxLength="50" />
+    <Property Name="StuAmphur" Type="varchar" MaxLength="50" />
+    <Property Name="StuProvince_id" Type="int" />
+    <Property Name="StuZipcode" Type="varchar" MaxLength="5" />
+    <Property Name="StuPic" Type="varbinary(max)" />
+    <Property Name="StuOldEd" Type="int" />
+    <Property Name="StuStatus" Type="int" />
+    <Property Name="StuTAdviser" Type="varchar" MaxLength="10" />
+    <Property Name="StuDName" Type="varchar" MaxLength="100" />
+    <Property Name="StuDJob" Type="int" />
+    <Property Name="StuDIncome" Type="int" />
+    <Property Name="StuMName" Type="varchar" MaxLength="100" />
+    <Property Name="StuMJob" Type="int" />
+    <Property Name="StuMIncome" Type="int" />
+    <Property Name="StuFStatus" Type="int" />
+  </EntityType>
+  <EntityType Name="Subject">
+    <Key>
+      <PropertyRef Name="SubjId" />
+    </Key>
+    <Property Name="SubjId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="SubjCode" Type="varchar" MaxLength="20" />
+    <Property Name="SubjDeId" Type="int" Nullable="false" />
+    <Property Name="SubjName" Type="varchar" MaxLength="100" />
+    <Property Name="SubjCredit" Type="int" />
+  </EntityType>
+  <EntityType Name="T_Category">
+    <Key>
+      <PropertyRef Name="CategoryID" />
+    </Key>
+    <Property Name="CategoryID" Type="varchar" MaxLength="5" Nullable="false" />
+    <Property Name="CA_NameCategory" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="T_Distributor">
+    <Key>
+      <PropertyRef Name="DistributorID" />
+    </Key>
+    <Property Name="DistributorID" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Di_Date" Type="varchar" MaxLength="10" />
+  </EntityType>
+  <EntityType Name="T_DistributorList">
+    <Key>
+      <PropertyRef Name="DistributorList" />
+    </Key>
+    <Property Name="DistributorList" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="DL_DistributorID" Type="varchar" MaxLength="50" />
+    <Property Name="DL_KhruphanthID" Type="varchar" MaxLength="50" />
+    <Property Name="DL_Status" Type="varchar" MaxLength="30" />
+  </EntityType>
+  <EntityType Name="T_Khruphanth">
+    <Key>
+      <PropertyRef Name="KhruphanthID" />
+    </Key>
+    <Property Name="KhruphanthID" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Kh_RequestLsitID" Type="int" />
+    <Property Name="Kh_QR_CODE" Type="varchar" MaxLength="50" />
+    <Property Name="Kh_PlaceID" Type="int" />
+    <Property Name="Kh_StatusID" Type="int" />
+  </EntityType>
+  <EntityType Name="T_Place">
+    <Key>
+      <PropertyRef Name="PlaceID" />
+    </Key>
+    <Property Name="PlaceID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="PL_NamePlace" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="T_RequestList">
+    <Key>
+      <PropertyRef Name="RequestLsitID" />
+    </Key>
+    <Property Name="RequestLsitID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="RL_RequisitionID" Type="varchar" MaxLength="20" />
+    <Property Name="RL_TypeID" Type="varchar" MaxLength="5" />
+    <Property Name="RL_CategoryID" Type="int" />
+    <Property Name="RL_NameKP" Type="varchar" MaxLength="50" />
+    <Property Name="RL_OnStart" Type="int" />
+    <Property Name="RL_Amount" Type="float" />
+    <Property Name="RL_Price" Type="float" />
+    <Property Name="RL_DetailKhru" Type="varchar(max)" />
+    <Property Name="RL_PictureKhru" Type="varchar(max)" />
+    <Property Name="RL_PlaceID" Type="int" />
+  </EntityType>
+  <EntityType Name="T_Requisition">
+    <Key>
+      <PropertyRef Name="RequisitionID" />
+    </Key>
+    <Property Name="RequisitionID" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="Re_TeaId" Type="varchar" MaxLength="10" />
+    <Property Name="Re_DateRequi" Type="varchar" MaxLength="10" />
+    <Property Name="Re_StepID" Type="char" MaxLength="1" />
+  </EntityType>
+  <EntityType Name="T_Stap">
+    <Key>
+      <PropertyRef Name="StepID" />
+    </Key>
+    <Property Name="StepID" Type="char" MaxLength="1" Nullable="false" />
+    <Property Name="ST_StepName" Type="varchar" MaxLength="20" />
+  </EntityType>
+  <EntityType Name="T_Status">
+    <Key>
+      <PropertyRef Name="StatusID" />
+    </Key>
+    <Property Name="StatusID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Status_Name" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="T_Type">
+    <Key>
+      <PropertyRef Name="TypeID" />
+    </Key>
+    <Property Name="TypeID" Type="varchar" MaxLength="5" Nullable="false" />
+    <Property Name="TY_NameType" Type="varchar" MaxLength="50" />
+    <Property Name="TY_CategoryID" Type="varchar" MaxLength="5" />
+  </EntityType>
+  <EntityType Name="Teacher">
+    <Key>
+      <PropertyRef Name="TeaId" />
+    </Key>
+    <Property Name="TeaId" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="TeaTitle" Type="int" />
+    <Property Name="TeaName" Type="varchar" MaxLength="50" />
+    <Property Name="TeaIdCard" Type="varchar" MaxLength="14" />
+    <Property Name="TeaExport" Type="text" />
+    <Property Name="TeaImage" Type="varbinary(max)" />
+    <Property Name="TeaLvl" Type="text" />
+  </EntityType>
+  <EntityType Name="Title">
+    <Key>
+      <PropertyRef Name="TId" />
+    </Key>
+    <Property Name="TId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TName" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="type_project">
+    <Key>
+      <PropertyRef Name="Type_id" />
+    </Key>
+    <Property Name="Type_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Type_name" Type="varchar" MaxLength="15" />
+  </EntityType>
+  <Association Name="FK_project_list_Student">
+    <End Role="Student" Type="Self.Student" Multiplicity="0..1" />
+    <End Role="project_list" Type="Self.project_list" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Student">
+        <PropertyRef Name="StuId" />
+      </Principal>
+      <Dependent Role="project_list">
+        <PropertyRef Name="stu_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_project_list_Teacher">
+    <End Role="Teacher" Type="Self.Teacher" Multiplicity="0..1" />
+    <End Role="project_list" Type="Self.project_list" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Teacher">
+        <PropertyRef Name="TeaId" />
+      </Principal>
+      <Dependent Role="project_list">
+        <PropertyRef Name="TeaId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_project_list_type_project">
+    <End Role="type_project" Type="Self.type_project" Multiplicity="0..1" />
+    <End Role="project_list" Type="Self.project_list" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="type_project">
+        <PropertyRef Name="Type_id" />
+      </Principal>
+      <Dependent Role="project_list">
+        <PropertyRef Name="type_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Relation_Course">
+    <End Role="Course" Type="Self.Course" Multiplicity="0..1" />
+    <End Role="Relation" Type="Self.Relation" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Course">
+        <PropertyRef Name="CId" />
+      </Principal>
+      <Dependent Role="Relation">
+        <PropertyRef Name="RCId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Relation_Subject">
+    <End Role="Subject" Type="Self.Subject" Multiplicity="0..1" />
+    <End Role="Relation" Type="Self.Relation" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Subject">
+        <PropertyRef Name="SubjId" />
+      </Principal>
+      <Dependent Role="Relation">
+        <PropertyRef Name="RSubjId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Status_RefProvince">
+    <End Role="RefProvince" Type="Self.RefProvince" Multiplicity="0..1" />
+    <End Role="Status" Type="Self.Status" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="RefProvince">
+        <PropertyRef Name="ProvinceId" />
+      </Principal>
+      <Dependent Role="Status">
+        <PropertyRef Name="SRefProvince" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Student_FStatus">
+    <End Role="FStatus" Type="Self.FStatus" Multiplicity="0..1" />
+    <End Role="Student" Type="Self.Student" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="FStatus">
+        <PropertyRef Name="FStatusId" />
+      </Principal>
+      <Dependent Role="Student">
+        <PropertyRef Name="StuFStatus" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Student_Job">
+    <End Role="Job" Type="Self.Job" Multiplicity="0..1" />
+    <End Role="Student" Type="Self.Student" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Job">
+        <PropertyRef Name="JId" />
+      </Principal>
+      <Dependent Role="Student">
+        <PropertyRef Name="StuDJob" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Student_Job1">
+    <End Role="Job" Type="Self.Job" Multiplicity="0..1" />
+    <End Role="Student" Type="Self.Student" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Job">
+        <PropertyRef Name="JId" />
+      </Principal>
+      <Dependent Role="Student">
+        <PropertyRef Name="StuMJob" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Student_OldED">
+    <End Role="OldED" Type="Self.OldED" Multiplicity="0..1" />
+    <End Role="Student" Type="Self.Student" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="OldED">
+        <PropertyRef Name="OldOIdEd" />
+      </Principal>
+      <Dependent Role="Student">
+        <PropertyRef Name="StuOldEd" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Student_RefProvince">
+    <End Role="RefProvince" Type="Self.RefProvince" Multiplicity="0..1" />
+    <End Role="Student" Type="Self.Student" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="RefProvince">
+        <PropertyRef Name="ProvinceId" />
+      </Principal>
+      <Dependent Role="Student">
+        <PropertyRef Name="StuProvince_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Student_Status">
+    <End Role="Status" Type="Self.Status" Multiplicity="0..1" />
+    <End Role="Student" Type="Self.Student" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Status">
+        <PropertyRef Name="SIdStatus" />
+      </Principal>
+      <Dependent Role="Student">
+        <PropertyRef Name="StuStatus" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Student_Teacher">
+    <End Role="Teacher" Type="Self.Teacher" Multiplicity="0..1" />
+    <End Role="Student" Type="Self.Student" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Teacher">
+        <PropertyRef Name="TeaId" />
+      </Principal>
+      <Dependent Role="Student">
+        <PropertyRef Name="StuTAdviser" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Student_Title">
+    <End Role="Title" Type="Self.Title" Multiplicity="0..1" />
+    <End Role="Student" Type="Self.Student" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Title">
+        <PropertyRef Name="TId" />
+      </Principal>
+      <Dependent Role="Student">
+        <PropertyRef Name="StuTitle" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Subject_Department">
+    <End Role="Department" Type="Self.Department" Multiplicity="1" />
+    <End Role="Subject" Type="Self.Subject" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Department">
+        <PropertyRef Name="DeId" />
+      </Principal>
+      <Dependent Role="Subject">
+        <PropertyRef Name="SubjDeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_T_DistributorList_T_Distributor1">
+    <End Role="T_Distributor" Type="Self.T_Distributor" Multiplicity="0..1" />
+    <End Role="T_DistributorList" Type="Self.T_DistributorList" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="T_Distributor">
+        <PropertyRef Name="DistributorID" />
+      </Principal>
+      <Dependent Role="T_DistributorList">
+        <PropertyRef Name="DL_DistributorID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_T_DistributorList_T_Khruphanth1">
+    <End Role="T_Khruphanth" Type="Self.T_Khruphanth" Multiplicity="0..1" />
+    <End Role="T_DistributorList" Type="Self.T_DistributorList" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="T_Khruphanth">
+        <PropertyRef Name="KhruphanthID" />
+      </Principal>
+      <Dependent Role="T_DistributorList">
+        <PropertyRef Name="DL_KhruphanthID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_T_Khruphanth_T_RequestList">
+    <End Role="T_RequestList" Type="Self.T_RequestList" Multiplicity="0..1" />
+    <End Role="T_Khruphanth" Type="Self.T_Khruphanth" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="T_RequestList">
+        <PropertyRef Name="RequestLsitID" />
+      </Principal>
+      <Dependent Role="T_Khruphanth">
+        <PropertyRef Name="Kh_RequestLsitID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_T_Khruphanth_T_Status1">
+    <End Role="T_Status" Type="Self.T_Status" Multiplicity="0..1" />
+    <End Role="T_Khruphanth" Type="Self.T_Khruphanth" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="T_Status">
+        <PropertyRef Name="StatusID" />
+      </Principal>
+      <Dependent Role="T_Khruphanth">
+        <PropertyRef Name="Kh_StatusID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_T_RequestList_T_Place1">
+    <End Role="T_Place" Type="Self.T_Place" Multiplicity="0..1" />
+    <End Role="T_RequestList" Type="Self.T_RequestList" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="T_Place">
+        <PropertyRef Name="PlaceID" />
+      </Principal>
+      <Dependent Role="T_RequestList">
+        <PropertyRef Name="RL_PlaceID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_T_RequestList_T_Requisition">
+    <End Role="T_Requisition" Type="Self.T_Requisition" Multiplicity="0..1" />
+    <End Role="T_RequestList" Type="Self.T_RequestList" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="T_Requisition">
+        <PropertyRef Name="RequisitionID" />
+      </Principal>
+      <Dependent Role="T_RequestList">
+        <PropertyRef Name="RL_RequisitionID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_T_RequestList_T_Type1">
+    <End Role="T_Type" Type="Self.T_Type" Multiplicity="0..1" />
+    <End Role="T_RequestList" Type="Self.T_RequestList" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="T_Type">
+        <PropertyRef Name="TypeID" />
+      </Principal>
+      <Dependent Role="T_RequestList">
+        <PropertyRef Name="RL_TypeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_T_Requisition_T_Stap">
+    <End Role="T_Stap" Type="Self.T_Stap" Multiplicity="0..1" />
+    <End Role="T_Requisition" Type="Self.T_Requisition" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="T_Stap">
+        <PropertyRef Name="StepID" />
+      </Principal>
+      <Dependent Role="T_Requisition">
+        <PropertyRef Name="Re_StepID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_T_Requisition_Teacher">
+    <End Role="Teacher" Type="Self.Teacher" Multiplicity="0..1" />
+    <End Role="T_Requisition" Type="Self.T_Requisition" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Teacher">
+        <PropertyRef Name="TeaId" />
+      </Principal>
+      <Dependent Role="T_Requisition">
+        <PropertyRef Name="Re_TeaId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_T_Type_T_Category1">
+    <End Role="T_Category" Type="Self.T_Category" Multiplicity="0..1" />
+    <End Role="T_Type" Type="Self.T_Type" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="T_Category">
+        <PropertyRef Name="CategoryID" />
+      </Principal>
+      <Dependent Role="T_Type">
+        <PropertyRef Name="TY_CategoryID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Teacher_Title">
+    <End Role="Title" Type="Self.Title" Multiplicity="0..1" />
+    <End Role="Teacher" Type="Self.Teacher" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Title">
+        <PropertyRef Name="TId" />
+      </Principal>
+      <Dependent Role="Teacher">
+        <PropertyRef Name="TeaTitle" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="ComCSDBModelStoreContainer">
+    <EntitySet Name="Account" EntityType="Self.Account" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Course" EntityType="Self.Course" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Department" EntityType="Self.Department" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="FStatus" EntityType="Self.FStatus" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Job" EntityType="Self.Job" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="OldED" EntityType="Self.OldED" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="project_list" EntityType="Self.project_list" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="RefProvince" EntityType="Self.RefProvince" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Relation" EntityType="Self.Relation" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SelectedEmployee" EntityType="Self.SelectedEmployee" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Status" EntityType="Self.Status" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Student" EntityType="Self.Student" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Subject" EntityType="Self.Subject" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="T_Category" EntityType="Self.T_Category" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="T_Distributor" EntityType="Self.T_Distributor" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="T_DistributorList" EntityType="Self.T_DistributorList" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="T_Khruphanth" EntityType="Self.T_Khruphanth" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="T_Place" EntityType="Self.T_Place" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="T_RequestList" EntityType="Self.T_RequestList" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="T_Requisition" EntityType="Self.T_Requisition" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="T_Stap" EntityType="Self.T_Stap" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="T_Status" EntityType="Self.T_Status" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="T_Type" EntityType="Self.T_Type" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Teacher" EntityType="Self.Teacher" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Title" EntityType="Self.Title" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="type_project" EntityType="Self.type_project" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_project_list_Student" Association="Self.FK_project_list_Student">
+      <End Role="Student" EntitySet="Student" />
+      <End Role="project_list" EntitySet="project_list" />
+    </AssociationSet>
+    <AssociationSet Name="FK_project_list_Teacher" Association="Self.FK_project_list_Teacher">
+      <End Role="Teacher" EntitySet="Teacher" />
+      <End Role="project_list" EntitySet="project_list" />
+    </AssociationSet>
+    <AssociationSet Name="FK_project_list_type_project" Association="Self.FK_project_list_type_project">
+      <End Role="type_project" EntitySet="type_project" />
+      <End Role="project_list" EntitySet="project_list" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Relation_Course" Association="Self.FK_Relation_Course">
+      <End Role="Course" EntitySet="Course" />
+      <End Role="Relation" EntitySet="Relation" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Relation_Subject" Association="Self.FK_Relation_Subject">
+      <End Role="Subject" EntitySet="Subject" />
+      <End Role="Relation" EntitySet="Relation" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Status_RefProvince" Association="Self.FK_Status_RefProvince">
+      <End Role="RefProvince" EntitySet="RefProvince" />
+      <End Role="Status" EntitySet="Status" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Student_FStatus" Association="Self.FK_Student_FStatus">
+      <End Role="FStatus" EntitySet="FStatus" />
+      <End Role="Student" EntitySet="Student" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Student_Job" Association="Self.FK_Student_Job">
+      <End Role="Job" EntitySet="Job" />
+      <End Role="Student" EntitySet="Student" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Student_Job1" Association="Self.FK_Student_Job1">
+      <End Role="Job" EntitySet="Job" />
+      <End Role="Student" EntitySet="Student" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Student_OldED" Association="Self.FK_Student_OldED">
+      <End Role="OldED" EntitySet="OldED" />
+      <End Role="Student" EntitySet="Student" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Student_RefProvince" Association="Self.FK_Student_RefProvince">
+      <End Role="RefProvince" EntitySet="RefProvince" />
+      <End Role="Student" EntitySet="Student" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Student_Status" Association="Self.FK_Student_Status">
+      <End Role="Status" EntitySet="Status" />
+      <End Role="Student" EntitySet="Student" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Student_Teacher" Association="Self.FK_Student_Teacher">
+      <End Role="Teacher" EntitySet="Teacher" />
+      <End Role="Student" EntitySet="Student" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Student_Title" Association="Self.FK_Student_Title">
+      <End Role="Title" EntitySet="Title" />
+      <End Role="Student" EntitySet="Student" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Subject_Department" Association="Self.FK_Subject_Department">
+      <End Role="Department" EntitySet="Department" />
+      <End Role="Subject" EntitySet="Subject" />
+    </AssociationSet>
+    <AssociationSet Name="FK_T_DistributorList_T_Distributor1" Association="Self.FK_T_DistributorList_T_Distributor1">
+      <End Role="T_Distributor" EntitySet="T_Distributor" />
+      <End Role="T_DistributorList" EntitySet="T_DistributorList" />
+    </AssociationSet>
+    <AssociationSet Name="FK_T_DistributorList_T_Khruphanth1" Association="Self.FK_T_DistributorList_T_Khruphanth1">
+      <End Role="T_Khruphanth" EntitySet="T_Khruphanth" />
+      <End Role="T_DistributorList" EntitySet="T_DistributorList" />
+    </AssociationSet>
+    <AssociationSet Name="FK_T_Khruphanth_T_RequestList" Association="Self.FK_T_Khruphanth_T_RequestList">
+      <End Role="T_RequestList" EntitySet="T_RequestList" />
+      <End Role="T_Khruphanth" EntitySet="T_Khruphanth" />
+    </AssociationSet>
+    <AssociationSet Name="FK_T_Khruphanth_T_Status1" Association="Self.FK_T_Khruphanth_T_Status1">
+      <End Role="T_Status" EntitySet="T_Status" />
+      <End Role="T_Khruphanth" EntitySet="T_Khruphanth" />
+    </AssociationSet>
+    <AssociationSet Name="FK_T_RequestList_T_Place1" Association="Self.FK_T_RequestList_T_Place1">
+      <End Role="T_Place" EntitySet="T_Place" />
+      <End Role="T_RequestList" EntitySet="T_RequestList" />
+    </AssociationSet>
+    <AssociationSet Name="FK_T_RequestList_T_Requisition" Association="Self.FK_T_RequestList_T_Requisition">
+      <End Role="T_Requisition" EntitySet="T_Requisition" />
+      <End Role="T_RequestList" EntitySet="T_RequestList" />
+    </AssociationSet>
+    <AssociationSet Name="FK_T_RequestList_T_Type1" Association="Self.FK_T_RequestList_T_Type1">
+      <End Role="T_Type" EntitySet="T_Type" />
+      <End Role="T_RequestList" EntitySet="T_RequestList" />
+    </AssociationSet>
+    <AssociationSet Name="FK_T_Requisition_T_Stap" Association="Self.FK_T_Requisition_T_Stap">
+      <End Role="T_Stap" EntitySet="T_Stap" />
+      <End Role="T_Requisition" EntitySet="T_Requisition" />
+    </AssociationSet>
+    <AssociationSet Name="FK_T_Requisition_Teacher" Association="Self.FK_T_Requisition_Teacher">
+      <End Role="Teacher" EntitySet="Teacher" />
+      <End Role="T_Requisition" EntitySet="T_Requisition" />
+    </AssociationSet>
+    <AssociationSet Name="FK_T_Type_T_Category1" Association="Self.FK_T_Type_T_Category1">
+      <End Role="T_Category" EntitySet="T_Category" />
+      <End Role="T_Type" EntitySet="T_Type" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Teacher_Title" Association="Self.FK_Teacher_Title">
+      <End Role="Title" EntitySet="Title" />
+      <End Role="Teacher" EntitySet="Teacher" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

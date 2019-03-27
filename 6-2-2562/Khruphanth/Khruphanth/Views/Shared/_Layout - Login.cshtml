@@ -1,0 +1,101 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- Tell the browser to be responsive to screen width -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <!-- Favicon icon -->
+    <link rel="icon" type="images/png" sizes="50x50" href="~/Content/images/favicon5.png">
+    <title>ครุภัณฑ์-วิทยาการคอมพิวเตอร์</title>
+    @*@Styles.Render("~/Content/css")*@
+    @Scripts.Render("~/bundles/modernizr")
+    <!-- Bootstrap Core CSS -->
+    <link href="https://fonts.googleapis.com/css?family=Sriracha&amp;subset=thai" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Sriracha" rel="stylesheet">
+    @*<link href="~/Content/css/lib/bootstrap/bootstrap.min.css" rel="stylesheet">*@
+    <!-- Custom CSS -->
+    @*<link href="~/Content/css/lib/calendar2/semantic.ui.min.css" rel="stylesheet">
+        <link href="~/Content/css/lib/calendar2/pignose.calendar.min.css" rel="stylesheet">
+        <link href="~/Content/css/lib/owl.carousel.min.css" rel="stylesheet" />
+        <link href="~/Content/css/lib/owl.theme.default.min.css" rel="stylesheet" />
+        <link href="~/Content/css/helper.css" rel="stylesheet">
+        <link href="~/Content/css/style.css" rel="stylesheet">*@
+
+
+
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:** -->
+    <!--[if lt IE 9]>
+        <script src="https:**oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https:**oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <style>
+        body {
+            font-family: 'Sriracha', cursive;
+        }
+        /* ใช้เฉพาะหัวข้อ */
+        h1, h2, h3, h4, h5, h6, p {
+            font-family: 'Sriracha', cursive;
+        }
+
+        title {
+            font-family: 'Sriracha', cursive;
+        }
+    </style>
+
+
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-12"> @RenderBody()</div>
+        </div>
+    </div>
+    @*<!-- End Wrapper -->
+    <!-- All Jquery -->
+    <script src="~/Scripts/js/lib/jquery/jquery.min.js"></script>
+    <!-- Bootstrap tether Core JavaScript -->
+    <script src="~/Scripts/js/lib/bootstrap/js/popper.min.js"></script>
+    <script src="~/Scripts/js/lib/bootstrap/js/bootstrap.min.js"></script>
+    <!-- slimscrollbar scrollbar JavaScript -->
+    <script src="~/Scripts/js/jquery.slimscroll.js"></script>
+    <!--Menu sidebar -->
+    <script src="~/Scripts/js/sidebarmenu.js"></script>
+    <!--stickey kit -->
+    <script src="~/Scripts/js/lib/sticky-kit-master/dist/sticky-kit.min.js"></script>
+    <!--Custom JavaScript -->
+    <!-- Amchart -->
+    @*<script src="~/Scripts/js/lib/morris-chart/raphael-min.js"></script>*@
+    @*<script src="~/Scripts/js/lib/morris-chart/morris.js"></script>*@
+    @*<script src="~/Scripts/js/lib/morris-chart/dashboard1-init.js"></script>*@
+
+
+    @*<script src="~/Scripts/js/lib/calendar-2/moment.latest.min.js"></script>
+    <!-- scripit init-->
+    <script src="~/Scripts/js/lib/calendar-2/semantic.ui.min.js"></script>
+    <!-- scripit init-->
+    <script src="~/Scripts/js/lib/calendar-2/prism.min.js"></script>
+    <!-- scripit init-->
+    <script src="~/Scripts/js/lib/calendar-2/pignose.calendar.min.js"></script>
+    <!-- scripit init-->
+    <script src="~/Scripts/js/lib/calendar-2/pignose.init.js"></script>
+
+    <script src="~/Scripts/js/lib/owl-carousel/owl.carousel.min.js"></script>
+    <script src="~/Scripts/js/lib/owl-carousel/owl.carousel-init.js"></script>*@
+
+    <!-- scripit init-->
+
+    @*<script src="~/Scripts/js/scripts.js"></script>*@
+
+    @*@Scripts.Render("~/bundles/jquery")*@
+    @Scripts.Render("~/bundles/bootstrap")
+
+    @RenderSection("scripts", required: false)
+</body>
+
+</html>

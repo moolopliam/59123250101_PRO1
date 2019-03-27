@@ -1,0 +1,755 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="ComCSDBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="ComCSDBEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Account" EntityType="ComCSDBModel.Account" />
+    <EntitySet Name="Course" EntityType="ComCSDBModel.Course" />
+    <EntitySet Name="Department" EntityType="ComCSDBModel.Department" />
+    <EntitySet Name="FStatus" EntityType="ComCSDBModel.FStatus" />
+    <EntitySet Name="Job" EntityType="ComCSDBModel.Job" />
+    <EntitySet Name="OldED" EntityType="ComCSDBModel.OldED" />
+    <EntitySet Name="project_list" EntityType="ComCSDBModel.project_list" />
+    <EntitySet Name="RefProvince" EntityType="ComCSDBModel.RefProvince" />
+    <EntitySet Name="Relation" EntityType="ComCSDBModel.Relation" />
+    <EntitySet Name="SelectedEmployee" EntityType="ComCSDBModel.SelectedEmployee" />
+    <EntitySet Name="Status" EntityType="ComCSDBModel.Status" />
+    <EntitySet Name="Student" EntityType="ComCSDBModel.Student" />
+    <EntitySet Name="Subject" EntityType="ComCSDBModel.Subject" />
+    <EntitySet Name="T_Category" EntityType="ComCSDBModel.T_Category" />
+    <EntitySet Name="T_Distributor" EntityType="ComCSDBModel.T_Distributor" />
+    <EntitySet Name="T_DistributorList" EntityType="ComCSDBModel.T_DistributorList" />
+    <EntitySet Name="T_Khruphanth" EntityType="ComCSDBModel.T_Khruphanth" />
+    <EntitySet Name="T_Place" EntityType="ComCSDBModel.T_Place" />
+    <EntitySet Name="T_RequestList" EntityType="ComCSDBModel.T_RequestList" />
+    <EntitySet Name="T_Requisition" EntityType="ComCSDBModel.T_Requisition" />
+    <EntitySet Name="T_Stap" EntityType="ComCSDBModel.T_Stap" />
+    <EntitySet Name="T_Status" EntityType="ComCSDBModel.T_Status" />
+    <EntitySet Name="T_Type" EntityType="ComCSDBModel.T_Type" />
+    <EntitySet Name="Teacher" EntityType="ComCSDBModel.Teacher" />
+    <EntitySet Name="Title" EntityType="ComCSDBModel.Title" />
+    <EntitySet Name="type_project" EntityType="ComCSDBModel.type_project" />
+    <AssociationSet Name="FK_Relation_Course" Association="ComCSDBModel.FK_Relation_Course">
+      <End Role="Course" EntitySet="Course" />
+      <End Role="Relation" EntitySet="Relation" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Subject_Department" Association="ComCSDBModel.FK_Subject_Department">
+      <End Role="Department" EntitySet="Department" />
+      <End Role="Subject" EntitySet="Subject" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Student_FStatus" Association="ComCSDBModel.FK_Student_FStatus">
+      <End Role="FStatus" EntitySet="FStatus" />
+      <End Role="Student" EntitySet="Student" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Student_Job" Association="ComCSDBModel.FK_Student_Job">
+      <End Role="Job" EntitySet="Job" />
+      <End Role="Student" EntitySet="Student" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Student_Job1" Association="ComCSDBModel.FK_Student_Job1">
+      <End Role="Job" EntitySet="Job" />
+      <End Role="Student" EntitySet="Student" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Student_OldED" Association="ComCSDBModel.FK_Student_OldED">
+      <End Role="OldED" EntitySet="OldED" />
+      <End Role="Student" EntitySet="Student" />
+    </AssociationSet>
+    <AssociationSet Name="FK_project_list_Student" Association="ComCSDBModel.FK_project_list_Student">
+      <End Role="Student" EntitySet="Student" />
+      <End Role="project_list" EntitySet="project_list" />
+    </AssociationSet>
+    <AssociationSet Name="FK_project_list_Teacher" Association="ComCSDBModel.FK_project_list_Teacher">
+      <End Role="Teacher" EntitySet="Teacher" />
+      <End Role="project_list" EntitySet="project_list" />
+    </AssociationSet>
+    <AssociationSet Name="FK_project_list_type_project" Association="ComCSDBModel.FK_project_list_type_project">
+      <End Role="type_project" EntitySet="type_project" />
+      <End Role="project_list" EntitySet="project_list" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Status_RefProvince" Association="ComCSDBModel.FK_Status_RefProvince">
+      <End Role="RefProvince" EntitySet="RefProvince" />
+      <End Role="Status" EntitySet="Status" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Student_RefProvince" Association="ComCSDBModel.FK_Student_RefProvince">
+      <End Role="RefProvince" EntitySet="RefProvince" />
+      <End Role="Student" EntitySet="Student" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Relation_Subject" Association="ComCSDBModel.FK_Relation_Subject">
+      <End Role="Subject" EntitySet="Subject" />
+      <End Role="Relation" EntitySet="Relation" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Student_Status" Association="ComCSDBModel.FK_Student_Status">
+      <End Role="Status" EntitySet="Status" />
+      <End Role="Student" EntitySet="Student" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Student_Teacher" Association="ComCSDBModel.FK_Student_Teacher">
+      <End Role="Teacher" EntitySet="Teacher" />
+      <End Role="Student" EntitySet="Student" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Student_Title" Association="ComCSDBModel.FK_Student_Title">
+      <End Role="Title" EntitySet="Title" />
+      <End Role="Student" EntitySet="Student" />
+    </AssociationSet>
+    <AssociationSet Name="FK_T_Type_T_Category1" Association="ComCSDBModel.FK_T_Type_T_Category1">
+      <End Role="T_Category" EntitySet="T_Category" />
+      <End Role="T_Type" EntitySet="T_Type" />
+    </AssociationSet>
+    <AssociationSet Name="FK_T_DistributorList_T_Distributor1" Association="ComCSDBModel.FK_T_DistributorList_T_Distributor1">
+      <End Role="T_Distributor" EntitySet="T_Distributor" />
+      <End Role="T_DistributorList" EntitySet="T_DistributorList" />
+    </AssociationSet>
+    <AssociationSet Name="FK_T_DistributorList_T_Khruphanth1" Association="ComCSDBModel.FK_T_DistributorList_T_Khruphanth1">
+      <End Role="T_Khruphanth" EntitySet="T_Khruphanth" />
+      <End Role="T_DistributorList" EntitySet="T_DistributorList" />
+    </AssociationSet>
+    <AssociationSet Name="FK_T_Khruphanth_T_RequestList" Association="ComCSDBModel.FK_T_Khruphanth_T_RequestList">
+      <End Role="T_RequestList" EntitySet="T_RequestList" />
+      <End Role="T_Khruphanth" EntitySet="T_Khruphanth" />
+    </AssociationSet>
+    <AssociationSet Name="FK_T_Khruphanth_T_Status1" Association="ComCSDBModel.FK_T_Khruphanth_T_Status1">
+      <End Role="T_Status" EntitySet="T_Status" />
+      <End Role="T_Khruphanth" EntitySet="T_Khruphanth" />
+    </AssociationSet>
+    <AssociationSet Name="FK_T_RequestList_T_Place1" Association="ComCSDBModel.FK_T_RequestList_T_Place1">
+      <End Role="T_Place" EntitySet="T_Place" />
+      <End Role="T_RequestList" EntitySet="T_RequestList" />
+    </AssociationSet>
+    <AssociationSet Name="FK_T_RequestList_T_Requisition" Association="ComCSDBModel.FK_T_RequestList_T_Requisition">
+      <End Role="T_Requisition" EntitySet="T_Requisition" />
+      <End Role="T_RequestList" EntitySet="T_RequestList" />
+    </AssociationSet>
+    <AssociationSet Name="FK_T_RequestList_T_Type1" Association="ComCSDBModel.FK_T_RequestList_T_Type1">
+      <End Role="T_Type" EntitySet="T_Type" />
+      <End Role="T_RequestList" EntitySet="T_RequestList" />
+    </AssociationSet>
+    <AssociationSet Name="FK_T_Requisition_T_Stap" Association="ComCSDBModel.FK_T_Requisition_T_Stap">
+      <End Role="T_Stap" EntitySet="T_Stap" />
+      <End Role="T_Requisition" EntitySet="T_Requisition" />
+    </AssociationSet>
+    <AssociationSet Name="FK_T_Requisition_Teacher" Association="ComCSDBModel.FK_T_Requisition_Teacher">
+      <End Role="Teacher" EntitySet="Teacher" />
+      <End Role="T_Requisition" EntitySet="T_Requisition" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Teacher_Title" Association="ComCSDBModel.FK_Teacher_Title">
+      <End Role="Title" EntitySet="Title" />
+      <End Role="Teacher" EntitySet="Teacher" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Account">
+    <Key>
+      <PropertyRef Name="AId" />
+    </Key>
+    <Property Name="AId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="AUsername" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="APassword" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="AStatus" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+  </EntityType>
+  <EntityType Name="Course">
+    <Key>
+      <PropertyRef Name="CId" />
+    </Key>
+    <Property Name="CId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CTName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="CEName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="CYear" Type="Int32" />
+    <Property Name="CSDegreeNameTH" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="CSDegreeNameEN" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="CSCredit" Type="Int32" />
+    <Property Name="CSCurriculum" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="CSGraJob" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="CsGeneralCategory" Type="Int32" />
+    <Property Name="CsComputerCategory" Type="Int32" />
+    <NavigationProperty Name="Relation" Relationship="ComCSDBModel.FK_Relation_Course" FromRole="Course" ToRole="Relation" />
+  </EntityType>
+  <EntityType Name="Department">
+    <Key>
+      <PropertyRef Name="DeId" />
+    </Key>
+    <Property Name="DeId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="DeName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="DeCredit" Type="Int32" />
+    <NavigationProperty Name="Subject" Relationship="ComCSDBModel.FK_Subject_Department" FromRole="Department" ToRole="Subject" />
+  </EntityType>
+  <EntityType Name="FStatus">
+    <Key>
+      <PropertyRef Name="FStatusId" />
+    </Key>
+    <Property Name="FStatusId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="FStatusName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Student" Relationship="ComCSDBModel.FK_Student_FStatus" FromRole="FStatus" ToRole="Student" />
+  </EntityType>
+  <EntityType Name="Job">
+    <Key>
+      <PropertyRef Name="JId" />
+    </Key>
+    <Property Name="JId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="JName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Student" Relationship="ComCSDBModel.FK_Student_Job" FromRole="Job" ToRole="Student" />
+    <NavigationProperty Name="Student1" Relationship="ComCSDBModel.FK_Student_Job1" FromRole="Job" ToRole="Student" />
+  </EntityType>
+  <EntityType Name="OldED">
+    <Key>
+      <PropertyRef Name="OldOIdEd" />
+    </Key>
+    <Property Name="OldOIdEd" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="OOldEdName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Student" Relationship="ComCSDBModel.FK_Student_OldED" FromRole="OldED" ToRole="Student" />
+  </EntityType>
+  <EntityType Name="project_list">
+    <Key>
+      <PropertyRef Name="project_id" />
+    </Key>
+    <Property Name="project_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="project_name" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="project_name_e" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="stu_id" Type="String" MaxLength="12" FixedLength="false" Unicode="false" />
+    <Property Name="type_id" Type="Int32" />
+    <Property Name="TeaId" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="Data_Post" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="File" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Detail" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="LinkWeb" Type="String" MaxLength="200" FixedLength="true" Unicode="true" />
+    <Property Name="LinkVideo" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Rate" Type="Int32" />
+    <NavigationProperty Name="Student" Relationship="ComCSDBModel.FK_project_list_Student" FromRole="project_list" ToRole="Student" />
+    <NavigationProperty Name="Teacher" Relationship="ComCSDBModel.FK_project_list_Teacher" FromRole="project_list" ToRole="Teacher" />
+    <NavigationProperty Name="type_project" Relationship="ComCSDBModel.FK_project_list_type_project" FromRole="project_list" ToRole="type_project" />
+  </EntityType>
+  <EntityType Name="RefProvince">
+    <Key>
+      <PropertyRef Name="ProvinceId" />
+    </Key>
+    <Property Name="ProvinceId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ProvinceName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Status" Relationship="ComCSDBModel.FK_Status_RefProvince" FromRole="RefProvince" ToRole="Status" />
+    <NavigationProperty Name="Student" Relationship="ComCSDBModel.FK_Student_RefProvince" FromRole="RefProvince" ToRole="Student" />
+  </EntityType>
+  <EntityType Name="Relation">
+    <Key>
+      <PropertyRef Name="RID" />
+    </Key>
+    <Property Name="RID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="RSubjId" Type="Int32" />
+    <Property Name="RCId" Type="Int32" />
+    <NavigationProperty Name="Course" Relationship="ComCSDBModel.FK_Relation_Course" FromRole="Relation" ToRole="Course" />
+    <NavigationProperty Name="Subject" Relationship="ComCSDBModel.FK_Relation_Subject" FromRole="Relation" ToRole="Subject" />
+  </EntityType>
+  <EntityType Name="SelectedEmployee">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="SelectedEmployeeIDs" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="Status">
+    <Key>
+      <PropertyRef Name="SIdStatus" />
+    </Key>
+    <Property Name="SIdStatus" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="SStatusName" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Name="SRefProvince" Type="Int32" />
+    <NavigationProperty Name="RefProvince" Relationship="ComCSDBModel.FK_Status_RefProvince" FromRole="Status" ToRole="RefProvince" />
+    <NavigationProperty Name="Student" Relationship="ComCSDBModel.FK_Student_Status" FromRole="Status" ToRole="Student" />
+  </EntityType>
+  <EntityType Name="Student">
+    <Key>
+      <PropertyRef Name="StuId" />
+    </Key>
+    <Property Name="StuId" Type="String" Nullable="false" MaxLength="12" FixedLength="false" Unicode="false" />
+    <Property Name="StuPassword" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="StuTitle" Type="Int32" />
+    <Property Name="StuFName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="StuLName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="StuSex" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="StuBDate" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="StuEmail" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Name="StuTel" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="StuHomeNo" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="StuMoo" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+    <Property Name="StuRoad" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="StuTambon" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="StuAmphur" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="StuProvince_id" Type="Int32" />
+    <Property Name="StuZipcode" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+    <Property Name="StuPic" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <Property Name="StuOldEd" Type="Int32" />
+    <Property Name="StuStatus" Type="Int32" />
+    <Property Name="StuTAdviser" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="StuDName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="StuDJob" Type="Int32" />
+    <Property Name="StuDIncome" Type="Int32" />
+    <Property Name="StuMName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="StuMJob" Type="Int32" />
+    <Property Name="StuMIncome" Type="Int32" />
+    <Property Name="StuFStatus" Type="Int32" />
+    <NavigationProperty Name="FStatus" Relationship="ComCSDBModel.FK_Student_FStatus" FromRole="Student" ToRole="FStatus" />
+    <NavigationProperty Name="Job" Relationship="ComCSDBModel.FK_Student_Job" FromRole="Student" ToRole="Job" />
+    <NavigationProperty Name="Job1" Relationship="ComCSDBModel.FK_Student_Job1" FromRole="Student" ToRole="Job" />
+    <NavigationProperty Name="OldED" Relationship="ComCSDBModel.FK_Student_OldED" FromRole="Student" ToRole="OldED" />
+    <NavigationProperty Name="project_list" Relationship="ComCSDBModel.FK_project_list_Student" FromRole="Student" ToRole="project_list" />
+    <NavigationProperty Name="RefProvince" Relationship="ComCSDBModel.FK_Student_RefProvince" FromRole="Student" ToRole="RefProvince" />
+    <NavigationProperty Name="Status" Relationship="ComCSDBModel.FK_Student_Status" FromRole="Student" ToRole="Status" />
+    <NavigationProperty Name="Teacher" Relationship="ComCSDBModel.FK_Student_Teacher" FromRole="Student" ToRole="Teacher" />
+    <NavigationProperty Name="Title" Relationship="ComCSDBModel.FK_Student_Title" FromRole="Student" ToRole="Title" />
+  </EntityType>
+  <EntityType Name="Subject">
+    <Key>
+      <PropertyRef Name="SubjId" />
+    </Key>
+    <Property Name="SubjId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="SubjCode" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="SubjDeId" Type="Int32" Nullable="false" />
+    <Property Name="SubjName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="SubjCredit" Type="Int32" />
+    <NavigationProperty Name="Department" Relationship="ComCSDBModel.FK_Subject_Department" FromRole="Subject" ToRole="Department" />
+    <NavigationProperty Name="Relation" Relationship="ComCSDBModel.FK_Relation_Subject" FromRole="Subject" ToRole="Relation" />
+  </EntityType>
+  <EntityType Name="T_Category">
+    <Key>
+      <PropertyRef Name="CategoryID" />
+    </Key>
+    <Property Name="CategoryID" Type="String" Nullable="false" MaxLength="5" FixedLength="false" Unicode="false" />
+    <Property Name="CA_NameCategory" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="T_Type" Relationship="ComCSDBModel.FK_T_Type_T_Category1" FromRole="T_Category" ToRole="T_Type" />
+  </EntityType>
+  <EntityType Name="T_Distributor">
+    <Key>
+      <PropertyRef Name="DistributorID" />
+    </Key>
+    <Property Name="DistributorID" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Di_Date" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="Di_Status" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="T_DistributorList" Relationship="ComCSDBModel.FK_T_DistributorList_T_Distributor1" FromRole="T_Distributor" ToRole="T_DistributorList" />
+  </EntityType>
+  <EntityType Name="T_DistributorList">
+    <Key>
+      <PropertyRef Name="DistributorList" />
+    </Key>
+    <Property Name="DistributorList" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="DL_DistributorID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="DL_KhruphanthID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="T_Distributor" Relationship="ComCSDBModel.FK_T_DistributorList_T_Distributor1" FromRole="T_DistributorList" ToRole="T_Distributor" />
+    <NavigationProperty Name="T_Khruphanth" Relationship="ComCSDBModel.FK_T_DistributorList_T_Khruphanth1" FromRole="T_DistributorList" ToRole="T_Khruphanth" />
+  </EntityType>
+  <EntityType Name="T_Khruphanth">
+    <Key>
+      <PropertyRef Name="KhruphanthID" />
+    </Key>
+    <Property Name="KhruphanthID" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Kh_RequestLsitID" Type="Int32" />
+    <Property Name="Kh_QR_CODE" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Kh_PlaceID" Type="Int32" />
+    <Property Name="Kh_StatusID" Type="Int32" />
+    <NavigationProperty Name="T_DistributorList" Relationship="ComCSDBModel.FK_T_DistributorList_T_Khruphanth1" FromRole="T_Khruphanth" ToRole="T_DistributorList" />
+    <NavigationProperty Name="T_RequestList" Relationship="ComCSDBModel.FK_T_Khruphanth_T_RequestList" FromRole="T_Khruphanth" ToRole="T_RequestList" />
+    <NavigationProperty Name="T_Status" Relationship="ComCSDBModel.FK_T_Khruphanth_T_Status1" FromRole="T_Khruphanth" ToRole="T_Status" />
+  </EntityType>
+  <EntityType Name="T_Place">
+    <Key>
+      <PropertyRef Name="PlaceID" />
+    </Key>
+    <Property Name="PlaceID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="PL_NamePlace" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="T_RequestList" Relationship="ComCSDBModel.FK_T_RequestList_T_Place1" FromRole="T_Place" ToRole="T_RequestList" />
+  </EntityType>
+  <EntityType Name="T_RequestList">
+    <Key>
+      <PropertyRef Name="RequestLsitID" />
+    </Key>
+    <Property Name="RequestLsitID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="RL_RequisitionID" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="RL_TypeID" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+    <Property Name="RL_CategoryID" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+    <Property Name="RL_NameKP" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="RL_OnStart" Type="Int32" />
+    <Property Name="RL_Amount" Type="Double" />
+    <Property Name="RL_Price" Type="Double" />
+    <Property Name="RL_DetailKhru" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="RL_PictureKhru" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="RL_PlaceID" Type="Int32" />
+    <NavigationProperty Name="T_Khruphanth" Relationship="ComCSDBModel.FK_T_Khruphanth_T_RequestList" FromRole="T_RequestList" ToRole="T_Khruphanth" />
+    <NavigationProperty Name="T_Place" Relationship="ComCSDBModel.FK_T_RequestList_T_Place1" FromRole="T_RequestList" ToRole="T_Place" />
+    <NavigationProperty Name="T_Requisition" Relationship="ComCSDBModel.FK_T_RequestList_T_Requisition" FromRole="T_RequestList" ToRole="T_Requisition" />
+    <NavigationProperty Name="T_Type" Relationship="ComCSDBModel.FK_T_RequestList_T_Type1" FromRole="T_RequestList" ToRole="T_Type" />
+  </EntityType>
+  <EntityType Name="T_Requisition">
+    <Key>
+      <PropertyRef Name="RequisitionID" />
+    </Key>
+    <Property Name="RequisitionID" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="Re_TeaId" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="Re_DateRequi" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="Re_StepID" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <NavigationProperty Name="T_RequestList" Relationship="ComCSDBModel.FK_T_RequestList_T_Requisition" FromRole="T_Requisition" ToRole="T_RequestList" />
+    <NavigationProperty Name="T_Stap" Relationship="ComCSDBModel.FK_T_Requisition_T_Stap" FromRole="T_Requisition" ToRole="T_Stap" />
+    <NavigationProperty Name="Teacher" Relationship="ComCSDBModel.FK_T_Requisition_Teacher" FromRole="T_Requisition" ToRole="Teacher" />
+  </EntityType>
+  <EntityType Name="T_Stap">
+    <Key>
+      <PropertyRef Name="StepID" />
+    </Key>
+    <Property Name="StepID" Type="String" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="ST_StepName" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="T_Requisition" Relationship="ComCSDBModel.FK_T_Requisition_T_Stap" FromRole="T_Stap" ToRole="T_Requisition" />
+  </EntityType>
+  <EntityType Name="T_Status">
+    <Key>
+      <PropertyRef Name="StatusID" />
+    </Key>
+    <Property Name="StatusID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Status_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="T_Khruphanth" Relationship="ComCSDBModel.FK_T_Khruphanth_T_Status1" FromRole="T_Status" ToRole="T_Khruphanth" />
+  </EntityType>
+  <EntityType Name="T_Type">
+    <Key>
+      <PropertyRef Name="TypeID" />
+    </Key>
+    <Property Name="TypeID" Type="String" Nullable="false" MaxLength="5" FixedLength="false" Unicode="false" />
+    <Property Name="TY_NameType" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="TY_CategoryID" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="T_Category" Relationship="ComCSDBModel.FK_T_Type_T_Category1" FromRole="T_Type" ToRole="T_Category" />
+    <NavigationProperty Name="T_RequestList" Relationship="ComCSDBModel.FK_T_RequestList_T_Type1" FromRole="T_Type" ToRole="T_RequestList" />
+  </EntityType>
+  <EntityType Name="Teacher">
+    <Key>
+      <PropertyRef Name="TeaId" />
+    </Key>
+    <Property Name="TeaId" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="TeaTitle" Type="Int32" />
+    <Property Name="TeaName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="TeaIdCard" Type="String" MaxLength="14" FixedLength="false" Unicode="false" />
+    <Property Name="TeaExport" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="TeaImage" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <Property Name="TeaLvl" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="project_list" Relationship="ComCSDBModel.FK_project_list_Teacher" FromRole="Teacher" ToRole="project_list" />
+    <NavigationProperty Name="Student" Relationship="ComCSDBModel.FK_Student_Teacher" FromRole="Teacher" ToRole="Student" />
+    <NavigationProperty Name="T_Requisition" Relationship="ComCSDBModel.FK_T_Requisition_Teacher" FromRole="Teacher" ToRole="T_Requisition" />
+    <NavigationProperty Name="Title" Relationship="ComCSDBModel.FK_Teacher_Title" FromRole="Teacher" ToRole="Title" />
+  </EntityType>
+  <EntityType Name="Title">
+    <Key>
+      <PropertyRef Name="TId" />
+    </Key>
+    <Property Name="TId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Student" Relationship="ComCSDBModel.FK_Student_Title" FromRole="Title" ToRole="Student" />
+    <NavigationProperty Name="Teacher" Relationship="ComCSDBModel.FK_Teacher_Title" FromRole="Title" ToRole="Teacher" />
+  </EntityType>
+  <EntityType Name="type_project">
+    <Key>
+      <PropertyRef Name="Type_id" />
+    </Key>
+    <Property Name="Type_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Type_name" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="project_list" Relationship="ComCSDBModel.FK_project_list_type_project" FromRole="type_project" ToRole="project_list" />
+  </EntityType>
+  <Association Name="FK_Relation_Course">
+    <End Type="ComCSDBModel.Course" Role="Course" Multiplicity="0..1" />
+    <End Type="ComCSDBModel.Relation" Role="Relation" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Course">
+        <PropertyRef Name="CId" />
+      </Principal>
+      <Dependent Role="Relation">
+        <PropertyRef Name="RCId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Subject_Department">
+    <End Type="ComCSDBModel.Department" Role="Department" Multiplicity="1" />
+    <End Type="ComCSDBModel.Subject" Role="Subject" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Department">
+        <PropertyRef Name="DeId" />
+      </Principal>
+      <Dependent Role="Subject">
+        <PropertyRef Name="SubjDeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Student_FStatus">
+    <End Type="ComCSDBModel.FStatus" Role="FStatus" Multiplicity="0..1" />
+    <End Type="ComCSDBModel.Student" Role="Student" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="FStatus">
+        <PropertyRef Name="FStatusId" />
+      </Principal>
+      <Dependent Role="Student">
+        <PropertyRef Name="StuFStatus" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Student_Job">
+    <End Type="ComCSDBModel.Job" Role="Job" Multiplicity="0..1" />
+    <End Type="ComCSDBModel.Student" Role="Student" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Job">
+        <PropertyRef Name="JId" />
+      </Principal>
+      <Dependent Role="Student">
+        <PropertyRef Name="StuDJob" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Student_Job1">
+    <End Type="ComCSDBModel.Job" Role="Job" Multiplicity="0..1" />
+    <End Type="ComCSDBModel.Student" Role="Student" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Job">
+        <PropertyRef Name="JId" />
+      </Principal>
+      <Dependent Role="Student">
+        <PropertyRef Name="StuMJob" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Student_OldED">
+    <End Type="ComCSDBModel.OldED" Role="OldED" Multiplicity="0..1" />
+    <End Type="ComCSDBModel.Student" Role="Student" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="OldED">
+        <PropertyRef Name="OldOIdEd" />
+      </Principal>
+      <Dependent Role="Student">
+        <PropertyRef Name="StuOldEd" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_project_list_Student">
+    <End Type="ComCSDBModel.Student" Role="Student" Multiplicity="0..1" />
+    <End Type="ComCSDBModel.project_list" Role="project_list" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Student">
+        <PropertyRef Name="StuId" />
+      </Principal>
+      <Dependent Role="project_list">
+        <PropertyRef Name="stu_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_project_list_Teacher">
+    <End Type="ComCSDBModel.Teacher" Role="Teacher" Multiplicity="0..1" />
+    <End Type="ComCSDBModel.project_list" Role="project_list" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Teacher">
+        <PropertyRef Name="TeaId" />
+      </Principal>
+      <Dependent Role="project_list">
+        <PropertyRef Name="TeaId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_project_list_type_project">
+    <End Type="ComCSDBModel.type_project" Role="type_project" Multiplicity="0..1" />
+    <End Type="ComCSDBModel.project_list" Role="project_list" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="type_project">
+        <PropertyRef Name="Type_id" />
+      </Principal>
+      <Dependent Role="project_list">
+        <PropertyRef Name="type_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Status_RefProvince">
+    <End Type="ComCSDBModel.RefProvince" Role="RefProvince" Multiplicity="0..1" />
+    <End Type="ComCSDBModel.Status" Role="Status" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="RefProvince">
+        <PropertyRef Name="ProvinceId" />
+      </Principal>
+      <Dependent Role="Status">
+        <PropertyRef Name="SRefProvince" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Student_RefProvince">
+    <End Type="ComCSDBModel.RefProvince" Role="RefProvince" Multiplicity="0..1" />
+    <End Type="ComCSDBModel.Student" Role="Student" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="RefProvince">
+        <PropertyRef Name="ProvinceId" />
+      </Principal>
+      <Dependent Role="Student">
+        <PropertyRef Name="StuProvince_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Relation_Subject">
+    <End Type="ComCSDBModel.Subject" Role="Subject" Multiplicity="0..1" />
+    <End Type="ComCSDBModel.Relation" Role="Relation" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Subject">
+        <PropertyRef Name="SubjId" />
+      </Principal>
+      <Dependent Role="Relation">
+        <PropertyRef Name="RSubjId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Student_Status">
+    <End Type="ComCSDBModel.Status" Role="Status" Multiplicity="0..1" />
+    <End Type="ComCSDBModel.Student" Role="Student" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Status">
+        <PropertyRef Name="SIdStatus" />
+      </Principal>
+      <Dependent Role="Student">
+        <PropertyRef Name="StuStatus" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Student_Teacher">
+    <End Type="ComCSDBModel.Teacher" Role="Teacher" Multiplicity="0..1" />
+    <End Type="ComCSDBModel.Student" Role="Student" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Teacher">
+        <PropertyRef Name="TeaId" />
+      </Principal>
+      <Dependent Role="Student">
+        <PropertyRef Name="StuTAdviser" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Student_Title">
+    <End Type="ComCSDBModel.Title" Role="Title" Multiplicity="0..1" />
+    <End Type="ComCSDBModel.Student" Role="Student" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Title">
+        <PropertyRef Name="TId" />
+      </Principal>
+      <Dependent Role="Student">
+        <PropertyRef Name="StuTitle" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_T_Type_T_Category1">
+    <End Type="ComCSDBModel.T_Category" Role="T_Category" Multiplicity="0..1" />
+    <End Type="ComCSDBModel.T_Type" Role="T_Type" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="T_Category">
+        <PropertyRef Name="CategoryID" />
+      </Principal>
+      <Dependent Role="T_Type">
+        <PropertyRef Name="TY_CategoryID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_T_DistributorList_T_Distributor1">
+    <End Type="ComCSDBModel.T_Distributor" Role="T_Distributor" Multiplicity="0..1" />
+    <End Type="ComCSDBModel.T_DistributorList" Role="T_DistributorList" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="T_Distributor">
+        <PropertyRef Name="DistributorID" />
+      </Principal>
+      <Dependent Role="T_DistributorList">
+        <PropertyRef Name="DL_DistributorID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_T_DistributorList_T_Khruphanth1">
+    <End Type="ComCSDBModel.T_Khruphanth" Role="T_Khruphanth" Multiplicity="0..1" />
+    <End Type="ComCSDBModel.T_DistributorList" Role="T_DistributorList" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="T_Khruphanth">
+        <PropertyRef Name="KhruphanthID" />
+      </Principal>
+      <Dependent Role="T_DistributorList">
+        <PropertyRef Name="DL_KhruphanthID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_T_Khruphanth_T_RequestList">
+    <End Type="ComCSDBModel.T_RequestList" Role="T_RequestList" Multiplicity="0..1" />
+    <End Type="ComCSDBModel.T_Khruphanth" Role="T_Khruphanth" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="T_RequestList">
+        <PropertyRef Name="RequestLsitID" />
+      </Principal>
+      <Dependent Role="T_Khruphanth">
+        <PropertyRef Name="Kh_RequestLsitID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_T_Khruphanth_T_Status1">
+    <End Type="ComCSDBModel.T_Status" Role="T_Status" Multiplicity="0..1" />
+    <End Type="ComCSDBModel.T_Khruphanth" Role="T_Khruphanth" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="T_Status">
+        <PropertyRef Name="StatusID" />
+      </Principal>
+      <Dependent Role="T_Khruphanth">
+        <PropertyRef Name="Kh_StatusID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_T_RequestList_T_Place1">
+    <End Type="ComCSDBModel.T_Place" Role="T_Place" Multiplicity="0..1" />
+    <End Type="ComCSDBModel.T_RequestList" Role="T_RequestList" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="T_Place">
+        <PropertyRef Name="PlaceID" />
+      </Principal>
+      <Dependent Role="T_RequestList">
+        <PropertyRef Name="RL_PlaceID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_T_RequestList_T_Requisition">
+    <End Type="ComCSDBModel.T_Requisition" Role="T_Requisition" Multiplicity="0..1" />
+    <End Type="ComCSDBModel.T_RequestList" Role="T_RequestList" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="T_Requisition">
+        <PropertyRef Name="RequisitionID" />
+      </Principal>
+      <Dependent Role="T_RequestList">
+        <PropertyRef Name="RL_RequisitionID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_T_RequestList_T_Type1">
+    <End Type="ComCSDBModel.T_Type" Role="T_Type" Multiplicity="0..1" />
+    <End Type="ComCSDBModel.T_RequestList" Role="T_RequestList" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="T_Type">
+        <PropertyRef Name="TypeID" />
+      </Principal>
+      <Dependent Role="T_RequestList">
+        <PropertyRef Name="RL_TypeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_T_Requisition_T_Stap">
+    <End Type="ComCSDBModel.T_Stap" Role="T_Stap" Multiplicity="0..1" />
+    <End Type="ComCSDBModel.T_Requisition" Role="T_Requisition" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="T_Stap">
+        <PropertyRef Name="StepID" />
+      </Principal>
+      <Dependent Role="T_Requisition">
+        <PropertyRef Name="Re_StepID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_T_Requisition_Teacher">
+    <End Type="ComCSDBModel.Teacher" Role="Teacher" Multiplicity="0..1" />
+    <End Type="ComCSDBModel.T_Requisition" Role="T_Requisition" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Teacher">
+        <PropertyRef Name="TeaId" />
+      </Principal>
+      <Dependent Role="T_Requisition">
+        <PropertyRef Name="Re_TeaId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Teacher_Title">
+    <End Type="ComCSDBModel.Title" Role="Title" Multiplicity="0..1" />
+    <End Type="ComCSDBModel.Teacher" Role="Teacher" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Title">
+        <PropertyRef Name="TId" />
+      </Principal>
+      <Dependent Role="Teacher">
+        <PropertyRef Name="TeaTitle" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

@@ -1,0 +1,64 @@
+﻿@model Khruphanth.Models.T_Category
+
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+@using (Html.BeginForm("Create", "T_Category", FormMethod.Post, new { @class = "needs-validation ", @ovalidate = "", @id = "myform2", @enctype = "multipart/form-data" }))
+{
+    @Html.AntiForgeryToken()
+    <div class="container-fluid ">
+        <!-- Start Page Content -->
+        <div class="row ">
+            <div class="col-lg-12">
+                <div class="card card-outline-primary">
+                    <div class="card" style="background-color:rgb(16, 166, 246);text-align:center">
+                        <h4 class="m-b-0 text-white" style="word-spacing:30px;">เพิ่มหมวดครุภัณฑ์ </h4>
+                    </div>
+                    <div class="card-body">
+                        <div class="form-body">
+                            <div class="form-horizontal">
+                                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                                <div class="row p-t-20">
+
+                                    <div class="col-md-2">
+                                        <div class="form-group">
+                                            @Html.LabelFor(model => model.CategoryID, htmlAttributes: new { @class = "control-label col-md-10" })
+                                            @Html.EditorFor(model => model.CategoryID, new { htmlAttributes = new { @class = "form-control input-rounded font", @required = "" } })
+                                            @Html.ValidationMessageFor(model => model.CategoryID, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+                                    <div class="col-md-2">
+                                        <div class="form-group">
+                                            @Html.LabelFor(model => model.CA_NameCategory, htmlAttributes: new { @class = "control-label col-md-10" })
+                                            @Html.EditorFor(model => model.CA_NameCategory, new { htmlAttributes = new { @class = "form-control input-rounded font", @required = "" } })
+                                            @Html.ValidationMessageFor(model => model.CA_NameCategory, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                                    <div class="form-group">
+                                        <div class="col-md-offset-2 col-md-10">
+                                            <button type="submit" class="btn-outline btn btn-success"> <i class="fa fa-check"></i> Save</button>
+                                        </div>
+                                    </div>
+                                </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

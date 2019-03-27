@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <parameter name="ComCSDBEntities-Web.config Connection String" description="ComCSDBEntities Connection String used in web.config by the application to access the database." defaultValue="metadata=res://*/Models.Model1.csdl|res://*/Models.Model1.ssdl|res://*/Models.Model1.msl;provider=System.Data.SqlClient;provider connection string=&quot;data source=DESKTOP-8O45V40\SQLEXPRESS;initial catalog=ComCSDB;integrated security=True;MultipleActiveResultSets=True;App=EntityFramework&quot;" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="D:\\สำรองข้อมูล\\โปรเจคครุภัณฑ์\\6-2-2562\\Khruphanth\\Khruphanth\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='ComCSDBEntities']/@connectionString" />
+  </parameter>
+  <parameter name="ComCSDBConnectionString-Web.config Connection String" description="ComCSDBConnectionString Connection String used in web.config by the application to access the database." defaultValue="Data Source=DESKTOP-8O45V40\SQLEXPRESS;Initial Catalog=ComCSDB;Integrated Security=True;MultipleActiveResultSets=True;Application Name=EntityFramework" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="D:\\สำรองข้อมูล\\โปรเจคครุภัณฑ์\\6-2-2562\\Khruphanth\\Khruphanth\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='ComCSDBConnectionString']/@connectionString" />
+  </parameter>
+</parameters>

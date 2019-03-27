@@ -1,0 +1,206 @@
+﻿@model Khruphanth.Models.T_RequestList
+
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<script src="~/Scripts/jquery-ajax.min.js"></script>
+@*<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.1/jquery.min.js"></script>*@
+<script type="text/javascript">
+    $(function () {
+    //    if ($("#RL_CategoryID").val() == '0') {
+    //        //var productDefaultValue = "<option value='0'>---เลือกประเภท---</option>";
+    //        $("#RL_TypeID").html(productDefaultValue).show();
+    //    }
+
+        $("#RL_CategoryID").change(function () {
+            var selectedItemValue = $(this).val();
+
+            var ddType = $("#RL_TypeID");
+            $.ajax({
+                cache: false,
+                type: "GET",
+                url: '@Url.Action("GetProductsByCategoryId", "Requisition")',
+                data: { "id": selectedItemValue },
+                success: function (data) {
+                    ddType.html('');
+                    $.each(data, function (id, option) {
+                        ddType.append($('<option></option>').val(option.id).html(option.name));
+
+                    });
+                },
+                error: function (xhr, ajaxOptions, thrownError) {
+                    //alert('Found error to load product!!.');
+
+                }
+            });
+        });
+    });
+</script>
+
+@using (Html.BeginForm("Edit", "RequestList", FormMethod.Post, new { @class = "needs-validation ", @ovalidate = "", @id = "myform2", @enctype = "multipart/form-data" }))
+{
+
+    <div class="container-fluid ">
+        <!-- Start Page Content -->
+        <div class="row ">
+            <div class="col-lg-12">
+                <div class="card card-outline-primary">
+                    <div class="card" style="background-color:rgb(255, 60, 96); text-align:center">
+                        <h4 class="m-b-0 text-white" style="word-spacing:30px;">บันทึกรายเบิกครุภัณฑ์ </h4>
+                    </div>
+                    <div class="card-body">
+                        <div class="form-horizontal">
+                            @Html.AntiForgeryToken()
+                            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                            @Html.HiddenFor(model => model.RequestLsitID)
+                            <div class="row">
+                                @Html.HiddenFor(model => model.RL_PictureKhru, htmlAttributes: new { @class = "control-label col-md-2" })
+                                <div class="col-lg-4"></div>
+                                <div class="col-md-8">
+                                    @if (Model.RL_PictureKhru != null)
+                                    {
+                                        <img src="@Url.Content(Model.RL_PictureKhru)" width="300" class="img-rounded">
+                                    }
+                                </div>
+                                <div class="col-lg-2"></div>
+                            </div>
+                            <div class="row p-t-20">
+
+                                <div class="col-md-2">
+                                    <div class="form-group">
+                                        @Html.LabelFor(model => model.RL_RequisitionID, null, htmlAttributes: new { @class = "control-label col-md-10" })
+                                        @*@Html.DropDownList("RequisitionID", null, htmlAttributes: new { @class = "form-control input-rounded" })*@
+                                        @Html.EditorFor(model => model.RL_RequisitionID, new { htmlAttributes = new { @class = "form-control input-rounded font", @required = "", @value = TempData["ID"], @readonly = "@readonly" } })
+                                        @Html.ValidationMessage("RL_RequisitionID", "", new { @class = "text-danger" })
+                                    </div>
+                                </div>
+                                <div class="col-md-2">
+                                    <div class="form-group">
+                                        @Html.LabelFor(model => model.RL_CategoryID, htmlAttributes: new { @class = "control-label col-md-10" })
+
+                                        @Html.DropDownList("RL_CategoryID", null, "-กรุณาเลือกหมวด-", htmlAttributes: new { @class = "form-control input-rounded form-DD", @required = ""})
+                                        <div class="invalid-feedback">  กรุณาเลือกหมวด</div>
+                                    </div>
+                                </div>
+                                <div class="col-md-2">
+                                    <div class="form-group">
+
+                                        @Html.LabelFor(model => model.RL_TypeID, null, htmlAttributes: new { @class = "control-label col-md-10" })
+                                        @Html.DropDownList("RL_TypeID", null, "-กรุณาเลือกประเภท-", htmlAttributes: new { @class = "form-control  input-rounded form-DD", @required = "" })
+
+                                        <div class="invalid-feedback"> กรุณาเลือกประเภท</div>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-2">
+                                    <div class="form-group">
+                                        @Html.LabelFor(model => model.RL_OnStart, htmlAttributes: new { @class = "control-label col-md-10" })
+                                        @Html.EditorFor(model => model.RL_OnStart, new { htmlAttributes = new { @class = "form-control input-rounded font", @required = "",@type="number" } })
+                                        @Html.ValidationMessageFor(model => model.RL_OnStart, "", new { @class = "text-danger" })
+                                    </div>
+                                </div>
+                                <div class="col-md-2">
+                                    <div class="form-group">
+                                        @Html.LabelFor(model => model.RL_Amount, htmlAttributes: new { @class = "control-label col-md-10" })
+                                        @Html.EditorFor(model => model.RL_Amount, new { htmlAttributes = new { @class = "form-control input-rounded font", @required = "", @type = "number" } })
+                                        @Html.ValidationMessageFor(model => model.RL_Amount, "", new { @class = "text-danger" })
+                                    </div>
+                                </div>
+
+                                <div class="col-md-2">
+                                    <div class="form-group">
+                                        @Html.LabelFor(model => model.RL_Price, htmlAttributes: new { @class = "control-label col-md-12" })
+                                        @Html.EditorFor(model => model.RL_Price, new { htmlAttributes = new { @class = "form-control input-rounded font", @required = "", @type = "number" } })
+                                        @Html.ValidationMessageFor(model => model.RL_Price, "", new { @class = "text-danger" })
+
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row p-t-20">
+
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        @Html.LabelFor(model => model.RL_NameKP, htmlAttributes: new { @class = "control-label col-md-7" })
+                                        @Html.EditorFor(model => model.RL_NameKP, new { htmlAttributes = new { @class = "form-control input-rounded font", @required = "" } })
+                                        <div class="invalid-feedback">@Html.ValidationMessageFor(model => model.RL_NameKP, "", new { @class = "text-danger" })</div>
+
+                                    </div>
+                                </div>
+
+                                <div class="col-md-5">
+                                    <div class="form-group">
+                                        @Html.LabelFor(model => model.RL_PictureKhru, htmlAttributes: new { @class = "control-label col-md-12" })
+                                        @Html.TextBoxFor(model => model.ImageUpload, new { @class = "form-control input-rounded font ", @type = "file", @*@required = ""*@})
+                                        <div class="invalid-feedback">เลือกรูปภาพ</div>
+
+                                    </div>
+                                </div>
+
+                                <div class="col-md-3 ">
+                                    <div class="form-group">
+                                        @Html.LabelFor(model => model.RL_PlaceID, htmlAttributes: new { @class = "control-label col-md-12" })
+                                        @*@Html.TextBoxFor(model => model.R_PlaceID, new { @class = "form-control input-rounded font ", @required = "" })*@
+                                        @Html.DropDownList("RL_PlaceID", null, "-------เลือกรายการ--------", htmlAttributes: new { @class = "form-control  input-rounded form-D2 text-center", @required = "" })
+                                        <div class="invalid-feedback"> กรุณาเลือกที่เก็บครุภัณฑ์</div>
+
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row p-t-20">
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        @Html.LabelFor(model => model.RL_DetailKhru, htmlAttributes: new { @class = "control-label col-md-7" })
+                                        @*@Html.TextAreaFor(model => model.DetailKhru, new { htmlAttributes = new { @class="textarea_editor form-control", @row = "15", @required = "", @style = "height:450px" } })*@
+                                        @Html.TextAreaFor(model => model.RL_DetailKhru, new { @class = "form-control tes ", @rows = "15", @required = "" })
+                                        @*<textarea class="textarea_editor form-control" rows="15" placeholder="Enter text ..." style="height:450px"></textarea>*@
+                                        <div class="invalid-feedback">@Html.ValidationMessageFor(model => model.RL_DetailKhru, "", new { @class = "text-danger" })</div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <button type="submit" class="btn-outline btn btn-success" onclick="mypost"> <i class="fa fa-check"></i> Save</button>
+                            <button type="reset" class="btn-outline btn btn-inverse">reset</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+}
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+    <script type="text/javascript">
+
+        //$('#list').addInputArea({});
+        (function () {
+            debugger
+            'use strict';
+            window.addEventListener('load', function () {
+                // Fetch all the forms we want to apply custom Bootstrap validation styles to
+                var forms = document.getElementsByClassName('needs-validation');
+                // Loop over them and prevent submission
+                var validation = Array.prototype.filter.call(forms, function (form) {
+                    form.addEventListener('submit', function (event) {
+                        if (form.checkValidity() === false) {
+                            event.preventDefault();
+                            event.stopPropagation();
+                        }
+                        form.classList.add('was-validated');
+
+                    }, false);
+                });
+            },
+                false);
+        })();
+
+    </script>
+
+}
+

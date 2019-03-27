@@ -1,0 +1,287 @@
+﻿@model IEnumerable<Khruphanth.Models.T_Requisition>
+
+@{
+    /**/
+
+    /**/
+
+    ViewBag.Title = "Waiting";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@{
+    if (Convert.ToString(Session["Result"]) == "error")
+    {
+
+        <script type="text/javascript">
+            window.onload = function () {
+                Command: toastr["warning"]("ไม่สามารถลบข้อมูลได้ เนื่องจากข้อมูลนี้ใช้งานอยู่", "แจ้งเตือน")
+
+                toastr.options = {
+                    "closeButton": false,
+                    "debug": false,
+                    "newestOnTop": false,
+                    "progressBar": false,
+                    "positionClass": "toast-top-right",
+                    "preventDuplicates": false,
+                    "onclick": null,
+                    "showDuration": "300",
+                    "hideDuration": "1000",
+                    "timeOut": "5000",
+                    "extendedTimeOut": "1000",
+                    "showEasing": "swing",
+                    "hideEasing": "linear",
+                    "showMethod": "fadeIn",
+                    "hideMethod": "fadeOut"
+                }
+            }
+        </script>
+    }
+    else if (Convert.ToString(Session["Result"]) == "ok")
+    {
+        <script type="text/javascript">
+            window.onload = function () {
+                Command: toastr["success"]("ลบข้อมูลเรียบร้อย", "แจ้งเตือน")
+
+                toastr.options = {
+                    "closeButton": true,
+                    "debug": false,
+                    "newestOnTop": false,
+                    "progressBar": false,
+                    "positionClass": "toast-top-right",
+                    "preventDuplicates": false,
+                    "onclick": null,
+                    "showDuration": "300",
+                    "hideDuration": "1000",
+                    "timeOut": "5000",
+                    "extendedTimeOut": "1000",
+                    "showEasing": "swing",
+                    "hideEasing": "linear",
+                    "showMethod": "fadeIn",
+                    "hideMethod": "fadeOut"
+                }
+            }
+        </script>
+
+    }
+    else if (Convert.ToString(Session["Result"]) == "okC")
+    {
+        <script type="text/javascript">
+            window.onload = function () {
+                Command: toastr["success"]("เพิ่มข้อมูลเรียบร้อย", "แจ้งเตือน")
+
+                toastr.options = {
+                    "closeButton": true,
+                    "debug": false,
+                    "newestOnTop": false,
+                    "progressBar": false,
+                    "positionClass": "toast-top-right",
+                    "preventDuplicates": false,
+                    "onclick": null,
+                    "showDuration": "300",
+                    "hideDuration": "1000",
+                    "timeOut": "5000",
+                    "extendedTimeOut": "1000",
+                    "showEasing": "swing",
+                    "hideEasing": "linear",
+                    "showMethod": "fadeIn",
+                    "hideMethod": "fadeOut"
+                }
+            }
+        </script>
+
+    }
+    else if (Convert.ToString(Session["Result"]) == "okE")
+    {
+        <script type="text/javascript">
+            window.onload = function () {
+                Command: toastr["success"]("แก้ไขข้อมูลเรียบร้อย", "แจ้งเตือน")
+
+                toastr.options = {
+                    "closeButton": true,
+                    "debug": false,
+                    "newestOnTop": false,
+                    "progressBar": false,
+                    "positionClass": "toast-top-right",
+                    "preventDuplicates": false,
+                    "onclick": null,
+                    "showDuration": "300",
+                    "hideDuration": "1000",
+                    "timeOut": "5000",
+                    "extendedTimeOut": "1000",
+                    "showEasing": "swing",
+                    "hideEasing": "linear",
+                    "showMethod": "fadeIn",
+                    "hideMethod": "fadeOut"
+                }
+            }
+        </script>
+
+    }
+
+    Session.Remove("Result");
+}
+
+<style>
+    .bu {
+        background-color: #9ACD32; /* Green */
+        color: white;
+    }
+</style>
+<div class="col-md-12">
+    <div class="card">
+        <div class="card-body p-b-0">
+            @*<h4 class="card-title">Customtab2 Tab</h4>*@
+            <!-- Nav tabs -->
+            <ul class="nav nav-tabs customtab2" role="tablist">
+
+                <li class="nav-item"> <a class="nav-link   " data-toggle="tab" href="#profile7" role="tab"><span class="hidden-sm-up "><i class="ti-user"></i></span> <span class="hidden-xs-down ">รอการอนุมัติ   &nbsp; <span class="label label-rouded label-danger pull-right"> @TempData["amout"]</span></</span> </a> </li>
+                <li class="nav-item"> <a class="nav-link active  " data-toggle="tab" href="#home7" role="tab"><span class="hidden-sm-up"><i class="ti-home"></i></span> <span class="hidden-xs-down">ใบเบิก </span></a> </li>
+            </ul>
+            <!-- Tab panes -->
+            <div class="tab-content">
+                <div class="tab-pane active " id="home7" role="tabpanel">
+                    <div class="p-20">
+                        <table id="myTable" class="table table-striped table-bordered " style="width:100%">
+                            <thead>
+                                <tr class="font">
+                                    <th class="font">
+                                        @Html.DisplayNameFor(model => model.RequisitionID)
+                                    </th>
+                                    <th class="font">
+                                        @Html.DisplayNameFor(model => model.Re_DateRequi)
+                                    </th>
+                                    <th class="font">
+                                        @Html.DisplayNameFor(model => model.Re_TeaId)
+                                    </th>
+                                    <th class="font">
+                                        @Html.DisplayNameFor(model => model.Re_StepID)
+                                    </th>
+                                    <th>จำนวนครุภัณฑ์</th>
+                                    <th></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var item in Model.Where(x => x.Re_StepID == "1"))
+                                {
+                                    <tr class="font">
+                                        <td class="font">
+                                            @Html.DisplayFor(modelItem => item.RequisitionID)
+                                        </td>
+                                        <td class="font">
+                                            @item.Re_DateRequi.Value.ToString("dd/MM/yyyy")
+                                        </td>
+                                        <td class="font">
+                                            @Html.DisplayFor(modelItem => item.Teacher.TeaName)
+                                        </td>
+                                        <td class="font" width="15%" style="text-align:center">
+                                            <span class="badge badge-success"> @Html.DisplayFor(modelItem => item.T_Stap.ST_StepName)</span>
+                                        </td>
+                                        <td width="15%">
+                                            @item.T_RequestList.Count
+                                        </td>
+                                        <td class="font" width="10%">
+                                            @Html.ActionLink("รายละเอียด", "DetailsS", null, new { RequisitionID = item.RequisitionID }, new { @class = "btn-rounded btn btn-info" })
+                                        </td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="tab-pane  p-20" id="profile7" role="tabpanel">
+                    <table id="myTable1" class="table table-striped table-bordered " style="width:100%">
+                        <thead>
+                            <tr class="font">
+                                <th class="font">
+                                    @Html.DisplayNameFor(model => model.RequisitionID)
+                                </th>
+                                <th class="font">
+                                    @Html.DisplayNameFor(model => model.Re_DateRequi)
+                                </th>
+                                <th class="font">
+                                    @Html.DisplayNameFor(model => model.Re_TeaId)
+                                </th>
+                                <th class="font">
+                                    @Html.DisplayNameFor(model => model.Re_StepID)
+                                </th>
+                                <th>จำนวนครุภัณฑ์</th>
+                                <th class="font"></th>
+                                @*<th class="font"></th>*@
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model.Where(x => x.Re_StepID == "0"))
+                            {
+                                <tr class="font">
+                                    <td class="font">
+                                        @Html.DisplayFor(modelItem => item.RequisitionID)
+                                    </td>
+                                    <td class="font">
+                                        @item.Re_DateRequi.Value.ToString("dd/MM/yyyy")
+                                    </td>
+                                    <td class="font">
+                                        @Html.DisplayFor(modelItem => item.Teacher.TeaName)
+                                    </td>
+                                    <td class="font  text-danger" style="text-align:center">
+                                        <span class="badge badge-danger">  @Html.DisplayFor(modelItem => item.T_Stap.ST_StepName)</span>
+                                    </td>
+                                    <td width="15%">
+                                        @item.T_RequestList.Count
+                                    </td>
+                                    <td class="font center-block" width="35%" style="text-align:center">
+                                        @Html.ActionLink("แก้ไข", "Edit", null, new { RequisitionID = item.RequisitionID }, new { @class = "btn-rounded btn btn-warning" })
+                                        @Html.ActionLink("รายการเบิก", "Details", null, new { RequisitionID = item.RequisitionID }, new { @class = "btn-rounded btn btn-info" })
+                                        @*@Html.ActionLink("ลบข้อมูล", "Delete", null, new { RequisitionID = item.RequisitionID }, new { @class = "btn-rounded btn btn-danger" })*@
+                                        <button class="btn-rounded btn btn-danger " onclick="Delete('@Url.Action("Delete", "Requisition", new { RequisitionID= item.RequisitionID})')" @*id="IDR" value="@item.RequisitionID"*@>ลบข้อมูล</button>
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+    @*<script src="~/Scripts/bootstrap.min.js"></script>*@
+    <script src="~/Scripts/jquery.dataTables.min.js"></script>
+    @*<script src="~/Scripts/dataTables.bootstrap.min.js"></script>*@
+    <script src="~/Scripts/bootstrap-editable.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('#myTable').DataTable();
+        });
+    </script>
+    <script>
+        $(document).ready(function () {
+            $('#myTable1').DataTable();
+        });
+    </script>
+
+    <script>
+        function Delete(url) {
+            $.confirm({
+                title: 'ยืนยัน!',
+                content: 'กรุณายืนยัน การลบ',
+                type: 'red',
+                buttons: {
+                    tryAgain: {
+                        text: 'ลบ',
+                        btnClass: 'btn-danger',
+                        action: function () {
+                            window.location.href = url;
+                        }
+                    },
+                    ปิด: function () {
+
+                    }
+                }
+            });
+        }
+    </script>
+
+}
+

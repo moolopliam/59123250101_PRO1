@@ -1,0 +1,218 @@
+﻿@model Khruphanth.Models.T_Khruphanth
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<style>
+    .center {
+        display: block;
+        margin-left: 300px;
+        margin-right: auto;
+        width: 50%;
+    }
+</style>
+
+<style>
+
+
+    .header-navigation {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: center;
+        font-size: .80rem;
+    }
+
+        .header-navigation a {
+            font-size: .80rem;
+        }
+
+        .header-navigation .breadcrumb {
+            margin-bottom: 0;
+            background-color: transparent;
+            padding: 0.20rem 1rem;
+        }
+
+        .header-navigation .btn-group {
+            margin-left: auto;
+        }
+
+        .header-navigation .btn-share {
+            position: relative;
+        }
+
+            .header-navigation .btn-share::after {
+                content: "";
+                width: 1px;
+                height: 50%;
+                background-color: #ccc;
+                position: absolute;
+                top: 50%;
+                left: 100%;
+                transform: translateY(-50%);
+            }
+
+    .store-body {
+        display: flex;
+        flex-direction: row;
+        padding: 0;
+    }
+
+        .store-body .product-info {
+            width: 60%;
+            border-right: 1px solid rgba(0,0,0,.125);
+        }
+
+        .store-body .product-payment-details {
+            width: 40%;
+            padding: 15px 15px 0 15px;
+        }
+
+    .product-info .product-gallery {
+        display: flex;
+        flex-direction: row;
+        border-bottom: 1px solid rgba(0,0,0,.125);
+    }
+
+    .product-gallery-featured {
+        display: flex;
+        width: 100%;
+        flex-direction: row;
+        justify-content: center;
+        align-items: flex-start;
+        padding: 15px 0;
+        cursor: zoom-in;
+    }
+
+    .product-gallery-thumbnails .thumbnails-list li {
+        margin-bottom: 5px;
+        cursor: pointer;
+        position: relative;
+        width: 70px;
+        height: 70px;
+    }
+
+    .thumbnails-list li img {
+        display: block;
+        width: 100%;
+    }
+
+    .product-gallery-thumbnails .thumbnails-list li:hover::before {
+        content: "";
+        width: 3px;
+        height: 100%;
+        background: #007bff;
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+
+    .product-info .product-seller-recommended {
+        padding: 20px 20px 0 20px;
+    }
+
+    .product-comments textarea {
+        height: 50px;
+    }
+
+    .last-questions-list li {
+        margin-bottom: 20px;
+    }
+
+        .last-questions-list li span {
+            padding-left: 10px;
+        }
+
+    .po {
+        word-spacing: 30px;
+    }
+
+    .y {
+        line-height: 0pt
+    }
+
+    .u {
+        background-color: transparent;
+        border: 0;
+        font-size: 1em;
+    }
+</style>
+
+<div class="container-fluid ">
+    <!-- Start Page Content -->
+    <div class="row ">
+        <div class="col-lg-12">
+            <div class="card card-outline-primary">
+                <div class="card" style="background-color:rgb(253, 142, 10)">
+                    <h4 class="m-b-0 text-white" style="word-spacing:30px;text-align:center">รายละเอียดครุภัณฑ์ </h4>
+                </div>
+                <div class="card-body">
+                    <main>
+                        <div class="card-body store-body">
+                            <div class="product-info col-md-6">
+                                <div class="product-gallery">
+                                    <div class="product-gallery-thumbnails">
+                                        <ol class="thumbnails-list list-unstyled">
+                                            <li><img src="@Url.Content(Model.T_RequestList.RL_PictureKhru)" alt=""></li>
+                                            <li><img src="@Url.Content(Model.Kh_QR_CODE)" alt=""></li>
+
+                                        </ol>
+                                    </div>
+                                    <div class="product-gallery-featured">
+                                        <img src="@Url.Content(Model.T_RequestList.RL_PictureKhru)" alt="" width="350" height="350">
+                                        @*<img src="@Url.Content(Model.Kh_QR_CODE)" alt="" width="350" height="350">*@
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="product-payment-details col-md-6">
+                                <div class="row">
+                                    <div class="col-md-8"></div>
+                                    <div class="col-md-4">
+                                        @Html.DisplayNameFor(model => model.T_RequestList.RL_RequisitionID)&emsp;  @Html.DisplayFor(model => model.T_RequestList.RL_RequisitionID)
+                                        <p>@Html.DisplayNameFor(model => model.T_RequestList.T_Requisition.Re_DateRequi)&emsp;@Html.DisplayFor(model => model.T_RequestList.T_Requisition.Re_DateRequi)</p>
+
+                                    </div>
+                                </div>
+                                <h5 class="y">@Html.DisplayName("ผู้เบิก")&emsp;@Html.DisplayFor(model => model.T_RequestList.T_Requisition.Teacher.Title.TName) @Html.DisplayFor(model => model.T_RequestList.T_Requisition.Teacher.TeaName)</h5>
+                                <h5 class="y">  @Html.DisplayNameFor(model => model.T_RequestList.RL_NameKP)&emsp; @Html.DisplayFor(model => model.T_RequestList.RL_NameKP)</h5>
+                                <h5 class=""> @Html.DisplayNameFor(model => model.T_RequestList.T_Type.T_Category.CA_NameCategory)&emsp; @Html.DisplayFor(model => model.T_RequestList.T_Type.T_Category.CA_NameCategory)&emsp;&emsp;&emsp;&emsp;  @Html.DisplayNameFor(model => model.T_RequestList.T_Type.TY_NameType)&emsp; @Html.DisplayFor(model => model.T_RequestList.T_Type.TY_NameType)</h5>
+
+                                @{
+
+                                    var Price = string.Format("{0:0,0}", Convert.ToDecimal(Model.T_RequestList.RL_Price));
+                                }
+                                <h2 class="product-price display-4">$ @Price</h2>
+                                @Html.DisplayNameFor(model => model.T_RequestList.RL_DetailKhru)
+
+                                @Html.TextAreaFor(model => model.T_RequestList.RL_DetailKhru, new { @class = "textarea form-control  font", @style = "height:100px", @readonly = "true" })
+
+                                <div class="text-muted mb-2"></div>
+                                <button class="btn btn-info btn-lg btn-block">ย้อนกลับ</button>
+
+                            </div>
+                        </div>
+                    </main>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    // select all thumbnails
+    const galleryThumbnail = document.querySelectorAll(".thumbnails-list li");
+    // select featured
+    const galleryFeatured = document.querySelector(".product-gallery-featured img");
+
+    // loop all items
+    galleryThumbnail.forEach((item) => {
+        item.addEventListener("mouseover", function () {
+            let image = item.children[0].src;
+            galleryFeatured.src = image;
+        });
+    });
+
+    // show popover
+
+</script>

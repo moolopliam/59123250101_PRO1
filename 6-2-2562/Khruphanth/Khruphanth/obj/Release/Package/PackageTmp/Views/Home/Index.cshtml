@@ -1,0 +1,68 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+<br /><br />
+<!-- Start Page Content -->
+<div class="row">
+    <div class="col-md-3">
+        <div class="card p-30">
+            <div class="media">
+                <div class="media-left meida media-middle">
+                    <span><i class="fa fa-usd f-s-40 color-primary"></i></span>
+                </div>
+                <div class="media-body media-text-right">
+                    <h2>@Convert.ToInt32(TempData["ALX"])</h2>
+                    <p class="m-b-0">มูลค่าครุภัณฑ์ทั้งหมด</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="card p-30">
+            <div class="media">
+                <div class="media-left meida media-middle">
+                    <span><i class="fa fa-shopping-cart f-s-40 color-success"></i></span>
+                </div>
+                <div class="media-body media-text-right">
+                    <h2>@Convert.ToInt32(TempData["ALI"])</h2>
+                    <p class="m-b-0">จำนวนครุภัณฑ์(จำหน่ายแล้ว)</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="card p-30">
+            <div class="media">
+                <div class="media-left meida media-middle">
+                    <span><i class="fa fa-archive f-s-40 color-warning"></i></span>
+                </div>
+                <div class="media-body media-text-right">
+                    <h2>@Convert.ToInt32(TempData["ALO"])</h2>
+                    <p class="m-b-0">จำนวนครุภัณฑ์(กำลังใช้งาน)</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="card p-30">
+            <div class="media">
+                <div class="media-left  media-middle">
+                    <span><i class="fa fa-user f-s-40 color-danger"></i></span>
+                </div>
+                <div class="media-body media-text-right">
+                    <h2>@TempData["ALC"].ToString()</h2>
+                    <p class="m-b-0">อาจารย์ทั้งหมด</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="col-lg-12">
+    <div class="card">
+        <div class="card-body">
+            <img class="img-fluid center" alt="Responsive image Paris" src="~/Images/43950691_1626953520743336_2101373596369682432_o.jpg" />
+        </div>
+    </div>
+</div>
+
+

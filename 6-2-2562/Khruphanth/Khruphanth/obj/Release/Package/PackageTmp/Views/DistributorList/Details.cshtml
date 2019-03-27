@@ -1,0 +1,43 @@
+﻿@model Khruphanth.Models.T_DistributorList
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>T_DistributorList</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.DL_Status)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DL_Status)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.T_Distributor.Di_Date)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.T_Distributor.Di_Date)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.T_Khruphanth.Kh_QR_CODE)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.T_Khruphanth.Kh_QR_CODE)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.DistributorList }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

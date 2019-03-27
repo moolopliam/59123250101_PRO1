@@ -1,0 +1,46 @@
+﻿@model IEnumerable<Khruphanth.Models.T_DistributorList>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.T_Distributor.Di_Status)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.T_Distributor.Di_Date)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.T_Khruphanth.Kh_QR_CODE)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.T_Distributor.Di_Status)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.T_Distributor.Di_Date)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.T_Khruphanth.Kh_QR_CODE)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.DistributorList }) |
+            @Html.ActionLink("Details", "Details", new { id=item.DistributorList }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.DistributorList })
+        </td>
+    </tr>
+}
+
+</table>

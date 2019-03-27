@@ -1,0 +1,7 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<sitemanifest>
+  <DbDacFx path="D:\สำรองข้อมูล\โปรเจคครุภัณฑ์\6-2-2562\Khruphanth\Khruphanth\obj\Release\AutoScripts\ComCSDBConnectionString_IncrementalSchemaOnly.dacpac" dacpacAction="Deploy" />
+  <IisApp path="D:\สำรองข้อมูล\โปรเจคครุภัณฑ์\6-2-2562\Khruphanth\Khruphanth\obj\Release\Package\PackageTmp" />
+  <setAcl path="D:\สำรองข้อมูล\โปรเจคครุภัณฑ์\6-2-2562\Khruphanth\Khruphanth\obj\Release\Package\PackageTmp" setAclResourceType="Directory" />
+  <setAcl path="D:\สำรองข้อมูล\โปรเจคครุภัณฑ์\6-2-2562\Khruphanth\Khruphanth\obj\Release\Package\PackageTmp" setAclUser="anonymousAuthenticationUser" setAclResourceType="Directory" />
+</sitemanifest>

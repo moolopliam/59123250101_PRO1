@@ -1,0 +1,120 @@
+﻿@model IEnumerable<Khruphanth.Models.T_RequestList>
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container-fluid ">
+    <!-- Start Page Content -->
+    <div class="row ">
+        <div class="col-lg-12">
+            <div class="card card-outline-primary">
+                <div class="card" style="background-color:rgb(253, 142, 10)">
+                    <h4 class="m-b-0 text-white" style="word-spacing:30px;">รายการใบเบิกครุภัณฑ์ </h4>
+                </div>
+                <div class="card-body">
+                    <div class="form-body">
+                        <p>
+                            @{
+
+                                var totalAmoiut = 0.0;
+                                var totalPri = 0.0;
+                                var totalP = 0.0;
+                                var ID = "";
+
+                            }
+                           
+
+                        </p>
+                        <table id="myTable" class="table table-striped table-bordered " style="width:100%">
+                            <thead>
+                                <tr>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.RL_NameKP)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.RL_Amount)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.RL_Price)
+                                    </th>
+                                    <th>
+                                        ราคารวม
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.RL_PlaceID)
+                                    </th>
+                                    <th></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var item in Model)
+                                {
+                                    <tr>
+                                        <td class="font">
+                                            @Html.DisplayFor(modelItem => item.RL_NameKP)
+                                        </td>
+                                        @{
+                                            ID = item.RL_RequisitionID;
+                                        }
+                                        <td width="10%" class="color-success font">
+                                            @Html.DisplayFor(modelItem => item.RL_Amount)
+                                        </td>
+                                        <td width="10%" class="color-primary font">
+                                            @Html.DisplayFor(modelItem => item.RL_Price) ฿
+                                        </td>
+                                        <td class="color-danger font">
+                                            @{
+                                                var total = item.RL_Price * item.RL_Amount;
+                                                totalP += Convert.ToDouble(total);
+                                                totalAmoiut += Convert.ToDouble(item.RL_Amount);
+                                                totalPri += Convert.ToDouble(item.RL_Price);
+
+                                            }
+                                            @total ฿
+                                        </td>
+                                        <td class="font">
+                                            @Html.DisplayFor(modelItem => item.T_Place.PL_NamePlace)
+                                        </td>
+                                        <td style="text-align:center" class="font">
+                                            @Html.ActionLink("รายละเอียด", "DetailsK", "RequisRest", new { id = item.RequestLsitID }, new { @class = "btn-rounded btn btn-info" })
+                                        </td>
+                                    </tr>
+                                }
+                            </tbody>
+                            <tfoot>
+                                <tr>
+                                    <td style="text-decoration-color:black" class="font"> <p> <b> รวม  </b></p></td>
+                                    <td style="text-align:center" class="color-success font">
+                                        @totalAmoiut
+                                    </td>
+                                    <td style="text-align:center" class="color-primary font">
+                                        @totalPri ฿
+                                    </td>
+                                    <td style="text-align:center" class="color-danger font">
+                                        @totalP ฿
+                                    </td>
+                                    <td></td>
+                                    <td style="text-align: center" class="font">
+                                    </td>
+                                </tr>
+                            </tfoot>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+    <script src="~/Scripts/jquery.dataTables.min.js"></script>
+    <script src="~/Scripts/bootstrap-editable.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('#myTable').DataTable();
+        });
+    </script>
+
+}

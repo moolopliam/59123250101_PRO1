@@ -1,0 +1,345 @@
+﻿
+@if (Session["CHKNAME"] == null)
+{
+    <script>
+            window.location.href = '@Url.Action("Login", "Home")';
+    </script>
+}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- Tell the browser to be responsive to screen width -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <!-- Favicon icon -->
+    <link rel="icon" type="images/png" sizes="50x50" href="~/Content/images/favicon5.png">
+    <title>ครุภัณฑ์-วิทยาการคอมพิวเตอร์</title>
+    @*@Styles.Render("~/Content/css")*@
+    @Scripts.Render("~/bundles/modernizr")
+    <!-- Bootstrap Core CSS -->
+    <link href="https://fonts.googleapis.com/css?family=Sriracha&amp;subset=thai" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Sriracha" rel="stylesheet">
+    <link href="~/Content/css/lib/bootstrap/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link href="~/Content/jquery-confirm.css" rel="stylesheet" />
+    <link href="~/Content/toastr.min.css" rel="stylesheet" />
+    <link href="~/Content/css/lib/calendar2/semantic.ui.min.css" rel="stylesheet">
+    <link href="~/Content/css/lib/calendar2/pignose.calendar.min.css" rel="stylesheet">
+    <link href="~/Content/css/lib/owl.carousel.min.css" rel="stylesheet" />
+    <link href="~/Content/css/lib/owl.theme.default.min.css" rel="stylesheet" />
+    <link href="~/Content/css/helper.css" rel="stylesheet">
+    <link href="~/Content/css/style.css" rel="stylesheet">
+    <link href="~/Content/Chosen/chosen.min.css" rel="stylesheet" />
+
+
+
+    @*<link href="~/Content/dropify.min.css" rel="stylesheet" />*@
+
+
+    @*<link href="~/Content/nice-select.css" rel="stylesheet" />*@
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:** -->
+    <!--[if lt IE 9]>
+        <script src="https:**oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https:**oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <style>
+        body {
+            font-family: 'Sriracha', cursive;
+        }
+        /* ใช้เฉพาะหัวข้อ */
+        h1, h2, h3, h4, h5, h6, p {
+            font-family: 'Sriracha', cursive;
+        }
+
+        title {
+            font-family: 'Sriracha', cursive;
+        }
+
+        .tk {
+            width: 150px;
+            height: 50px;
+        }
+
+        .form-DD {
+            height: 43px !important;
+            width: 150px !important;
+            font-size: 14px !important;
+            font-family: 'Sriracha', cursive;
+        }
+        .form-DD2 {
+            height: 43px !important;
+            width: 300px !important;
+            font-size: 14px !important;
+            font-family: 'Sriracha', cursive;
+        }
+        .form-DD1 {
+            height: 43px !important;
+            width: 150px !important;
+            font-size: 14px !important;
+            font-family: 'Sriracha', cursive;
+        }
+
+        .form-D2 {
+            height: 43px !important;
+            width: 200px !important;
+            font-size: 14px !important;
+            font-family: 'Sriracha', cursive;
+            text-align: center;
+        }
+
+
+        .tes {
+            height: 103px !important;
+            /*width: 150px !important;*/
+            font-size: 14px !important;
+            font-family: 'Sriracha', cursive;
+            border-radius: 30px;
+        }
+
+        .font {
+            font-size: 14px !important;
+            font-family: 'Sriracha', cursive;
+        }
+
+     
+    </style>
+
+
+</head>
+
+<body class="fix-header fix-sidebar">
+    <!-- Preloader - style you can find in spinners.css -->
+    <div class="preloader">
+        <svg class="circular" viewBox="25 25 50 50">
+            <circle class="path" cx="50" cy="50" r="20" fill="none" stroke-width="2" stroke-miterlimit="10" />
+        </svg>
+    </div>
+    <!-- Main wrapper  -->
+    <div id="main-wrapper">
+        <!-- header header  -->
+        <div class="header">
+            <nav class="navbar top-navbar navbar-expand-md navbar-light">
+                <!-- Logo -->
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="index.html">
+                        <!-- Logo icon -->
+                        <b><img src="~/Content/images/logo3.png" alt="homepage" class="dark-logo" /></b>
+                        <!--End Logo icon -->
+                        <!-- Logo text -->
+                        <span><img src="~/Content/images/logo-text3.png" alt="homepage" class="dark-logo" /></span>
+                    </a>
+                </div>
+                <!-- End Logo -->
+                <div class="navbar-collapse">
+                    <!-- toggle and nav items -->
+                    <ul class="navbar-nav mr-auto mt-md-0">
+                        <!-- This is  -->
+                        <li class="nav-item"> <a class="nav-link nav-toggler hidden-md-up text-muted  " href="javascript:void(0)"><i class="mdi mdi-menu"></i></a> </li>
+                        <li class="nav-item m-l-10"> <a class="nav-link sidebartoggler hidden-sm-down text-muted  " href="javascript:void(0)"><i class="ti-menu"></i></a> </li>
+                        <!-- Messages -->
+ 
+                        <!-- End Messages -->
+                    </ul>
+                    <!-- User profile and search -->
+                    <ul class="navbar-nav my-lg-0">
+                        <!-- Comment -->
+                        <!-- End Comment -->
+                        <!-- Messages -->
+                        <!-- End Messages -->
+                        <!-- Profile -->
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle text-muted  " href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="~/Images/Kru.png" alt="user" class="profile-pic" /></a>
+                            <div class="dropdown-menu dropdown-menu-right animated zoomIn">
+                                <ul class="dropdown-user">
+                                    <li><a href="@Url.Action("Logout","Home")"><i class="fa fa-power-off"></i> Logout</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+        <!-- End header header -->
+        <!-- Left Sidebar  -->
+        <div class="left-sidebar">
+            <!-- Sidebar scroll-->
+            <div class="scroll-sidebar">
+                <!-- Sidebar navigation-->
+                <nav class="sidebar-nav">
+                    <ul id="sidebarnav">
+                        <li class="nav-devider"></li>
+                        <li class="nav-label">ข้อมูลการเบิก</li>
+                        <li>
+                            <a class="has-arrow  " href="#" aria-expanded="false"><i class="fa fa-exchange"></i><span class="hide-menu">รายการเบิก <span class="label label-rouded label-primary pull-right">2</span></span></a>
+                            <ul aria-expanded="false" class="collapse">
+                                <li><a href="@Url.Action("Waiting","Requisition")">เบิกครุภัณฑ์</a></li>
+                                <li><a href="@Url.Action("Create","Requisition")">เพิ่มใบเบิกครุภัณฑ์</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-label">ข้อมูล</li>
+                        <li>
+                            <a class="has-arrow  " href="#" aria-expanded="false"><i class="fa fa-envelope"></i><span class="hide-menu">ครุภัณฑ์<span class="label label-rouded label-primary pull-right">2</span></span></a>
+                            <ul aria-expanded="false" class="collapse">
+                                <li><a href="@Url.Action("Index","Khruphanths")">ข้อมูลครุภัณฑ์</a></li>
+                                <li><a href="@Url.Action("Index","RequisRest")">รายการเบิกครุภัณฑ์คงเหลือ</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a class="has-arrow  " href="#" aria-expanded="false"><i class="fa fa-bar-chart"></i><span class="hide-menu">หมวด-ชนิด<span class="label label-rouded label-primary pull-right">3</span></span></a>
+                            <ul aria-expanded="false" class="collapse">
+                                <li><a href="@Url.Action("Index","T_Category")">หมวดครุภัณฑ์</a></li>
+                                <li><a href="@Url.Action("Index","Type")">ชนิดครุภัณฑ์</a></li>
+                                <li><a href="@Url.Action("Index","T_Place")">ที่เก็บครุภัณฑ์</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-label">ข้อมูลการจำหน่าย</li>
+                        <li>
+                            <a class="has-arrow  " href="#" aria-expanded="false"><i class="fa fa-suitcase"></i><span class="hide-menu">รายการจำหน่าย <span class="label label-rouded label-danger pull-right">2</span></span></a>
+                            <ul aria-expanded="false" class="collapse">
+                                <li><a href="@Url.Action("IndexR","Distributor")">ใบจำหน่าย</a></li>
+                                <li><a href="@Url.Action("Create","Distributor")">เพิ่มใบเจำหน่าย</a></li>
+                            </ul>
+                        </li>
+
+                        <li class="nav-label">ค้นหาข้อมูลด้วย QR_CODE</li>
+                        <li>
+                            <a class="has-arrow  " href="#" aria-expanded="false"><i class="fa fa-columns"></i><span class="hide-menu">ค้นหาข้อมูล</span></a>
+                            <ul aria-expanded="false" class="collapse">
+                                <li><a href="@Url.Action("About","Home")">ครุภัณฑ์</a></li>
+                                <li><a href="@Url.Action("Index","Home")">รายละเอียดต่างๆ</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-label">รายงานผล</li>
+                        <li>
+                            <a class="has-arrow  " href="#" aria-expanded="false"><i class="fa fa-columns"></i><span class="hide-menu">รายงานข้อมูล</span></a>
+                            <ul aria-expanded="false" class="collapse">
+                                <li><a href="@Url.Action("Report","Home")">พิมพ์ใบเบิกครุภัณฑ์</a></li>
+                                <li><a href="@Url.Action("Report3","Home")">พิมพ์ใบเบิกครุภัณฑ์คงเหลือ</a></li>
+                                <li><a href="@Url.Action("Report1","Home")">พิมพ์QRCODE</a></li>
+                                <li><a href="@Url.Action("Report2","Home")">พิมพ์รายการจำหน่าย</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </nav>
+                <!-- End Sidebar navigation -->
+            </div>
+            <!-- End Sidebar scroll-->
+        </div>
+        <!-- End Left Sidebar  -->
+        <!-- Page wrapper  -->
+        <div class="page-wrapper">
+            <!-- Bread crumb -->
+            @*<div class="row page-titles">
+                    <div class="col-md-5 align-self-center">
+                        <h3 class="text-primary">ครุภัณฑ์ วิทยาการคอมพิวเตอร์</h3>
+                    </div>
+                    <div class="col-md-7 align-self-center">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item"><a href="javascript:void(0)">Home</a></li>
+                            <li class="breadcrumb-item active">Dashboard</li>
+                        </ol>
+                    </div>
+                </div>*@
+            <!-- End Bread crumb -->
+            <!-- Container fluid  -->
+            <!-- End PAge Content -->
+            <!-- End Container fluid  -->
+            <!-- footer -->
+            <div class="container-fluid">
+
+                <div class="row">
+                    <div class="col-lg-12"> @RenderBody()</div>
+                </div>
+            </div>
+            <footer class="footer">
+                <p> @DateTime.Now.Year - My ASP.NET Application</p>
+            </footer>
+        </div>
+        <!-- End Page wrapper  -->
+        <!-- End footer -->
+    </div>
+    <!-- End Wrapper -->
+    <!-- All Jquery -->
+    <script src="~/Scripts/js/lib/jquery/jquery.min.js"></script>
+    <!-- Bootstrap tether Core JavaScript -->
+    <script src="~/Scripts/js/lib/bootstrap/js/popper.min.js"></script>
+    <script src="~/Scripts/js/lib/bootstrap/js/bootstrap.min.js"></script>
+    <!-- slimscrollbar scrollbar JavaScript -->
+    <script src="~/Scripts/js/jquery.slimscroll.js"></script>
+    <!--Menu sidebar -->
+    <script src="~/Scripts/js/sidebarmenu.js"></script>
+    <!--stickey kit -->
+    <script src="~/Scripts/js/lib/sticky-kit-master/dist/sticky-kit.min.js"></script>
+    <!--Custom JavaScript -->
+    <!-- Amchart -->
+    <script src="~/Scripts/js/lib/morris-chart/raphael-min.js"></script>
+    @*<script src="~/Scripts/js/lib/morris-chart/morris.js"></script>
+    <script src="~/Scripts/js/lib/morris-chart/dashboard1-init.js"></script>*@
+
+
+    <script src="~/Scripts/js/lib/calendar-2/moment.latest.min.js"></script>
+    <!-- scripit init-->
+    <script src="~/Scripts/js/lib/calendar-2/semantic.ui.min.js"></script>
+    <!-- scripit init-->
+    <script src="~/Scripts/js/lib/calendar-2/prism.min.js"></script>
+    <!-- scripit init-->
+    <script src="~/Scripts/js/lib/calendar-2/pignose.calendar.min.js"></script>
+    <!-- scripit init-->
+    <script src="~/Scripts/js/lib/calendar-2/pignose.init.js"></script>
+
+    <script src="~/Scripts/js/lib/owl-carousel/owl.carousel.min.js"></script>
+    <script src="~/Scripts/js/lib/owl-carousel/owl.carousel-init.js"></script>
+
+    <!-- scripit init-->
+
+    <script src="~/Scripts/js/scripts.js"></script>
+    @*<script src="~/Scripts/js/lib/dropzone/dropzone.js"></script>*@
+    @*@Scripts.Render("~/bundles/jquery")*@
+    @Scripts.Render("~/bundles/bootstrap")
+    <script src="~/Scripts/jquery.add-input-area.min.js"></script>
+
+    @*<script src="~/Scripts/jquery.nice-select.min.js"></script>*@
+    @*<script src="~/Scripts/bootstrap.js"></script>*@
+    <script src="~/Scripts/chosen.jquery.min.js"></script>
+
+
+    @RenderSection("scripts", required: false)
+
+
+    <script type="text/javascript">
+
+        //$('#list').addInputArea({});
+        (function () {
+            debugger
+            'use strict';
+            window.addEventListener('load', function () {
+                // Fetch all the forms we want to apply custom Bootstrap validation styles to
+                var forms = document.getElementsByClassName('needs-validation');
+                // Loop over them and prevent submission
+                var validation = Array.prototype.filter.call(forms, function (form) {
+                    form.addEventListener('submit', function (event) {
+                        if (form.checkValidity() === false) {
+                            event.preventDefault();
+                            event.stopPropagation();
+                        }
+                        form.classList.add('was-validated');
+
+                    }, false);
+                });
+            },
+                false);
+        })();
+
+    </script>
+    <script src="~/Scripts/jquery-confirm.js"></script>
+    <script src="~/Scripts/toastr.min.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,287 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="ComCSDBModelStoreContainer" CdmEntityContainer="ComCSDBEntities">
+    <EntitySetMapping Name="Account">
+      <EntityTypeMapping TypeName="ComCSDBModel.Account">
+        <MappingFragment StoreEntitySet="Account">
+          <ScalarProperty Name="AStatus" ColumnName="AStatus" />
+          <ScalarProperty Name="APassword" ColumnName="APassword" />
+          <ScalarProperty Name="AUsername" ColumnName="AUsername" />
+          <ScalarProperty Name="AId" ColumnName="AId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Course">
+      <EntityTypeMapping TypeName="ComCSDBModel.Course">
+        <MappingFragment StoreEntitySet="Course">
+          <ScalarProperty Name="CsComputerCategory" ColumnName="CsComputerCategory" />
+          <ScalarProperty Name="CsGeneralCategory" ColumnName="CsGeneralCategory" />
+          <ScalarProperty Name="CSGraJob" ColumnName="CSGraJob" />
+          <ScalarProperty Name="CSCurriculum" ColumnName="CSCurriculum" />
+          <ScalarProperty Name="CSCredit" ColumnName="CSCredit" />
+          <ScalarProperty Name="CSDegreeNameEN" ColumnName="CSDegreeNameEN" />
+          <ScalarProperty Name="CSDegreeNameTH" ColumnName="CSDegreeNameTH" />
+          <ScalarProperty Name="CYear" ColumnName="CYear" />
+          <ScalarProperty Name="CEName" ColumnName="CEName" />
+          <ScalarProperty Name="CTName" ColumnName="CTName" />
+          <ScalarProperty Name="CId" ColumnName="CId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Department">
+      <EntityTypeMapping TypeName="ComCSDBModel.Department">
+        <MappingFragment StoreEntitySet="Department">
+          <ScalarProperty Name="DeCredit" ColumnName="DeCredit" />
+          <ScalarProperty Name="DeName" ColumnName="DeName" />
+          <ScalarProperty Name="DeId" ColumnName="DeId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="FStatus">
+      <EntityTypeMapping TypeName="ComCSDBModel.FStatus">
+        <MappingFragment StoreEntitySet="FStatus">
+          <ScalarProperty Name="FStatusName" ColumnName="FStatusName" />
+          <ScalarProperty Name="FStatusId" ColumnName="FStatusId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Job">
+      <EntityTypeMapping TypeName="ComCSDBModel.Job">
+        <MappingFragment StoreEntitySet="Job">
+          <ScalarProperty Name="JName" ColumnName="JName" />
+          <ScalarProperty Name="JId" ColumnName="JId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="OldED">
+      <EntityTypeMapping TypeName="ComCSDBModel.OldED">
+        <MappingFragment StoreEntitySet="OldED">
+          <ScalarProperty Name="OOldEdName" ColumnName="OOldEdName" />
+          <ScalarProperty Name="OldOIdEd" ColumnName="OldOIdEd" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="project_list">
+      <EntityTypeMapping TypeName="ComCSDBModel.project_list">
+        <MappingFragment StoreEntitySet="project_list">
+          <ScalarProperty Name="Rate" ColumnName="Rate" />
+          <ScalarProperty Name="LinkVideo" ColumnName="LinkVideo" />
+          <ScalarProperty Name="LinkWeb" ColumnName="LinkWeb" />
+          <ScalarProperty Name="Detail" ColumnName="Detail" />
+          <ScalarProperty Name="File" ColumnName="File" />
+          <ScalarProperty Name="Data_Post" ColumnName="Data_Post" />
+          <ScalarProperty Name="TeaId" ColumnName="TeaId" />
+          <ScalarProperty Name="type_id" ColumnName="type_id" />
+          <ScalarProperty Name="stu_id" ColumnName="stu_id" />
+          <ScalarProperty Name="project_name_e" ColumnName="project_name_e" />
+          <ScalarProperty Name="project_name" ColumnName="project_name" />
+          <ScalarProperty Name="project_id" ColumnName="project_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="RefProvince">
+      <EntityTypeMapping TypeName="ComCSDBModel.RefProvince">
+        <MappingFragment StoreEntitySet="RefProvince">
+          <ScalarProperty Name="ProvinceName" ColumnName="ProvinceName" />
+          <ScalarProperty Name="ProvinceId" ColumnName="ProvinceId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Relation">
+      <EntityTypeMapping TypeName="ComCSDBModel.Relation">
+        <MappingFragment StoreEntitySet="Relation">
+          <ScalarProperty Name="RCId" ColumnName="RCId" />
+          <ScalarProperty Name="RSubjId" ColumnName="RSubjId" />
+          <ScalarProperty Name="RID" ColumnName="RID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SelectedEmployee">
+      <EntityTypeMapping TypeName="ComCSDBModel.SelectedEmployee">
+        <MappingFragment StoreEntitySet="SelectedEmployee">
+          <ScalarProperty Name="SelectedEmployeeIDs" ColumnName="SelectedEmployeeIDs" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Status">
+      <EntityTypeMapping TypeName="ComCSDBModel.Status">
+        <MappingFragment StoreEntitySet="Status">
+          <ScalarProperty Name="SRefProvince" ColumnName="SRefProvince" />
+          <ScalarProperty Name="SStatusName" ColumnName="SStatusName" />
+          <ScalarProperty Name="SIdStatus" ColumnName="SIdStatus" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Student">
+      <EntityTypeMapping TypeName="ComCSDBModel.Student">
+        <MappingFragment StoreEntitySet="Student">
+          <ScalarProperty Name="StuFStatus" ColumnName="StuFStatus" />
+          <ScalarProperty Name="StuMIncome" ColumnName="StuMIncome" />
+          <ScalarProperty Name="StuMJob" ColumnName="StuMJob" />
+          <ScalarProperty Name="StuMName" ColumnName="StuMName" />
+          <ScalarProperty Name="StuDIncome" ColumnName="StuDIncome" />
+          <ScalarProperty Name="StuDJob" ColumnName="StuDJob" />
+          <ScalarProperty Name="StuDName" ColumnName="StuDName" />
+          <ScalarProperty Name="StuTAdviser" ColumnName="StuTAdviser" />
+          <ScalarProperty Name="StuStatus" ColumnName="StuStatus" />
+          <ScalarProperty Name="StuOldEd" ColumnName="StuOldEd" />
+          <ScalarProperty Name="StuPic" ColumnName="StuPic" />
+          <ScalarProperty Name="StuZipcode" ColumnName="StuZipcode" />
+          <ScalarProperty Name="StuProvince_id" ColumnName="StuProvince_id" />
+          <ScalarProperty Name="StuAmphur" ColumnName="StuAmphur" />
+          <ScalarProperty Name="StuTambon" ColumnName="StuTambon" />
+          <ScalarProperty Name="StuRoad" ColumnName="StuRoad" />
+          <ScalarProperty Name="StuMoo" ColumnName="StuMoo" />
+          <ScalarProperty Name="StuHomeNo" ColumnName="StuHomeNo" />
+          <ScalarProperty Name="StuTel" ColumnName="StuTel" />
+          <ScalarProperty Name="StuEmail" ColumnName="StuEmail" />
+          <ScalarProperty Name="StuBDate" ColumnName="StuBDate" />
+          <ScalarProperty Name="StuSex" ColumnName="StuSex" />
+          <ScalarProperty Name="StuLName" ColumnName="StuLName" />
+          <ScalarProperty Name="StuFName" ColumnName="StuFName" />
+          <ScalarProperty Name="StuTitle" ColumnName="StuTitle" />
+          <ScalarProperty Name="StuPassword" ColumnName="StuPassword" />
+          <ScalarProperty Name="StuId" ColumnName="StuId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Subject">
+      <EntityTypeMapping TypeName="ComCSDBModel.Subject">
+        <MappingFragment StoreEntitySet="Subject">
+          <ScalarProperty Name="SubjCredit" ColumnName="SubjCredit" />
+          <ScalarProperty Name="SubjName" ColumnName="SubjName" />
+          <ScalarProperty Name="SubjDeId" ColumnName="SubjDeId" />
+          <ScalarProperty Name="SubjCode" ColumnName="SubjCode" />
+          <ScalarProperty Name="SubjId" ColumnName="SubjId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="T_Category">
+      <EntityTypeMapping TypeName="ComCSDBModel.T_Category">
+        <MappingFragment StoreEntitySet="T_Category">
+          <ScalarProperty Name="CA_NameCategory" ColumnName="CA_NameCategory" />
+          <ScalarProperty Name="CategoryID" ColumnName="CategoryID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="T_Distributor">
+      <EntityTypeMapping TypeName="ComCSDBModel.T_Distributor">
+        <MappingFragment StoreEntitySet="T_Distributor">
+          <ScalarProperty Name="Di_Date" ColumnName="Di_Date" />
+          <ScalarProperty Name="DistributorID" ColumnName="DistributorID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="T_DistributorList">
+      <EntityTypeMapping TypeName="ComCSDBModel.T_DistributorList">
+        <MappingFragment StoreEntitySet="T_DistributorList">
+          <ScalarProperty Name="DL_Status" ColumnName="DL_Status" />
+          <ScalarProperty Name="DL_KhruphanthID" ColumnName="DL_KhruphanthID" />
+          <ScalarProperty Name="DL_DistributorID" ColumnName="DL_DistributorID" />
+          <ScalarProperty Name="DistributorList" ColumnName="DistributorList" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="T_Khruphanth">
+      <EntityTypeMapping TypeName="ComCSDBModel.T_Khruphanth">
+        <MappingFragment StoreEntitySet="T_Khruphanth">
+          <ScalarProperty Name="Kh_StatusID" ColumnName="Kh_StatusID" />
+          <ScalarProperty Name="Kh_PlaceID" ColumnName="Kh_PlaceID" />
+          <ScalarProperty Name="Kh_QR_CODE" ColumnName="Kh_QR_CODE" />
+          <ScalarProperty Name="Kh_RequestLsitID" ColumnName="Kh_RequestLsitID" />
+          <ScalarProperty Name="KhruphanthID" ColumnName="KhruphanthID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="T_Place">
+      <EntityTypeMapping TypeName="ComCSDBModel.T_Place">
+        <MappingFragment StoreEntitySet="T_Place">
+          <ScalarProperty Name="PL_NamePlace" ColumnName="PL_NamePlace" />
+          <ScalarProperty Name="PlaceID" ColumnName="PlaceID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="T_RequestList">
+      <EntityTypeMapping TypeName="ComCSDBModel.T_RequestList">
+        <MappingFragment StoreEntitySet="T_RequestList">
+          <ScalarProperty Name="RL_PlaceID" ColumnName="RL_PlaceID" />
+          <ScalarProperty Name="RL_PictureKhru" ColumnName="RL_PictureKhru" />
+          <ScalarProperty Name="RL_DetailKhru" ColumnName="RL_DetailKhru" />
+          <ScalarProperty Name="RL_Price" ColumnName="RL_Price" />
+          <ScalarProperty Name="RL_Amount" ColumnName="RL_Amount" />
+          <ScalarProperty Name="RL_OnStart" ColumnName="RL_OnStart" />
+          <ScalarProperty Name="RL_NameKP" ColumnName="RL_NameKP" />
+          <ScalarProperty Name="RL_CategoryID" ColumnName="RL_CategoryID" />
+          <ScalarProperty Name="RL_TypeID" ColumnName="RL_TypeID" />
+          <ScalarProperty Name="RL_RequisitionID" ColumnName="RL_RequisitionID" />
+          <ScalarProperty Name="RequestLsitID" ColumnName="RequestLsitID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="T_Requisition">
+      <EntityTypeMapping TypeName="ComCSDBModel.T_Requisition">
+        <MappingFragment StoreEntitySet="T_Requisition">
+          <ScalarProperty Name="Re_StepID" ColumnName="Re_StepID" />
+          <ScalarProperty Name="Re_DateRequi" ColumnName="Re_DateRequi" />
+          <ScalarProperty Name="Re_TeaId" ColumnName="Re_TeaId" />
+          <ScalarProperty Name="RequisitionID" ColumnName="RequisitionID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="T_Stap">
+      <EntityTypeMapping TypeName="ComCSDBModel.T_Stap">
+        <MappingFragment StoreEntitySet="T_Stap">
+          <ScalarProperty Name="ST_StepName" ColumnName="ST_StepName" />
+          <ScalarProperty Name="StepID" ColumnName="StepID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="T_Status">
+      <EntityTypeMapping TypeName="ComCSDBModel.T_Status">
+        <MappingFragment StoreEntitySet="T_Status">
+          <ScalarProperty Name="Status_Name" ColumnName="Status_Name" />
+          <ScalarProperty Name="StatusID" ColumnName="StatusID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="T_Type">
+      <EntityTypeMapping TypeName="ComCSDBModel.T_Type">
+        <MappingFragment StoreEntitySet="T_Type">
+          <ScalarProperty Name="TY_CategoryID" ColumnName="TY_CategoryID" />
+          <ScalarProperty Name="TY_NameType" ColumnName="TY_NameType" />
+          <ScalarProperty Name="TypeID" ColumnName="TypeID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Teacher">
+      <EntityTypeMapping TypeName="ComCSDBModel.Teacher">
+        <MappingFragment StoreEntitySet="Teacher">
+          <ScalarProperty Name="TeaLvl" ColumnName="TeaLvl" />
+          <ScalarProperty Name="TeaImage" ColumnName="TeaImage" />
+          <ScalarProperty Name="TeaExport" ColumnName="TeaExport" />
+          <ScalarProperty Name="TeaIdCard" ColumnName="TeaIdCard" />
+          <ScalarProperty Name="TeaName" ColumnName="TeaName" />
+          <ScalarProperty Name="TeaTitle" ColumnName="TeaTitle" />
+          <ScalarProperty Name="TeaId" ColumnName="TeaId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Title">
+      <EntityTypeMapping TypeName="ComCSDBModel.Title">
+        <MappingFragment StoreEntitySet="Title">
+          <ScalarProperty Name="TName" ColumnName="TName" />
+          <ScalarProperty Name="TId" ColumnName="TId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="type_project">
+      <EntityTypeMapping TypeName="ComCSDBModel.type_project">
+        <MappingFragment StoreEntitySet="type_project">
+          <ScalarProperty Name="Type_name" ColumnName="Type_name" />
+          <ScalarProperty Name="Type_id" ColumnName="Type_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

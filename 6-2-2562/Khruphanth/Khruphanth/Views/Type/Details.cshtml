@@ -1,0 +1,47 @@
+﻿@model Khruphanth.Models.T_Type
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div class="container-fluid ">
+    <!-- Start Page Content -->
+    <div class="row ">
+        <div class="col-lg-12">
+            <div class="card card-outline-primary">
+                <div class="card" style="background-color:rgb(93, 188, 38)">
+                    <h4 class="m-b-0 text-white" style="word-spacing:30px;">ชนิดครุภัณฑ์ </h4>
+                </div>
+                <div class="card-body">
+                    <dl class="dl-horizontal">
+                        <dt>
+                            @Html.DisplayNameFor(model => model.TY_NameType)
+                        </dt>
+
+                        <dd>
+                            @Html.DisplayFor(model => model.TY_NameType)
+                        </dd>
+
+                        <dt>
+                            @Html.DisplayNameFor(model => model.T_Category.CA_NameCategory)
+                        </dt>
+
+                        <dd>
+                            @Html.DisplayFor(model => model.T_Category.CA_NameCategory)
+                        </dd>
+
+                    </dl>
+                </div>
+                <p>
+                    @Html.ActionLink("Edit", "Edit", new { id = Model.TypeID }) |
+                    @Html.ActionLink("Back to List", "Index")
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+

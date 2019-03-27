@@ -1,0 +1,2224 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="ComCSDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Account">
+          <Key>
+            <PropertyRef Name="AId" />
+          </Key>
+          <Property Name="AId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="AUsername" Type="varchar" MaxLength="50" />
+          <Property Name="APassword" Type="varchar" MaxLength="50" />
+          <Property Name="AStatus" Type="char" MaxLength="1" />
+        </EntityType>
+        <EntityType Name="Course">
+          <Key>
+            <PropertyRef Name="CId" />
+          </Key>
+          <Property Name="CId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CTName" Type="varchar" MaxLength="100" />
+          <Property Name="CEName" Type="varchar" MaxLength="100" />
+          <Property Name="CYear" Type="int" />
+          <Property Name="CSDegreeNameTH" Type="varchar" MaxLength="100" />
+          <Property Name="CSDegreeNameEN" Type="varchar" MaxLength="100" />
+          <Property Name="CSCredit" Type="int" />
+          <Property Name="CSCurriculum" Type="text" />
+          <Property Name="CSGraJob" Type="text" />
+          <Property Name="CsGeneralCategory" Type="int" />
+          <Property Name="CsComputerCategory" Type="int" />
+        </EntityType>
+        <EntityType Name="Department">
+          <Key>
+            <PropertyRef Name="DeId" />
+          </Key>
+          <Property Name="DeId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="DeName" Type="varchar" MaxLength="50" />
+          <Property Name="DeCredit" Type="int" />
+        </EntityType>
+        <EntityType Name="FStatus">
+          <Key>
+            <PropertyRef Name="FStatusId" />
+          </Key>
+          <Property Name="FStatusId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="FStatusName" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Job">
+          <Key>
+            <PropertyRef Name="JId" />
+          </Key>
+          <Property Name="JId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="JName" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="OldED">
+          <Key>
+            <PropertyRef Name="OldOIdEd" />
+          </Key>
+          <Property Name="OldOIdEd" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="OOldEdName" Type="varchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="project_list">
+          <Key>
+            <PropertyRef Name="project_id" />
+          </Key>
+          <Property Name="project_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="project_name" Type="varchar" MaxLength="100" />
+          <Property Name="project_name_e" Type="varchar" MaxLength="100" />
+          <Property Name="stu_id" Type="varchar" MaxLength="12" />
+          <Property Name="type_id" Type="int" />
+          <Property Name="TeaId" Type="varchar" MaxLength="10" />
+          <Property Name="Data_Post" Type="varchar" MaxLength="15" />
+          <Property Name="File" Type="varchar" MaxLength="50" />
+          <Property Name="Detail" Type="text" />
+          <Property Name="LinkWeb" Type="nchar" MaxLength="200" />
+          <Property Name="LinkVideo" Type="text" />
+          <Property Name="Rate" Type="int" />
+        </EntityType>
+        <EntityType Name="RefProvince">
+          <Key>
+            <PropertyRef Name="ProvinceId" />
+          </Key>
+          <Property Name="ProvinceId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ProvinceName" Type="varchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="Relation">
+          <Key>
+            <PropertyRef Name="RID" />
+          </Key>
+          <Property Name="RID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="RSubjId" Type="int" />
+          <Property Name="RCId" Type="int" />
+        </EntityType>
+        <EntityType Name="SelectedEmployee">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="SelectedEmployeeIDs" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Status">
+          <Key>
+            <PropertyRef Name="SIdStatus" />
+          </Key>
+          <Property Name="SIdStatus" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="SStatusName" Type="varchar" MaxLength="150" />
+          <Property Name="SRefProvince" Type="int" />
+        </EntityType>
+        <EntityType Name="Student">
+          <Key>
+            <PropertyRef Name="StuId" />
+          </Key>
+          <Property Name="StuId" Type="varchar" MaxLength="12" Nullable="false" />
+          <Property Name="StuPassword" Type="varchar" MaxLength="10" />
+          <Property Name="StuTitle" Type="int" />
+          <Property Name="StuFName" Type="varchar" MaxLength="50" />
+          <Property Name="StuLName" Type="varchar" MaxLength="50" />
+          <Property Name="StuSex" Type="varchar" MaxLength="10" />
+          <Property Name="StuBDate" Type="varchar" MaxLength="20" />
+          <Property Name="StuEmail" Type="varchar" MaxLength="150" />
+          <Property Name="StuTel" Type="varchar" MaxLength="20" />
+          <Property Name="StuHomeNo" Type="varchar" MaxLength="10" />
+          <Property Name="StuMoo" Type="varchar" MaxLength="2" />
+          <Property Name="StuRoad" Type="varchar" MaxLength="50" />
+          <Property Name="StuTambon" Type="varchar" MaxLength="50" />
+          <Property Name="StuAmphur" Type="varchar" MaxLength="50" />
+          <Property Name="StuProvince_id" Type="int" />
+          <Property Name="StuZipcode" Type="varchar" MaxLength="5" />
+          <Property Name="StuPic" Type="varbinary(max)" />
+          <Property Name="StuOldEd" Type="int" />
+          <Property Name="StuStatus" Type="int" />
+          <Property Name="StuTAdviser" Type="varchar" MaxLength="10" />
+          <Property Name="StuDName" Type="varchar" MaxLength="100" />
+          <Property Name="StuDJob" Type="int" />
+          <Property Name="StuDIncome" Type="int" />
+          <Property Name="StuMName" Type="varchar" MaxLength="100" />
+          <Property Name="StuMJob" Type="int" />
+          <Property Name="StuMIncome" Type="int" />
+          <Property Name="StuFStatus" Type="int" />
+        </EntityType>
+        <EntityType Name="Subject">
+          <Key>
+            <PropertyRef Name="SubjId" />
+          </Key>
+          <Property Name="SubjId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="SubjCode" Type="varchar" MaxLength="20" />
+          <Property Name="SubjDeId" Type="int" Nullable="false" />
+          <Property Name="SubjName" Type="varchar" MaxLength="100" />
+          <Property Name="SubjCredit" Type="int" />
+        </EntityType>
+        <EntityType Name="T_Category">
+          <Key>
+            <PropertyRef Name="CategoryID" />
+          </Key>
+          <Property Name="CategoryID" Type="varchar" MaxLength="5" Nullable="false" />
+          <Property Name="CA_NameCategory" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="T_Distributor">
+          <Key>
+            <PropertyRef Name="DistributorID" />
+          </Key>
+          <Property Name="DistributorID" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Di_Date" Type="date" />
+          <Property Name="Di_Status" Type="varchar" MaxLength="15" />
+        </EntityType>
+        <EntityType Name="T_DistributorList">
+          <Key>
+            <PropertyRef Name="DistributorList" />
+          </Key>
+          <Property Name="DistributorList" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="DL_DistributorID" Type="varchar" MaxLength="50" />
+          <Property Name="DL_KhruphanthID" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="T_Khruphanth">
+          <Key>
+            <PropertyRef Name="KhruphanthID" />
+          </Key>
+          <Property Name="KhruphanthID" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Kh_RequestLsitID" Type="int" />
+          <Property Name="Kh_QR_CODE" Type="image" />
+          <Property Name="Kh_PlaceID" Type="int" />
+          <Property Name="Kh_StatusID" Type="int" />
+        </EntityType>
+        <EntityType Name="T_Place">
+          <Key>
+            <PropertyRef Name="PlaceID" />
+          </Key>
+          <Property Name="PlaceID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="PL_NamePlace" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="T_RequestList">
+          <Key>
+            <PropertyRef Name="RequestLsitID" />
+          </Key>
+          <Property Name="RequestLsitID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="RL_RequisitionID" Type="varchar" MaxLength="20" />
+          <Property Name="RL_TypeID" Type="varchar" MaxLength="5" />
+          <Property Name="RL_CategoryID" Type="varchar" MaxLength="5" />
+          <Property Name="RL_NameKP" Type="varchar" MaxLength="50" />
+          <Property Name="RL_OnStart" Type="int" />
+          <Property Name="RL_Amount" Type="float" />
+          <Property Name="RL_Price" Type="float" />
+          <Property Name="RL_DetailKhru" Type="varchar(max)" />
+          <Property Name="RL_PictureKhru" Type="varchar(max)" />
+          <Property Name="RL_PlaceID" Type="int" />
+        </EntityType>
+        <EntityType Name="T_Requisition">
+          <Key>
+            <PropertyRef Name="RequisitionID" />
+          </Key>
+          <Property Name="RequisitionID" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="Re_TeaId" Type="varchar" MaxLength="10" />
+          <Property Name="Re_DateRequi" Type="date" />
+          <Property Name="Re_StepID" Type="char" MaxLength="1" />
+        </EntityType>
+        <EntityType Name="T_Stap">
+          <Key>
+            <PropertyRef Name="StepID" />
+          </Key>
+          <Property Name="StepID" Type="char" MaxLength="1" Nullable="false" />
+          <Property Name="ST_StepName" Type="varchar" MaxLength="20" />
+        </EntityType>
+        <EntityType Name="T_Status">
+          <Key>
+            <PropertyRef Name="StatusID" />
+          </Key>
+          <Property Name="StatusID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Status_Name" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="T_Type">
+          <Key>
+            <PropertyRef Name="TypeID" />
+          </Key>
+          <Property Name="TypeID" Type="varchar" MaxLength="5" Nullable="false" />
+          <Property Name="TY_NameType" Type="varchar" MaxLength="50" />
+          <Property Name="TY_CategoryID" Type="varchar" MaxLength="5" />
+        </EntityType>
+        <EntityType Name="Teacher">
+          <Key>
+            <PropertyRef Name="TeaId" />
+          </Key>
+          <Property Name="TeaId" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="TeaTitle" Type="int" />
+          <Property Name="TeaName" Type="varchar" MaxLength="50" />
+          <Property Name="TeaIdCard" Type="varchar" MaxLength="14" />
+          <Property Name="TeaExport" Type="text" />
+          <Property Name="TeaImage" Type="varbinary(max)" />
+          <Property Name="TeaLvl" Type="text" />
+        </EntityType>
+        <EntityType Name="Title">
+          <Key>
+            <PropertyRef Name="TId" />
+          </Key>
+          <Property Name="TId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="TName" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="type_project">
+          <Key>
+            <PropertyRef Name="Type_id" />
+          </Key>
+          <Property Name="Type_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Type_name" Type="varchar" MaxLength="15" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'ComCSDB.dbo.View_DisKH' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="View_DisKH">
+          <Key>
+            <PropertyRef Name="TeaId" />
+            <PropertyRef Name="RequisitionID" />
+            <PropertyRef Name="RequestLsitID" />
+            <PropertyRef Name="KhruphanthID" />
+            <PropertyRef Name="PlaceID" />
+            <PropertyRef Name="DistributorID" />
+            <PropertyRef Name="DistributorList" />
+            <PropertyRef Name="TId" />
+          </Key>
+          <Property Name="TeaId" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="TeaTitle" Type="int" />
+          <Property Name="TeaName" Type="varchar" MaxLength="50" />
+          <Property Name="RequisitionID" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="Re_TeaId" Type="varchar" MaxLength="10" />
+          <Property Name="Re_StepID" Type="char" MaxLength="1" />
+          <Property Name="RequestLsitID" Type="int" Nullable="false" />
+          <Property Name="RL_RequisitionID" Type="varchar" MaxLength="20" />
+          <Property Name="RL_NameKP" Type="varchar" MaxLength="50" />
+          <Property Name="RL_Price" Type="float" />
+          <Property Name="KhruphanthID" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Kh_RequestLsitID" Type="int" />
+          <Property Name="Kh_PlaceID" Type="int" />
+          <Property Name="PlaceID" Type="int" Nullable="false" />
+          <Property Name="PL_NamePlace" Type="varchar" MaxLength="50" />
+          <Property Name="DistributorID" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="DistributorList" Type="int" Nullable="false" />
+          <Property Name="DL_DistributorID" Type="varchar" MaxLength="50" />
+          <Property Name="DL_KhruphanthID" Type="varchar" MaxLength="50" />
+          <Property Name="Di_Status" Type="varchar" MaxLength="15" />
+          <Property Name="TId" Type="int" Nullable="false" />
+          <Property Name="TName" Type="varchar" MaxLength="50" />
+          <Property Name="Re_DateRequi" Type="date" />
+          <Property Name="Di_Date" Type="date" />
+          <Property Name="COPY_DATE" Type="nvarchar" MaxLength="4000" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'ComCSDB.dbo.View_Distributor' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="View_Distributor">
+          <Key>
+            <PropertyRef Name="DistributorID" />
+            <PropertyRef Name="KhruphanthID" />
+          </Key>
+          <Property Name="DistributorID" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Di_Status" Type="varchar" MaxLength="15" />
+          <Property Name="DL_DistributorID" Type="varchar" MaxLength="50" />
+          <Property Name="DL_KhruphanthID" Type="varchar" MaxLength="50" />
+          <Property Name="RL_NameKP" Type="varchar" MaxLength="50" />
+          <Property Name="KhruphanthID" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="RL_PlaceID" Type="int" />
+          <Property Name="PL_NamePlace" Type="varchar" MaxLength="50" />
+          <Property Name="Di_Date" Type="date" />
+          <Property Name="Converted" Type="varchar" MaxLength="60" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'ComCSDB.dbo.View_QRCODE' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="View_QRCODE">
+          <Key>
+            <PropertyRef Name="KhruphanthID" />
+          </Key>
+          <Property Name="KhruphanthID" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Kh_QR_CODE" Type="image" />
+          <Property Name="Kh_StatusID" Type="int" />
+          <Property Name="RL_RequisitionID" Type="varchar" MaxLength="20" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'ComCSDB.dbo.View_RemainRT_KH' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="View_RemainRT_KH">
+          <Key>
+            <PropertyRef Name="RequisitionID" />
+            <PropertyRef Name="RequestLsitID" />
+          </Key>
+          <Property Name="RequisitionID" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="TeaName" Type="varchar" MaxLength="50" />
+          <Property Name="Re_DateRequi" Type="date" />
+          <Property Name="Re_StepID" Type="char" MaxLength="1" />
+          <Property Name="RequestLsitID" Type="int" Nullable="false" />
+          <Property Name="RL_RequisitionID" Type="varchar" MaxLength="20" />
+          <Property Name="RL_NameKP" Type="varchar" MaxLength="50" />
+          <Property Name="RL_Amount" Type="float" />
+          <Property Name="RL_Price" Type="float" />
+          <Property Name="PL_NamePlace" Type="varchar" MaxLength="50" />
+          <Property Name="Converted" Type="varchar" MaxLength="60" />
+          <Property Name="TName" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'ComCSDB.dbo.View_Requisition' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="View_Requisition">
+          <Key>
+            <PropertyRef Name="TId" />
+            <PropertyRef Name="TeaId" />
+            <PropertyRef Name="RequisitionID" />
+            <PropertyRef Name="RequestLsitID" />
+            <PropertyRef Name="TypeID" />
+            <PropertyRef Name="CategoryID" />
+            <PropertyRef Name="PlaceID" />
+          </Key>
+          <Property Name="TId" Type="int" Nullable="false" />
+          <Property Name="TName" Type="varchar" MaxLength="50" />
+          <Property Name="TeaId" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="TeaTitle" Type="int" />
+          <Property Name="TeaName" Type="varchar" MaxLength="50" />
+          <Property Name="RequisitionID" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="Re_TeaId" Type="varchar" MaxLength="10" />
+          <Property Name="RequestLsitID" Type="int" Nullable="false" />
+          <Property Name="RL_RequisitionID" Type="varchar" MaxLength="20" />
+          <Property Name="RL_TypeID" Type="varchar" MaxLength="5" />
+          <Property Name="TypeID" Type="varchar" MaxLength="5" Nullable="false" />
+          <Property Name="TY_NameType" Type="varchar" MaxLength="50" />
+          <Property Name="RL_CategoryID" Type="varchar" MaxLength="5" />
+          <Property Name="TY_CategoryID" Type="varchar" MaxLength="5" />
+          <Property Name="CategoryID" Type="varchar" MaxLength="5" Nullable="false" />
+          <Property Name="CA_NameCategory" Type="varchar" MaxLength="50" />
+          <Property Name="RL_NameKP" Type="varchar" MaxLength="50" />
+          <Property Name="RL_OnStart" Type="int" />
+          <Property Name="RL_Amount" Type="float" />
+          <Property Name="RL_Price" Type="float" />
+          <Property Name="RL_PlaceID" Type="int" />
+          <Property Name="PlaceID" Type="int" Nullable="false" />
+          <Property Name="PL_NamePlace" Type="varchar" MaxLength="50" />
+          <Property Name="Re_DateRequi" Type="date" />
+          <Property Name="ConvetDateRei" Type="varchar" MaxLength="60" />
+        </EntityType>
+        <Association Name="FK_project_list_Student">
+          <End Role="Student" Type="Self.Student" Multiplicity="0..1" />
+          <End Role="project_list" Type="Self.project_list" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Student">
+              <PropertyRef Name="StuId" />
+            </Principal>
+            <Dependent Role="project_list">
+              <PropertyRef Name="stu_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_project_list_Teacher">
+          <End Role="Teacher" Type="Self.Teacher" Multiplicity="0..1" />
+          <End Role="project_list" Type="Self.project_list" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Teacher">
+              <PropertyRef Name="TeaId" />
+            </Principal>
+            <Dependent Role="project_list">
+              <PropertyRef Name="TeaId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_project_list_type_project">
+          <End Role="type_project" Type="Self.type_project" Multiplicity="0..1" />
+          <End Role="project_list" Type="Self.project_list" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="type_project">
+              <PropertyRef Name="Type_id" />
+            </Principal>
+            <Dependent Role="project_list">
+              <PropertyRef Name="type_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Relation_Course">
+          <End Role="Course" Type="Self.Course" Multiplicity="0..1" />
+          <End Role="Relation" Type="Self.Relation" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Course">
+              <PropertyRef Name="CId" />
+            </Principal>
+            <Dependent Role="Relation">
+              <PropertyRef Name="RCId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Relation_Subject">
+          <End Role="Subject" Type="Self.Subject" Multiplicity="0..1" />
+          <End Role="Relation" Type="Self.Relation" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Subject">
+              <PropertyRef Name="SubjId" />
+            </Principal>
+            <Dependent Role="Relation">
+              <PropertyRef Name="RSubjId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Status_RefProvince">
+          <End Role="RefProvince" Type="Self.RefProvince" Multiplicity="0..1" />
+          <End Role="Status" Type="Self.Status" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="RefProvince">
+              <PropertyRef Name="ProvinceId" />
+            </Principal>
+            <Dependent Role="Status">
+              <PropertyRef Name="SRefProvince" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Student_FStatus">
+          <End Role="FStatus" Type="Self.FStatus" Multiplicity="0..1" />
+          <End Role="Student" Type="Self.Student" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="FStatus">
+              <PropertyRef Name="FStatusId" />
+            </Principal>
+            <Dependent Role="Student">
+              <PropertyRef Name="StuFStatus" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Student_Job">
+          <End Role="Job" Type="Self.Job" Multiplicity="0..1" />
+          <End Role="Student" Type="Self.Student" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Job">
+              <PropertyRef Name="JId" />
+            </Principal>
+            <Dependent Role="Student">
+              <PropertyRef Name="StuDJob" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Student_Job1">
+          <End Role="Job" Type="Self.Job" Multiplicity="0..1" />
+          <End Role="Student" Type="Self.Student" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Job">
+              <PropertyRef Name="JId" />
+            </Principal>
+            <Dependent Role="Student">
+              <PropertyRef Name="StuMJob" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Student_OldED">
+          <End Role="OldED" Type="Self.OldED" Multiplicity="0..1" />
+          <End Role="Student" Type="Self.Student" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="OldED">
+              <PropertyRef Name="OldOIdEd" />
+            </Principal>
+            <Dependent Role="Student">
+              <PropertyRef Name="StuOldEd" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Student_RefProvince">
+          <End Role="RefProvince" Type="Self.RefProvince" Multiplicity="0..1" />
+          <End Role="Student" Type="Self.Student" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="RefProvince">
+              <PropertyRef Name="ProvinceId" />
+            </Principal>
+            <Dependent Role="Student">
+              <PropertyRef Name="StuProvince_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Student_Status">
+          <End Role="Status" Type="Self.Status" Multiplicity="0..1" />
+          <End Role="Student" Type="Self.Student" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Status">
+              <PropertyRef Name="SIdStatus" />
+            </Principal>
+            <Dependent Role="Student">
+              <PropertyRef Name="StuStatus" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Student_Teacher">
+          <End Role="Teacher" Type="Self.Teacher" Multiplicity="0..1" />
+          <End Role="Student" Type="Self.Student" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Teacher">
+              <PropertyRef Name="TeaId" />
+            </Principal>
+            <Dependent Role="Student">
+              <PropertyRef Name="StuTAdviser" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Student_Title">
+          <End Role="Title" Type="Self.Title" Multiplicity="0..1" />
+          <End Role="Student" Type="Self.Student" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Title">
+              <PropertyRef Name="TId" />
+            </Principal>
+            <Dependent Role="Student">
+              <PropertyRef Name="StuTitle" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Subject_Department">
+          <End Role="Department" Type="Self.Department" Multiplicity="1" />
+          <End Role="Subject" Type="Self.Subject" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Department">
+              <PropertyRef Name="DeId" />
+            </Principal>
+            <Dependent Role="Subject">
+              <PropertyRef Name="SubjDeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_T_DistributorList_T_Distributor">
+          <End Role="T_Distributor" Type="Self.T_Distributor" Multiplicity="0..1" />
+          <End Role="T_DistributorList" Type="Self.T_DistributorList" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="T_Distributor">
+              <PropertyRef Name="DistributorID" />
+            </Principal>
+            <Dependent Role="T_DistributorList">
+              <PropertyRef Name="DL_DistributorID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_T_DistributorList_T_Khruphanth">
+          <End Role="T_Khruphanth" Type="Self.T_Khruphanth" Multiplicity="0..1" />
+          <End Role="T_DistributorList" Type="Self.T_DistributorList" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="T_Khruphanth">
+              <PropertyRef Name="KhruphanthID" />
+            </Principal>
+            <Dependent Role="T_DistributorList">
+              <PropertyRef Name="DL_KhruphanthID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_T_Khruphanth_T_RequestList">
+          <End Role="T_RequestList" Type="Self.T_RequestList" Multiplicity="0..1" />
+          <End Role="T_Khruphanth" Type="Self.T_Khruphanth" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="T_RequestList">
+              <PropertyRef Name="RequestLsitID" />
+            </Principal>
+            <Dependent Role="T_Khruphanth">
+              <PropertyRef Name="Kh_RequestLsitID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_T_Khruphanth_T_Status1">
+          <End Role="T_Status" Type="Self.T_Status" Multiplicity="0..1" />
+          <End Role="T_Khruphanth" Type="Self.T_Khruphanth" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="T_Status">
+              <PropertyRef Name="StatusID" />
+            </Principal>
+            <Dependent Role="T_Khruphanth">
+              <PropertyRef Name="Kh_StatusID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_T_RequestList_T_Place1">
+          <End Role="T_Place" Type="Self.T_Place" Multiplicity="0..1" />
+          <End Role="T_RequestList" Type="Self.T_RequestList" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="T_Place">
+              <PropertyRef Name="PlaceID" />
+            </Principal>
+            <Dependent Role="T_RequestList">
+              <PropertyRef Name="RL_PlaceID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_T_RequestList_T_Requisition">
+          <End Role="T_Requisition" Type="Self.T_Requisition" Multiplicity="0..1" />
+          <End Role="T_RequestList" Type="Self.T_RequestList" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="T_Requisition">
+              <PropertyRef Name="RequisitionID" />
+            </Principal>
+            <Dependent Role="T_RequestList">
+              <PropertyRef Name="RL_RequisitionID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_T_RequestList_T_Type1">
+          <End Role="T_Type" Type="Self.T_Type" Multiplicity="0..1" />
+          <End Role="T_RequestList" Type="Self.T_RequestList" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="T_Type">
+              <PropertyRef Name="TypeID" />
+            </Principal>
+            <Dependent Role="T_RequestList">
+              <PropertyRef Name="RL_TypeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_T_Requisition_T_Stap">
+          <End Role="T_Stap" Type="Self.T_Stap" Multiplicity="0..1" />
+          <End Role="T_Requisition" Type="Self.T_Requisition" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="T_Stap">
+              <PropertyRef Name="StepID" />
+            </Principal>
+            <Dependent Role="T_Requisition">
+              <PropertyRef Name="Re_StepID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_T_Requisition_Teacher1">
+          <End Role="Teacher" Type="Self.Teacher" Multiplicity="0..1" />
+          <End Role="T_Requisition" Type="Self.T_Requisition" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Teacher">
+              <PropertyRef Name="TeaId" />
+            </Principal>
+            <Dependent Role="T_Requisition">
+              <PropertyRef Name="Re_TeaId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_T_Type_T_Category1">
+          <End Role="T_Category" Type="Self.T_Category" Multiplicity="0..1" />
+          <End Role="T_Type" Type="Self.T_Type" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="T_Category">
+              <PropertyRef Name="CategoryID" />
+            </Principal>
+            <Dependent Role="T_Type">
+              <PropertyRef Name="TY_CategoryID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Teacher_Title">
+          <End Role="Title" Type="Self.Title" Multiplicity="0..1" />
+          <End Role="Teacher" Type="Self.Teacher" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Title">
+              <PropertyRef Name="TId" />
+            </Principal>
+            <Dependent Role="Teacher">
+              <PropertyRef Name="TeaTitle" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="ComCSDBModelStoreContainer">
+          <EntitySet Name="Account" EntityType="Self.Account" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Course" EntityType="Self.Course" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Department" EntityType="Self.Department" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="FStatus" EntityType="Self.FStatus" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Job" EntityType="Self.Job" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="OldED" EntityType="Self.OldED" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="project_list" EntityType="Self.project_list" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="RefProvince" EntityType="Self.RefProvince" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Relation" EntityType="Self.Relation" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="SelectedEmployee" EntityType="Self.SelectedEmployee" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Status" EntityType="Self.Status" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Student" EntityType="Self.Student" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Subject" EntityType="Self.Subject" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="T_Category" EntityType="Self.T_Category" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="T_Distributor" EntityType="Self.T_Distributor" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="T_DistributorList" EntityType="Self.T_DistributorList" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="T_Khruphanth" EntityType="Self.T_Khruphanth" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="T_Place" EntityType="Self.T_Place" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="T_RequestList" EntityType="Self.T_RequestList" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="T_Requisition" EntityType="Self.T_Requisition" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="T_Stap" EntityType="Self.T_Stap" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="T_Status" EntityType="Self.T_Status" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="T_Type" EntityType="Self.T_Type" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Teacher" EntityType="Self.Teacher" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Title" EntityType="Self.Title" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="type_project" EntityType="Self.type_project" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="View_DisKH" EntityType="Self.View_DisKH" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [View_DisKH].[TeaId] AS [TeaId], 
+    [View_DisKH].[TeaTitle] AS [TeaTitle], 
+    [View_DisKH].[TeaName] AS [TeaName], 
+    [View_DisKH].[RequisitionID] AS [RequisitionID], 
+    [View_DisKH].[Re_TeaId] AS [Re_TeaId], 
+    [View_DisKH].[Re_StepID] AS [Re_StepID], 
+    [View_DisKH].[RequestLsitID] AS [RequestLsitID], 
+    [View_DisKH].[RL_RequisitionID] AS [RL_RequisitionID], 
+    [View_DisKH].[RL_NameKP] AS [RL_NameKP], 
+    [View_DisKH].[RL_Price] AS [RL_Price], 
+    [View_DisKH].[KhruphanthID] AS [KhruphanthID], 
+    [View_DisKH].[Kh_RequestLsitID] AS [Kh_RequestLsitID], 
+    [View_DisKH].[Kh_PlaceID] AS [Kh_PlaceID], 
+    [View_DisKH].[PlaceID] AS [PlaceID], 
+    [View_DisKH].[PL_NamePlace] AS [PL_NamePlace], 
+    [View_DisKH].[DistributorID] AS [DistributorID], 
+    [View_DisKH].[DistributorList] AS [DistributorList], 
+    [View_DisKH].[DL_DistributorID] AS [DL_DistributorID], 
+    [View_DisKH].[DL_KhruphanthID] AS [DL_KhruphanthID], 
+    [View_DisKH].[Di_Status] AS [Di_Status], 
+    [View_DisKH].[TId] AS [TId], 
+    [View_DisKH].[TName] AS [TName], 
+    [View_DisKH].[Re_DateRequi] AS [Re_DateRequi], 
+    [View_DisKH].[Di_Date] AS [Di_Date], 
+    [View_DisKH].[COPY_DATE] AS [COPY_DATE]
+    FROM [dbo].[View_DisKH] AS [View_DisKH]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="View_Distributor" EntityType="Self.View_Distributor" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [View_Distributor].[DistributorID] AS [DistributorID], 
+    [View_Distributor].[Di_Status] AS [Di_Status], 
+    [View_Distributor].[DL_DistributorID] AS [DL_DistributorID], 
+    [View_Distributor].[DL_KhruphanthID] AS [DL_KhruphanthID], 
+    [View_Distributor].[RL_NameKP] AS [RL_NameKP], 
+    [View_Distributor].[KhruphanthID] AS [KhruphanthID], 
+    [View_Distributor].[RL_PlaceID] AS [RL_PlaceID], 
+    [View_Distributor].[PL_NamePlace] AS [PL_NamePlace], 
+    [View_Distributor].[Di_Date] AS [Di_Date], 
+    [View_Distributor].[Converted] AS [Converted]
+    FROM [dbo].[View_Distributor] AS [View_Distributor]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="View_QRCODE" EntityType="Self.View_QRCODE" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [View_QRCODE].[KhruphanthID] AS [KhruphanthID], 
+    [View_QRCODE].[Kh_QR_CODE] AS [Kh_QR_CODE], 
+    [View_QRCODE].[Kh_StatusID] AS [Kh_StatusID], 
+    [View_QRCODE].[RL_RequisitionID] AS [RL_RequisitionID]
+    FROM [dbo].[View_QRCODE] AS [View_QRCODE]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="View_RemainRT_KH" EntityType="Self.View_RemainRT_KH" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [View_RemainRT_KH].[RequisitionID] AS [RequisitionID], 
+    [View_RemainRT_KH].[TeaName] AS [TeaName], 
+    [View_RemainRT_KH].[Re_DateRequi] AS [Re_DateRequi], 
+    [View_RemainRT_KH].[Re_StepID] AS [Re_StepID], 
+    [View_RemainRT_KH].[RequestLsitID] AS [RequestLsitID], 
+    [View_RemainRT_KH].[RL_RequisitionID] AS [RL_RequisitionID], 
+    [View_RemainRT_KH].[RL_NameKP] AS [RL_NameKP], 
+    [View_RemainRT_KH].[RL_Amount] AS [RL_Amount], 
+    [View_RemainRT_KH].[RL_Price] AS [RL_Price], 
+    [View_RemainRT_KH].[PL_NamePlace] AS [PL_NamePlace], 
+    [View_RemainRT_KH].[Converted] AS [Converted], 
+    [View_RemainRT_KH].[TName] AS [TName]
+    FROM [dbo].[View_RemainRT_KH] AS [View_RemainRT_KH]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="View_Requisition" EntityType="Self.View_Requisition" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [View_Requisition].[TId] AS [TId], 
+    [View_Requisition].[TName] AS [TName], 
+    [View_Requisition].[TeaId] AS [TeaId], 
+    [View_Requisition].[TeaTitle] AS [TeaTitle], 
+    [View_Requisition].[TeaName] AS [TeaName], 
+    [View_Requisition].[RequisitionID] AS [RequisitionID], 
+    [View_Requisition].[Re_TeaId] AS [Re_TeaId], 
+    [View_Requisition].[RequestLsitID] AS [RequestLsitID], 
+    [View_Requisition].[RL_RequisitionID] AS [RL_RequisitionID], 
+    [View_Requisition].[RL_TypeID] AS [RL_TypeID], 
+    [View_Requisition].[TypeID] AS [TypeID], 
+    [View_Requisition].[TY_NameType] AS [TY_NameType], 
+    [View_Requisition].[RL_CategoryID] AS [RL_CategoryID], 
+    [View_Requisition].[TY_CategoryID] AS [TY_CategoryID], 
+    [View_Requisition].[CategoryID] AS [CategoryID], 
+    [View_Requisition].[CA_NameCategory] AS [CA_NameCategory], 
+    [View_Requisition].[RL_NameKP] AS [RL_NameKP], 
+    [View_Requisition].[RL_OnStart] AS [RL_OnStart], 
+    [View_Requisition].[RL_Amount] AS [RL_Amount], 
+    [View_Requisition].[RL_Price] AS [RL_Price], 
+    [View_Requisition].[RL_PlaceID] AS [RL_PlaceID], 
+    [View_Requisition].[PlaceID] AS [PlaceID], 
+    [View_Requisition].[PL_NamePlace] AS [PL_NamePlace], 
+    [View_Requisition].[Re_DateRequi] AS [Re_DateRequi], 
+    [View_Requisition].[ConvetDateRei] AS [ConvetDateRei]
+    FROM [dbo].[View_Requisition] AS [View_Requisition]</DefiningQuery>
+          </EntitySet>
+          <AssociationSet Name="FK_project_list_Student" Association="Self.FK_project_list_Student">
+            <End Role="Student" EntitySet="Student" />
+            <End Role="project_list" EntitySet="project_list" />
+          </AssociationSet>
+          <AssociationSet Name="FK_project_list_Teacher" Association="Self.FK_project_list_Teacher">
+            <End Role="Teacher" EntitySet="Teacher" />
+            <End Role="project_list" EntitySet="project_list" />
+          </AssociationSet>
+          <AssociationSet Name="FK_project_list_type_project" Association="Self.FK_project_list_type_project">
+            <End Role="type_project" EntitySet="type_project" />
+            <End Role="project_list" EntitySet="project_list" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Relation_Course" Association="Self.FK_Relation_Course">
+            <End Role="Course" EntitySet="Course" />
+            <End Role="Relation" EntitySet="Relation" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Relation_Subject" Association="Self.FK_Relation_Subject">
+            <End Role="Subject" EntitySet="Subject" />
+            <End Role="Relation" EntitySet="Relation" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Status_RefProvince" Association="Self.FK_Status_RefProvince">
+            <End Role="RefProvince" EntitySet="RefProvince" />
+            <End Role="Status" EntitySet="Status" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Student_FStatus" Association="Self.FK_Student_FStatus">
+            <End Role="FStatus" EntitySet="FStatus" />
+            <End Role="Student" EntitySet="Student" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Student_Job" Association="Self.FK_Student_Job">
+            <End Role="Job" EntitySet="Job" />
+            <End Role="Student" EntitySet="Student" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Student_Job1" Association="Self.FK_Student_Job1">
+            <End Role="Job" EntitySet="Job" />
+            <End Role="Student" EntitySet="Student" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Student_OldED" Association="Self.FK_Student_OldED">
+            <End Role="OldED" EntitySet="OldED" />
+            <End Role="Student" EntitySet="Student" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Student_RefProvince" Association="Self.FK_Student_RefProvince">
+            <End Role="RefProvince" EntitySet="RefProvince" />
+            <End Role="Student" EntitySet="Student" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Student_Status" Association="Self.FK_Student_Status">
+            <End Role="Status" EntitySet="Status" />
+            <End Role="Student" EntitySet="Student" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Student_Teacher" Association="Self.FK_Student_Teacher">
+            <End Role="Teacher" EntitySet="Teacher" />
+            <End Role="Student" EntitySet="Student" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Student_Title" Association="Self.FK_Student_Title">
+            <End Role="Title" EntitySet="Title" />
+            <End Role="Student" EntitySet="Student" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Subject_Department" Association="Self.FK_Subject_Department">
+            <End Role="Department" EntitySet="Department" />
+            <End Role="Subject" EntitySet="Subject" />
+          </AssociationSet>
+          <AssociationSet Name="FK_T_DistributorList_T_Distributor" Association="Self.FK_T_DistributorList_T_Distributor">
+            <End Role="T_Distributor" EntitySet="T_Distributor" />
+            <End Role="T_DistributorList" EntitySet="T_DistributorList" />
+          </AssociationSet>
+          <AssociationSet Name="FK_T_DistributorList_T_Khruphanth" Association="Self.FK_T_DistributorList_T_Khruphanth">
+            <End Role="T_Khruphanth" EntitySet="T_Khruphanth" />
+            <End Role="T_DistributorList" EntitySet="T_DistributorList" />
+          </AssociationSet>
+          <AssociationSet Name="FK_T_Khruphanth_T_RequestList" Association="Self.FK_T_Khruphanth_T_RequestList">
+            <End Role="T_RequestList" EntitySet="T_RequestList" />
+            <End Role="T_Khruphanth" EntitySet="T_Khruphanth" />
+          </AssociationSet>
+          <AssociationSet Name="FK_T_Khruphanth_T_Status1" Association="Self.FK_T_Khruphanth_T_Status1">
+            <End Role="T_Status" EntitySet="T_Status" />
+            <End Role="T_Khruphanth" EntitySet="T_Khruphanth" />
+          </AssociationSet>
+          <AssociationSet Name="FK_T_RequestList_T_Place1" Association="Self.FK_T_RequestList_T_Place1">
+            <End Role="T_Place" EntitySet="T_Place" />
+            <End Role="T_RequestList" EntitySet="T_RequestList" />
+          </AssociationSet>
+          <AssociationSet Name="FK_T_RequestList_T_Requisition" Association="Self.FK_T_RequestList_T_Requisition">
+            <End Role="T_Requisition" EntitySet="T_Requisition" />
+            <End Role="T_RequestList" EntitySet="T_RequestList" />
+          </AssociationSet>
+          <AssociationSet Name="FK_T_RequestList_T_Type1" Association="Self.FK_T_RequestList_T_Type1">
+            <End Role="T_Type" EntitySet="T_Type" />
+            <End Role="T_RequestList" EntitySet="T_RequestList" />
+          </AssociationSet>
+          <AssociationSet Name="FK_T_Requisition_T_Stap" Association="Self.FK_T_Requisition_T_Stap">
+            <End Role="T_Stap" EntitySet="T_Stap" />
+            <End Role="T_Requisition" EntitySet="T_Requisition" />
+          </AssociationSet>
+          <AssociationSet Name="FK_T_Requisition_Teacher1" Association="Self.FK_T_Requisition_Teacher1">
+            <End Role="Teacher" EntitySet="Teacher" />
+            <End Role="T_Requisition" EntitySet="T_Requisition" />
+          </AssociationSet>
+          <AssociationSet Name="FK_T_Type_T_Category1" Association="Self.FK_T_Type_T_Category1">
+            <End Role="T_Category" EntitySet="T_Category" />
+            <End Role="T_Type" EntitySet="T_Type" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Teacher_Title" Association="Self.FK_Teacher_Title">
+            <End Role="Title" EntitySet="Title" />
+            <End Role="Teacher" EntitySet="Teacher" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="ComCSDBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="ComCSDBEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Account" EntityType="ComCSDBModel.Account" />
+          <EntitySet Name="Course" EntityType="ComCSDBModel.Course" />
+          <EntitySet Name="Department" EntityType="ComCSDBModel.Department" />
+          <EntitySet Name="FStatus" EntityType="ComCSDBModel.FStatus" />
+          <EntitySet Name="Job" EntityType="ComCSDBModel.Job" />
+          <EntitySet Name="OldED" EntityType="ComCSDBModel.OldED" />
+          <EntitySet Name="project_list" EntityType="ComCSDBModel.project_list" />
+          <EntitySet Name="RefProvince" EntityType="ComCSDBModel.RefProvince" />
+          <EntitySet Name="Relation" EntityType="ComCSDBModel.Relation" />
+          <EntitySet Name="SelectedEmployee" EntityType="ComCSDBModel.SelectedEmployee" />
+          <EntitySet Name="Status" EntityType="ComCSDBModel.Status" />
+          <EntitySet Name="Student" EntityType="ComCSDBModel.Student" />
+          <EntitySet Name="Subject" EntityType="ComCSDBModel.Subject" />
+          <EntitySet Name="T_Category" EntityType="ComCSDBModel.T_Category" />
+          <EntitySet Name="T_Distributor" EntityType="ComCSDBModel.T_Distributor" />
+          <EntitySet Name="T_DistributorList" EntityType="ComCSDBModel.T_DistributorList" />
+          <EntitySet Name="T_Khruphanth" EntityType="ComCSDBModel.T_Khruphanth" />
+          <EntitySet Name="T_Place" EntityType="ComCSDBModel.T_Place" />
+          <EntitySet Name="T_RequestList" EntityType="ComCSDBModel.T_RequestList" />
+          <EntitySet Name="T_Requisition" EntityType="ComCSDBModel.T_Requisition" />
+          <EntitySet Name="T_Stap" EntityType="ComCSDBModel.T_Stap" />
+          <EntitySet Name="T_Status" EntityType="ComCSDBModel.T_Status" />
+          <EntitySet Name="T_Type" EntityType="ComCSDBModel.T_Type" />
+          <EntitySet Name="Teacher" EntityType="ComCSDBModel.Teacher" />
+          <EntitySet Name="Title" EntityType="ComCSDBModel.Title" />
+          <EntitySet Name="type_project" EntityType="ComCSDBModel.type_project" />
+          <EntitySet Name="View_DisKH" EntityType="ComCSDBModel.View_DisKH" />
+          <EntitySet Name="View_Distributor" EntityType="ComCSDBModel.View_Distributor" />
+          <EntitySet Name="View_QRCODE" EntityType="ComCSDBModel.View_QRCODE" />
+          <EntitySet Name="View_RemainRT_KH" EntityType="ComCSDBModel.View_RemainRT_KH" />
+          <EntitySet Name="View_Requisition" EntityType="ComCSDBModel.View_Requisition" />
+          <AssociationSet Name="FK_Relation_Course" Association="ComCSDBModel.FK_Relation_Course">
+            <End Role="Course" EntitySet="Course" />
+            <End Role="Relation" EntitySet="Relation" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Subject_Department" Association="ComCSDBModel.FK_Subject_Department">
+            <End Role="Department" EntitySet="Department" />
+            <End Role="Subject" EntitySet="Subject" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Student_FStatus" Association="ComCSDBModel.FK_Student_FStatus">
+            <End Role="FStatus" EntitySet="FStatus" />
+            <End Role="Student" EntitySet="Student" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Student_Job" Association="ComCSDBModel.FK_Student_Job">
+            <End Role="Job" EntitySet="Job" />
+            <End Role="Student" EntitySet="Student" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Student_Job1" Association="ComCSDBModel.FK_Student_Job1">
+            <End Role="Job" EntitySet="Job" />
+            <End Role="Student" EntitySet="Student" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Student_OldED" Association="ComCSDBModel.FK_Student_OldED">
+            <End Role="OldED" EntitySet="OldED" />
+            <End Role="Student" EntitySet="Student" />
+          </AssociationSet>
+          <AssociationSet Name="FK_project_list_Student" Association="ComCSDBModel.FK_project_list_Student">
+            <End Role="Student" EntitySet="Student" />
+            <End Role="project_list" EntitySet="project_list" />
+          </AssociationSet>
+          <AssociationSet Name="FK_project_list_Teacher" Association="ComCSDBModel.FK_project_list_Teacher">
+            <End Role="Teacher" EntitySet="Teacher" />
+            <End Role="project_list" EntitySet="project_list" />
+          </AssociationSet>
+          <AssociationSet Name="FK_project_list_type_project" Association="ComCSDBModel.FK_project_list_type_project">
+            <End Role="type_project" EntitySet="type_project" />
+            <End Role="project_list" EntitySet="project_list" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Status_RefProvince" Association="ComCSDBModel.FK_Status_RefProvince">
+            <End Role="RefProvince" EntitySet="RefProvince" />
+            <End Role="Status" EntitySet="Status" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Student_RefProvince" Association="ComCSDBModel.FK_Student_RefProvince">
+            <End Role="RefProvince" EntitySet="RefProvince" />
+            <End Role="Student" EntitySet="Student" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Relation_Subject" Association="ComCSDBModel.FK_Relation_Subject">
+            <End Role="Subject" EntitySet="Subject" />
+            <End Role="Relation" EntitySet="Relation" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Student_Status" Association="ComCSDBModel.FK_Student_Status">
+            <End Role="Status" EntitySet="Status" />
+            <End Role="Student" EntitySet="Student" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Student_Teacher" Association="ComCSDBModel.FK_Student_Teacher">
+            <End Role="Teacher" EntitySet="Teacher" />
+            <End Role="Student" EntitySet="Student" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Student_Title" Association="ComCSDBModel.FK_Student_Title">
+            <End Role="Title" EntitySet="Title" />
+            <End Role="Student" EntitySet="Student" />
+          </AssociationSet>
+          <AssociationSet Name="FK_T_Type_T_Category1" Association="ComCSDBModel.FK_T_Type_T_Category1">
+            <End Role="T_Category" EntitySet="T_Category" />
+            <End Role="T_Type" EntitySet="T_Type" />
+          </AssociationSet>
+          <AssociationSet Name="FK_T_DistributorList_T_Distributor" Association="ComCSDBModel.FK_T_DistributorList_T_Distributor">
+            <End Role="T_Distributor" EntitySet="T_Distributor" />
+            <End Role="T_DistributorList" EntitySet="T_DistributorList" />
+          </AssociationSet>
+          <AssociationSet Name="FK_T_DistributorList_T_Khruphanth" Association="ComCSDBModel.FK_T_DistributorList_T_Khruphanth">
+            <End Role="T_Khruphanth" EntitySet="T_Khruphanth" />
+            <End Role="T_DistributorList" EntitySet="T_DistributorList" />
+          </AssociationSet>
+          <AssociationSet Name="FK_T_Khruphanth_T_RequestList" Association="ComCSDBModel.FK_T_Khruphanth_T_RequestList">
+            <End Role="T_RequestList" EntitySet="T_RequestList" />
+            <End Role="T_Khruphanth" EntitySet="T_Khruphanth" />
+          </AssociationSet>
+          <AssociationSet Name="FK_T_Khruphanth_T_Status1" Association="ComCSDBModel.FK_T_Khruphanth_T_Status1">
+            <End Role="T_Status" EntitySet="T_Status" />
+            <End Role="T_Khruphanth" EntitySet="T_Khruphanth" />
+          </AssociationSet>
+          <AssociationSet Name="FK_T_RequestList_T_Place1" Association="ComCSDBModel.FK_T_RequestList_T_Place1">
+            <End Role="T_Place" EntitySet="T_Place" />
+            <End Role="T_RequestList" EntitySet="T_RequestList" />
+          </AssociationSet>
+          <AssociationSet Name="FK_T_RequestList_T_Requisition" Association="ComCSDBModel.FK_T_RequestList_T_Requisition">
+            <End Role="T_Requisition" EntitySet="T_Requisition" />
+            <End Role="T_RequestList" EntitySet="T_RequestList" />
+          </AssociationSet>
+          <AssociationSet Name="FK_T_RequestList_T_Type1" Association="ComCSDBModel.FK_T_RequestList_T_Type1">
+            <End Role="T_Type" EntitySet="T_Type" />
+            <End Role="T_RequestList" EntitySet="T_RequestList" />
+          </AssociationSet>
+          <AssociationSet Name="FK_T_Requisition_T_Stap" Association="ComCSDBModel.FK_T_Requisition_T_Stap">
+            <End Role="T_Stap" EntitySet="T_Stap" />
+            <End Role="T_Requisition" EntitySet="T_Requisition" />
+          </AssociationSet>
+          <AssociationSet Name="FK_T_Requisition_Teacher1" Association="ComCSDBModel.FK_T_Requisition_Teacher1">
+            <End Role="Teacher" EntitySet="Teacher" />
+            <End Role="T_Requisition" EntitySet="T_Requisition" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Teacher_Title" Association="ComCSDBModel.FK_Teacher_Title">
+            <End Role="Title" EntitySet="Title" />
+            <End Role="Teacher" EntitySet="Teacher" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="Account">
+          <Key>
+            <PropertyRef Name="AId" />
+          </Key>
+          <Property Name="AId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="AUsername" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="APassword" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="AStatus" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+        </EntityType>
+        <EntityType Name="Course">
+          <Key>
+            <PropertyRef Name="CId" />
+          </Key>
+          <Property Name="CId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CTName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="CEName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="CYear" Type="Int32" />
+          <Property Name="CSDegreeNameTH" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="CSDegreeNameEN" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="CSCredit" Type="Int32" />
+          <Property Name="CSCurriculum" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="CSGraJob" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="CsGeneralCategory" Type="Int32" />
+          <Property Name="CsComputerCategory" Type="Int32" />
+          <NavigationProperty Name="Relation" Relationship="ComCSDBModel.FK_Relation_Course" FromRole="Course" ToRole="Relation" />
+        </EntityType>
+        <EntityType Name="Department">
+          <Key>
+            <PropertyRef Name="DeId" />
+          </Key>
+          <Property Name="DeId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="DeName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="DeCredit" Type="Int32" />
+          <NavigationProperty Name="Subject" Relationship="ComCSDBModel.FK_Subject_Department" FromRole="Department" ToRole="Subject" />
+        </EntityType>
+        <EntityType Name="FStatus">
+          <Key>
+            <PropertyRef Name="FStatusId" />
+          </Key>
+          <Property Name="FStatusId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="FStatusName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Student" Relationship="ComCSDBModel.FK_Student_FStatus" FromRole="FStatus" ToRole="Student" />
+        </EntityType>
+        <EntityType Name="Job">
+          <Key>
+            <PropertyRef Name="JId" />
+          </Key>
+          <Property Name="JId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="JName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Student" Relationship="ComCSDBModel.FK_Student_Job" FromRole="Job" ToRole="Student" />
+          <NavigationProperty Name="Student1" Relationship="ComCSDBModel.FK_Student_Job1" FromRole="Job" ToRole="Student" />
+        </EntityType>
+        <EntityType Name="OldED">
+          <Key>
+            <PropertyRef Name="OldOIdEd" />
+          </Key>
+          <Property Name="OldOIdEd" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="OOldEdName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Student" Relationship="ComCSDBModel.FK_Student_OldED" FromRole="OldED" ToRole="Student" />
+        </EntityType>
+        <EntityType Name="project_list">
+          <Key>
+            <PropertyRef Name="project_id" />
+          </Key>
+          <Property Name="project_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="project_name" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="project_name_e" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="stu_id" Type="String" MaxLength="12" FixedLength="false" Unicode="false" />
+          <Property Name="type_id" Type="Int32" />
+          <Property Name="TeaId" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="Data_Post" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Name="File" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Detail" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="LinkWeb" Type="String" MaxLength="200" FixedLength="true" Unicode="true" />
+          <Property Name="LinkVideo" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Rate" Type="Int32" />
+          <NavigationProperty Name="Student" Relationship="ComCSDBModel.FK_project_list_Student" FromRole="project_list" ToRole="Student" />
+          <NavigationProperty Name="Teacher" Relationship="ComCSDBModel.FK_project_list_Teacher" FromRole="project_list" ToRole="Teacher" />
+          <NavigationProperty Name="type_project" Relationship="ComCSDBModel.FK_project_list_type_project" FromRole="project_list" ToRole="type_project" />
+        </EntityType>
+        <EntityType Name="RefProvince">
+          <Key>
+            <PropertyRef Name="ProvinceId" />
+          </Key>
+          <Property Name="ProvinceId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ProvinceName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Status" Relationship="ComCSDBModel.FK_Status_RefProvince" FromRole="RefProvince" ToRole="Status" />
+          <NavigationProperty Name="Student" Relationship="ComCSDBModel.FK_Student_RefProvince" FromRole="RefProvince" ToRole="Student" />
+        </EntityType>
+        <EntityType Name="Relation">
+          <Key>
+            <PropertyRef Name="RID" />
+          </Key>
+          <Property Name="RID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="RSubjId" Type="Int32" />
+          <Property Name="RCId" Type="Int32" />
+          <NavigationProperty Name="Course" Relationship="ComCSDBModel.FK_Relation_Course" FromRole="Relation" ToRole="Course" />
+          <NavigationProperty Name="Subject" Relationship="ComCSDBModel.FK_Relation_Subject" FromRole="Relation" ToRole="Subject" />
+        </EntityType>
+        <EntityType Name="SelectedEmployee">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="SelectedEmployeeIDs" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="Status">
+          <Key>
+            <PropertyRef Name="SIdStatus" />
+          </Key>
+          <Property Name="SIdStatus" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="SStatusName" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="SRefProvince" Type="Int32" />
+          <NavigationProperty Name="RefProvince" Relationship="ComCSDBModel.FK_Status_RefProvince" FromRole="Status" ToRole="RefProvince" />
+          <NavigationProperty Name="Student" Relationship="ComCSDBModel.FK_Student_Status" FromRole="Status" ToRole="Student" />
+        </EntityType>
+        <EntityType Name="Student">
+          <Key>
+            <PropertyRef Name="StuId" />
+          </Key>
+          <Property Name="StuId" Type="String" Nullable="false" MaxLength="12" FixedLength="false" Unicode="false" />
+          <Property Name="StuPassword" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="StuTitle" Type="Int32" />
+          <Property Name="StuFName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="StuLName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="StuSex" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="StuBDate" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="StuEmail" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="StuTel" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="StuHomeNo" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="StuMoo" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+          <Property Name="StuRoad" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="StuTambon" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="StuAmphur" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="StuProvince_id" Type="Int32" />
+          <Property Name="StuZipcode" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+          <Property Name="StuPic" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="StuOldEd" Type="Int32" />
+          <Property Name="StuStatus" Type="Int32" />
+          <Property Name="StuTAdviser" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="StuDName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="StuDJob" Type="Int32" />
+          <Property Name="StuDIncome" Type="Int32" />
+          <Property Name="StuMName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="StuMJob" Type="Int32" />
+          <Property Name="StuMIncome" Type="Int32" />
+          <Property Name="StuFStatus" Type="Int32" />
+          <NavigationProperty Name="FStatus" Relationship="ComCSDBModel.FK_Student_FStatus" FromRole="Student" ToRole="FStatus" />
+          <NavigationProperty Name="Job" Relationship="ComCSDBModel.FK_Student_Job" FromRole="Student" ToRole="Job" />
+          <NavigationProperty Name="Job1" Relationship="ComCSDBModel.FK_Student_Job1" FromRole="Student" ToRole="Job" />
+          <NavigationProperty Name="OldED" Relationship="ComCSDBModel.FK_Student_OldED" FromRole="Student" ToRole="OldED" />
+          <NavigationProperty Name="project_list" Relationship="ComCSDBModel.FK_project_list_Student" FromRole="Student" ToRole="project_list" />
+          <NavigationProperty Name="RefProvince" Relationship="ComCSDBModel.FK_Student_RefProvince" FromRole="Student" ToRole="RefProvince" />
+          <NavigationProperty Name="Status" Relationship="ComCSDBModel.FK_Student_Status" FromRole="Student" ToRole="Status" />
+          <NavigationProperty Name="Teacher" Relationship="ComCSDBModel.FK_Student_Teacher" FromRole="Student" ToRole="Teacher" />
+          <NavigationProperty Name="Title" Relationship="ComCSDBModel.FK_Student_Title" FromRole="Student" ToRole="Title" />
+        </EntityType>
+        <EntityType Name="Subject">
+          <Key>
+            <PropertyRef Name="SubjId" />
+          </Key>
+          <Property Name="SubjId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="SubjCode" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="SubjDeId" Type="Int32" Nullable="false" />
+          <Property Name="SubjName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="SubjCredit" Type="Int32" />
+          <NavigationProperty Name="Department" Relationship="ComCSDBModel.FK_Subject_Department" FromRole="Subject" ToRole="Department" />
+          <NavigationProperty Name="Relation" Relationship="ComCSDBModel.FK_Relation_Subject" FromRole="Subject" ToRole="Relation" />
+        </EntityType>
+        <EntityType Name="T_Category">
+          <Key>
+            <PropertyRef Name="CategoryID" />
+          </Key>
+          <Property Name="CategoryID" Type="String" Nullable="false" MaxLength="5" FixedLength="false" Unicode="false" />
+          <Property Name="CA_NameCategory" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="T_Type" Relationship="ComCSDBModel.FK_T_Type_T_Category1" FromRole="T_Category" ToRole="T_Type" />
+        </EntityType>
+        <EntityType Name="T_Distributor">
+          <Key>
+            <PropertyRef Name="DistributorID" />
+          </Key>
+          <Property Name="DistributorID" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Di_Date" Type="DateTime" Precision="0" />
+          <Property Name="Di_Status" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="T_DistributorList" Relationship="ComCSDBModel.FK_T_DistributorList_T_Distributor" FromRole="T_Distributor" ToRole="T_DistributorList" />
+        </EntityType>
+        <EntityType Name="T_DistributorList">
+          <Key>
+            <PropertyRef Name="DistributorList" />
+          </Key>
+          <Property Name="DistributorList" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="DL_DistributorID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="DL_KhruphanthID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="T_Distributor" Relationship="ComCSDBModel.FK_T_DistributorList_T_Distributor" FromRole="T_DistributorList" ToRole="T_Distributor" />
+          <NavigationProperty Name="T_Khruphanth" Relationship="ComCSDBModel.FK_T_DistributorList_T_Khruphanth" FromRole="T_DistributorList" ToRole="T_Khruphanth" />
+        </EntityType>
+        <EntityType Name="T_Khruphanth">
+          <Key>
+            <PropertyRef Name="KhruphanthID" />
+          </Key>
+          <Property Name="KhruphanthID" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Kh_RequestLsitID" Type="Int32" />
+          <Property Name="Kh_QR_CODE" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="Kh_PlaceID" Type="Int32" />
+          <Property Name="Kh_StatusID" Type="Int32" />
+          <NavigationProperty Name="T_DistributorList" Relationship="ComCSDBModel.FK_T_DistributorList_T_Khruphanth" FromRole="T_Khruphanth" ToRole="T_DistributorList" />
+          <NavigationProperty Name="T_RequestList" Relationship="ComCSDBModel.FK_T_Khruphanth_T_RequestList" FromRole="T_Khruphanth" ToRole="T_RequestList" />
+          <NavigationProperty Name="T_Status" Relationship="ComCSDBModel.FK_T_Khruphanth_T_Status1" FromRole="T_Khruphanth" ToRole="T_Status" />
+        </EntityType>
+        <EntityType Name="T_Place">
+          <Key>
+            <PropertyRef Name="PlaceID" />
+          </Key>
+          <Property Name="PlaceID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="PL_NamePlace" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="T_RequestList" Relationship="ComCSDBModel.FK_T_RequestList_T_Place1" FromRole="T_Place" ToRole="T_RequestList" />
+        </EntityType>
+        <EntityType Name="T_RequestList">
+          <Key>
+            <PropertyRef Name="RequestLsitID" />
+          </Key>
+          <Property Name="RequestLsitID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="RL_RequisitionID" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="RL_TypeID" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+          <Property Name="RL_CategoryID" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+          <Property Name="RL_NameKP" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="RL_OnStart" Type="Int32" />
+          <Property Name="RL_Amount" Type="Double" />
+          <Property Name="RL_Price" Type="Double" />
+          <Property Name="RL_DetailKhru" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="RL_PictureKhru" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="RL_PlaceID" Type="Int32" />
+          <NavigationProperty Name="T_Khruphanth" Relationship="ComCSDBModel.FK_T_Khruphanth_T_RequestList" FromRole="T_RequestList" ToRole="T_Khruphanth" />
+          <NavigationProperty Name="T_Place" Relationship="ComCSDBModel.FK_T_RequestList_T_Place1" FromRole="T_RequestList" ToRole="T_Place" />
+          <NavigationProperty Name="T_Requisition" Relationship="ComCSDBModel.FK_T_RequestList_T_Requisition" FromRole="T_RequestList" ToRole="T_Requisition" />
+          <NavigationProperty Name="T_Type" Relationship="ComCSDBModel.FK_T_RequestList_T_Type1" FromRole="T_RequestList" ToRole="T_Type" />
+        </EntityType>
+        <EntityType Name="T_Requisition">
+          <Key>
+            <PropertyRef Name="RequisitionID" />
+          </Key>
+          <Property Name="RequisitionID" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="Re_TeaId" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="Re_DateRequi" Type="DateTime" Precision="0" />
+          <Property Name="Re_StepID" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+          <NavigationProperty Name="T_RequestList" Relationship="ComCSDBModel.FK_T_RequestList_T_Requisition" FromRole="T_Requisition" ToRole="T_RequestList" />
+          <NavigationProperty Name="T_Stap" Relationship="ComCSDBModel.FK_T_Requisition_T_Stap" FromRole="T_Requisition" ToRole="T_Stap" />
+          <NavigationProperty Name="Teacher" Relationship="ComCSDBModel.FK_T_Requisition_Teacher1" FromRole="T_Requisition" ToRole="Teacher" />
+        </EntityType>
+        <EntityType Name="T_Stap">
+          <Key>
+            <PropertyRef Name="StepID" />
+          </Key>
+          <Property Name="StepID" Type="String" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="ST_StepName" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="T_Requisition" Relationship="ComCSDBModel.FK_T_Requisition_T_Stap" FromRole="T_Stap" ToRole="T_Requisition" />
+        </EntityType>
+        <EntityType Name="T_Status">
+          <Key>
+            <PropertyRef Name="StatusID" />
+          </Key>
+          <Property Name="StatusID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Status_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="T_Khruphanth" Relationship="ComCSDBModel.FK_T_Khruphanth_T_Status1" FromRole="T_Status" ToRole="T_Khruphanth" />
+        </EntityType>
+        <EntityType Name="T_Type">
+          <Key>
+            <PropertyRef Name="TypeID" />
+          </Key>
+          <Property Name="TypeID" Type="String" Nullable="false" MaxLength="5" FixedLength="false" Unicode="false" />
+          <Property Name="TY_NameType" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="TY_CategoryID" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="T_Category" Relationship="ComCSDBModel.FK_T_Type_T_Category1" FromRole="T_Type" ToRole="T_Category" />
+          <NavigationProperty Name="T_RequestList" Relationship="ComCSDBModel.FK_T_RequestList_T_Type1" FromRole="T_Type" ToRole="T_RequestList" />
+        </EntityType>
+        <EntityType Name="Teacher">
+          <Key>
+            <PropertyRef Name="TeaId" />
+          </Key>
+          <Property Name="TeaId" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="TeaTitle" Type="Int32" />
+          <Property Name="TeaName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="TeaIdCard" Type="String" MaxLength="14" FixedLength="false" Unicode="false" />
+          <Property Name="TeaExport" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="TeaImage" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="TeaLvl" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="project_list" Relationship="ComCSDBModel.FK_project_list_Teacher" FromRole="Teacher" ToRole="project_list" />
+          <NavigationProperty Name="Student" Relationship="ComCSDBModel.FK_Student_Teacher" FromRole="Teacher" ToRole="Student" />
+          <NavigationProperty Name="T_Requisition" Relationship="ComCSDBModel.FK_T_Requisition_Teacher1" FromRole="Teacher" ToRole="T_Requisition" />
+          <NavigationProperty Name="Title" Relationship="ComCSDBModel.FK_Teacher_Title" FromRole="Teacher" ToRole="Title" />
+        </EntityType>
+        <EntityType Name="Title">
+          <Key>
+            <PropertyRef Name="TId" />
+          </Key>
+          <Property Name="TId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Student" Relationship="ComCSDBModel.FK_Student_Title" FromRole="Title" ToRole="Student" />
+          <NavigationProperty Name="Teacher" Relationship="ComCSDBModel.FK_Teacher_Title" FromRole="Title" ToRole="Teacher" />
+        </EntityType>
+        <EntityType Name="type_project">
+          <Key>
+            <PropertyRef Name="Type_id" />
+          </Key>
+          <Property Name="Type_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Type_name" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="project_list" Relationship="ComCSDBModel.FK_project_list_type_project" FromRole="type_project" ToRole="project_list" />
+        </EntityType>
+        <EntityType Name="View_DisKH">
+          <Key>
+            <PropertyRef Name="TeaId" />
+            <PropertyRef Name="RequisitionID" />
+            <PropertyRef Name="RequestLsitID" />
+            <PropertyRef Name="KhruphanthID" />
+            <PropertyRef Name="PlaceID" />
+            <PropertyRef Name="DistributorID" />
+            <PropertyRef Name="DistributorList" />
+            <PropertyRef Name="TId" />
+          </Key>
+          <Property Name="TeaId" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="TeaTitle" Type="Int32" />
+          <Property Name="TeaName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="RequisitionID" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="Re_TeaId" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="Re_StepID" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="RequestLsitID" Type="Int32" Nullable="false" />
+          <Property Name="RL_RequisitionID" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="RL_NameKP" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="RL_Price" Type="Double" />
+          <Property Name="KhruphanthID" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Kh_RequestLsitID" Type="Int32" />
+          <Property Name="Kh_PlaceID" Type="Int32" />
+          <Property Name="PlaceID" Type="Int32" Nullable="false" />
+          <Property Name="PL_NamePlace" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="DistributorID" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="DistributorList" Type="Int32" Nullable="false" />
+          <Property Name="DL_DistributorID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="DL_KhruphanthID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Di_Status" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Name="TId" Type="Int32" Nullable="false" />
+          <Property Name="TName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Re_DateRequi" Type="DateTime" Precision="0" />
+          <Property Name="Di_Date" Type="DateTime" Precision="0" />
+          <Property Name="COPY_DATE" Type="String" MaxLength="4000" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="View_Distributor">
+          <Key>
+            <PropertyRef Name="DistributorID" />
+            <PropertyRef Name="KhruphanthID" />
+          </Key>
+          <Property Name="DistributorID" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Di_Status" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Name="DL_DistributorID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="DL_KhruphanthID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="RL_NameKP" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="KhruphanthID" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="RL_PlaceID" Type="Int32" />
+          <Property Name="PL_NamePlace" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Di_Date" Type="DateTime" Precision="0" />
+          <Property Name="Converted" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="View_QRCODE">
+          <Key>
+            <PropertyRef Name="KhruphanthID" />
+          </Key>
+          <Property Name="KhruphanthID" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Kh_QR_CODE" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="Kh_StatusID" Type="Int32" />
+          <Property Name="RL_RequisitionID" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="View_RemainRT_KH">
+          <Key>
+            <PropertyRef Name="RequisitionID" />
+            <PropertyRef Name="RequestLsitID" />
+          </Key>
+          <Property Name="RequisitionID" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="TeaName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Re_DateRequi" Type="DateTime" Precision="0" />
+          <Property Name="Re_StepID" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="RequestLsitID" Type="Int32" Nullable="false" />
+          <Property Name="RL_RequisitionID" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="RL_NameKP" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="RL_Amount" Type="Double" />
+          <Property Name="RL_Price" Type="Double" />
+          <Property Name="PL_NamePlace" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Converted" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+          <Property Name="TName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="View_Requisition">
+          <Key>
+            <PropertyRef Name="TId" />
+            <PropertyRef Name="TeaId" />
+            <PropertyRef Name="RequisitionID" />
+            <PropertyRef Name="RequestLsitID" />
+            <PropertyRef Name="TypeID" />
+            <PropertyRef Name="CategoryID" />
+            <PropertyRef Name="PlaceID" />
+          </Key>
+          <Property Name="TId" Type="Int32" Nullable="false" />
+          <Property Name="TName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="TeaId" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="TeaTitle" Type="Int32" />
+          <Property Name="TeaName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="RequisitionID" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="Re_TeaId" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="RequestLsitID" Type="Int32" Nullable="false" />
+          <Property Name="RL_RequisitionID" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="RL_TypeID" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+          <Property Name="TypeID" Type="String" Nullable="false" MaxLength="5" FixedLength="false" Unicode="false" />
+          <Property Name="TY_NameType" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="RL_CategoryID" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+          <Property Name="TY_CategoryID" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+          <Property Name="CategoryID" Type="String" Nullable="false" MaxLength="5" FixedLength="false" Unicode="false" />
+          <Property Name="CA_NameCategory" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="RL_NameKP" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="RL_OnStart" Type="Int32" />
+          <Property Name="RL_Amount" Type="Double" />
+          <Property Name="RL_Price" Type="Double" />
+          <Property Name="RL_PlaceID" Type="Int32" />
+          <Property Name="PlaceID" Type="Int32" Nullable="false" />
+          <Property Name="PL_NamePlace" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Re_DateRequi" Type="DateTime" Precision="0" />
+          <Property Name="ConvetDateRei" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <Association Name="FK_Relation_Course">
+          <End Type="ComCSDBModel.Course" Role="Course" Multiplicity="0..1" />
+          <End Type="ComCSDBModel.Relation" Role="Relation" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Course">
+              <PropertyRef Name="CId" />
+            </Principal>
+            <Dependent Role="Relation">
+              <PropertyRef Name="RCId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Subject_Department">
+          <End Type="ComCSDBModel.Department" Role="Department" Multiplicity="1" />
+          <End Type="ComCSDBModel.Subject" Role="Subject" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Department">
+              <PropertyRef Name="DeId" />
+            </Principal>
+            <Dependent Role="Subject">
+              <PropertyRef Name="SubjDeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Student_FStatus">
+          <End Type="ComCSDBModel.FStatus" Role="FStatus" Multiplicity="0..1" />
+          <End Type="ComCSDBModel.Student" Role="Student" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="FStatus">
+              <PropertyRef Name="FStatusId" />
+            </Principal>
+            <Dependent Role="Student">
+              <PropertyRef Name="StuFStatus" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Student_Job">
+          <End Type="ComCSDBModel.Job" Role="Job" Multiplicity="0..1" />
+          <End Type="ComCSDBModel.Student" Role="Student" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Job">
+              <PropertyRef Name="JId" />
+            </Principal>
+            <Dependent Role="Student">
+              <PropertyRef Name="StuDJob" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Student_Job1">
+          <End Type="ComCSDBModel.Job" Role="Job" Multiplicity="0..1" />
+          <End Type="ComCSDBModel.Student" Role="Student" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Job">
+              <PropertyRef Name="JId" />
+            </Principal>
+            <Dependent Role="Student">
+              <PropertyRef Name="StuMJob" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Student_OldED">
+          <End Type="ComCSDBModel.OldED" Role="OldED" Multiplicity="0..1" />
+          <End Type="ComCSDBModel.Student" Role="Student" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="OldED">
+              <PropertyRef Name="OldOIdEd" />
+            </Principal>
+            <Dependent Role="Student">
+              <PropertyRef Name="StuOldEd" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_project_list_Student">
+          <End Type="ComCSDBModel.Student" Role="Student" Multiplicity="0..1" />
+          <End Type="ComCSDBModel.project_list" Role="project_list" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Student">
+              <PropertyRef Name="StuId" />
+            </Principal>
+            <Dependent Role="project_list">
+              <PropertyRef Name="stu_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_project_list_Teacher">
+          <End Type="ComCSDBModel.Teacher" Role="Teacher" Multiplicity="0..1" />
+          <End Type="ComCSDBModel.project_list" Role="project_list" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Teacher">
+              <PropertyRef Name="TeaId" />
+            </Principal>
+            <Dependent Role="project_list">
+              <PropertyRef Name="TeaId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_project_list_type_project">
+          <End Type="ComCSDBModel.type_project" Role="type_project" Multiplicity="0..1" />
+          <End Type="ComCSDBModel.project_list" Role="project_list" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="type_project">
+              <PropertyRef Name="Type_id" />
+            </Principal>
+            <Dependent Role="project_list">
+              <PropertyRef Name="type_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Status_RefProvince">
+          <End Type="ComCSDBModel.RefProvince" Role="RefProvince" Multiplicity="0..1" />
+          <End Type="ComCSDBModel.Status" Role="Status" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="RefProvince">
+              <PropertyRef Name="ProvinceId" />
+            </Principal>
+            <Dependent Role="Status">
+              <PropertyRef Name="SRefProvince" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Student_RefProvince">
+          <End Type="ComCSDBModel.RefProvince" Role="RefProvince" Multiplicity="0..1" />
+          <End Type="ComCSDBModel.Student" Role="Student" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="RefProvince">
+              <PropertyRef Name="ProvinceId" />
+            </Principal>
+            <Dependent Role="Student">
+              <PropertyRef Name="StuProvince_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Relation_Subject">
+          <End Type="ComCSDBModel.Subject" Role="Subject" Multiplicity="0..1" />
+          <End Type="ComCSDBModel.Relation" Role="Relation" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Subject">
+              <PropertyRef Name="SubjId" />
+            </Principal>
+            <Dependent Role="Relation">
+              <PropertyRef Name="RSubjId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Student_Status">
+          <End Type="ComCSDBModel.Status" Role="Status" Multiplicity="0..1" />
+          <End Type="ComCSDBModel.Student" Role="Student" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Status">
+              <PropertyRef Name="SIdStatus" />
+            </Principal>
+            <Dependent Role="Student">
+              <PropertyRef Name="StuStatus" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Student_Teacher">
+          <End Type="ComCSDBModel.Teacher" Role="Teacher" Multiplicity="0..1" />
+          <End Type="ComCSDBModel.Student" Role="Student" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Teacher">
+              <PropertyRef Name="TeaId" />
+            </Principal>
+            <Dependent Role="Student">
+              <PropertyRef Name="StuTAdviser" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Student_Title">
+          <End Type="ComCSDBModel.Title" Role="Title" Multiplicity="0..1" />
+          <End Type="ComCSDBModel.Student" Role="Student" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Title">
+              <PropertyRef Name="TId" />
+            </Principal>
+            <Dependent Role="Student">
+              <PropertyRef Name="StuTitle" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_T_Type_T_Category1">
+          <End Type="ComCSDBModel.T_Category" Role="T_Category" Multiplicity="0..1" />
+          <End Type="ComCSDBModel.T_Type" Role="T_Type" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="T_Category">
+              <PropertyRef Name="CategoryID" />
+            </Principal>
+            <Dependent Role="T_Type">
+              <PropertyRef Name="TY_CategoryID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_T_DistributorList_T_Distributor">
+          <End Type="ComCSDBModel.T_Distributor" Role="T_Distributor" Multiplicity="0..1" />
+          <End Type="ComCSDBModel.T_DistributorList" Role="T_DistributorList" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="T_Distributor">
+              <PropertyRef Name="DistributorID" />
+            </Principal>
+            <Dependent Role="T_DistributorList">
+              <PropertyRef Name="DL_DistributorID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_T_DistributorList_T_Khruphanth">
+          <End Type="ComCSDBModel.T_Khruphanth" Role="T_Khruphanth" Multiplicity="0..1" />
+          <End Type="ComCSDBModel.T_DistributorList" Role="T_DistributorList" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="T_Khruphanth">
+              <PropertyRef Name="KhruphanthID" />
+            </Principal>
+            <Dependent Role="T_DistributorList">
+              <PropertyRef Name="DL_KhruphanthID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_T_Khruphanth_T_RequestList">
+          <End Type="ComCSDBModel.T_RequestList" Role="T_RequestList" Multiplicity="0..1" />
+          <End Type="ComCSDBModel.T_Khruphanth" Role="T_Khruphanth" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="T_RequestList">
+              <PropertyRef Name="RequestLsitID" />
+            </Principal>
+            <Dependent Role="T_Khruphanth">
+              <PropertyRef Name="Kh_RequestLsitID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_T_Khruphanth_T_Status1">
+          <End Type="ComCSDBModel.T_Status" Role="T_Status" Multiplicity="0..1" />
+          <End Type="ComCSDBModel.T_Khruphanth" Role="T_Khruphanth" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="T_Status">
+              <PropertyRef Name="StatusID" />
+            </Principal>
+            <Dependent Role="T_Khruphanth">
+              <PropertyRef Name="Kh_StatusID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_T_RequestList_T_Place1">
+          <End Type="ComCSDBModel.T_Place" Role="T_Place" Multiplicity="0..1" />
+          <End Type="ComCSDBModel.T_RequestList" Role="T_RequestList" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="T_Place">
+              <PropertyRef Name="PlaceID" />
+            </Principal>
+            <Dependent Role="T_RequestList">
+              <PropertyRef Name="RL_PlaceID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_T_RequestList_T_Requisition">
+          <End Type="ComCSDBModel.T_Requisition" Role="T_Requisition" Multiplicity="0..1" />
+          <End Type="ComCSDBModel.T_RequestList" Role="T_RequestList" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="T_Requisition">
+              <PropertyRef Name="RequisitionID" />
+            </Principal>
+            <Dependent Role="T_RequestList">
+              <PropertyRef Name="RL_RequisitionID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_T_RequestList_T_Type1">
+          <End Type="ComCSDBModel.T_Type" Role="T_Type" Multiplicity="0..1" />
+          <End Type="ComCSDBModel.T_RequestList" Role="T_RequestList" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="T_Type">
+              <PropertyRef Name="TypeID" />
+            </Principal>
+            <Dependent Role="T_RequestList">
+              <PropertyRef Name="RL_TypeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_T_Requisition_T_Stap">
+          <End Type="ComCSDBModel.T_Stap" Role="T_Stap" Multiplicity="0..1" />
+          <End Type="ComCSDBModel.T_Requisition" Role="T_Requisition" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="T_Stap">
+              <PropertyRef Name="StepID" />
+            </Principal>
+            <Dependent Role="T_Requisition">
+              <PropertyRef Name="Re_StepID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_T_Requisition_Teacher1">
+          <End Type="ComCSDBModel.Teacher" Role="Teacher" Multiplicity="0..1" />
+          <End Type="ComCSDBModel.T_Requisition" Role="T_Requisition" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Teacher">
+              <PropertyRef Name="TeaId" />
+            </Principal>
+            <Dependent Role="T_Requisition">
+              <PropertyRef Name="Re_TeaId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Teacher_Title">
+          <End Type="ComCSDBModel.Title" Role="Title" Multiplicity="0..1" />
+          <End Type="ComCSDBModel.Teacher" Role="Teacher" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Title">
+              <PropertyRef Name="TId" />
+            </Principal>
+            <Dependent Role="Teacher">
+              <PropertyRef Name="TeaTitle" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="ComCSDBModelStoreContainer" CdmEntityContainer="ComCSDBEntities">
+          <EntitySetMapping Name="Account">
+            <EntityTypeMapping TypeName="ComCSDBModel.Account">
+              <MappingFragment StoreEntitySet="Account">
+                <ScalarProperty Name="AStatus" ColumnName="AStatus" />
+                <ScalarProperty Name="APassword" ColumnName="APassword" />
+                <ScalarProperty Name="AUsername" ColumnName="AUsername" />
+                <ScalarProperty Name="AId" ColumnName="AId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Course">
+            <EntityTypeMapping TypeName="ComCSDBModel.Course">
+              <MappingFragment StoreEntitySet="Course">
+                <ScalarProperty Name="CsComputerCategory" ColumnName="CsComputerCategory" />
+                <ScalarProperty Name="CsGeneralCategory" ColumnName="CsGeneralCategory" />
+                <ScalarProperty Name="CSGraJob" ColumnName="CSGraJob" />
+                <ScalarProperty Name="CSCurriculum" ColumnName="CSCurriculum" />
+                <ScalarProperty Name="CSCredit" ColumnName="CSCredit" />
+                <ScalarProperty Name="CSDegreeNameEN" ColumnName="CSDegreeNameEN" />
+                <ScalarProperty Name="CSDegreeNameTH" ColumnName="CSDegreeNameTH" />
+                <ScalarProperty Name="CYear" ColumnName="CYear" />
+                <ScalarProperty Name="CEName" ColumnName="CEName" />
+                <ScalarProperty Name="CTName" ColumnName="CTName" />
+                <ScalarProperty Name="CId" ColumnName="CId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Department">
+            <EntityTypeMapping TypeName="ComCSDBModel.Department">
+              <MappingFragment StoreEntitySet="Department">
+                <ScalarProperty Name="DeCredit" ColumnName="DeCredit" />
+                <ScalarProperty Name="DeName" ColumnName="DeName" />
+                <ScalarProperty Name="DeId" ColumnName="DeId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="FStatus">
+            <EntityTypeMapping TypeName="ComCSDBModel.FStatus">
+              <MappingFragment StoreEntitySet="FStatus">
+                <ScalarProperty Name="FStatusName" ColumnName="FStatusName" />
+                <ScalarProperty Name="FStatusId" ColumnName="FStatusId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Job">
+            <EntityTypeMapping TypeName="ComCSDBModel.Job">
+              <MappingFragment StoreEntitySet="Job">
+                <ScalarProperty Name="JName" ColumnName="JName" />
+                <ScalarProperty Name="JId" ColumnName="JId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="OldED">
+            <EntityTypeMapping TypeName="ComCSDBModel.OldED">
+              <MappingFragment StoreEntitySet="OldED">
+                <ScalarProperty Name="OOldEdName" ColumnName="OOldEdName" />
+                <ScalarProperty Name="OldOIdEd" ColumnName="OldOIdEd" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="project_list">
+            <EntityTypeMapping TypeName="ComCSDBModel.project_list">
+              <MappingFragment StoreEntitySet="project_list">
+                <ScalarProperty Name="Rate" ColumnName="Rate" />
+                <ScalarProperty Name="LinkVideo" ColumnName="LinkVideo" />
+                <ScalarProperty Name="LinkWeb" ColumnName="LinkWeb" />
+                <ScalarProperty Name="Detail" ColumnName="Detail" />
+                <ScalarProperty Name="File" ColumnName="File" />
+                <ScalarProperty Name="Data_Post" ColumnName="Data_Post" />
+                <ScalarProperty Name="TeaId" ColumnName="TeaId" />
+                <ScalarProperty Name="type_id" ColumnName="type_id" />
+                <ScalarProperty Name="stu_id" ColumnName="stu_id" />
+                <ScalarProperty Name="project_name_e" ColumnName="project_name_e" />
+                <ScalarProperty Name="project_name" ColumnName="project_name" />
+                <ScalarProperty Name="project_id" ColumnName="project_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="RefProvince">
+            <EntityTypeMapping TypeName="ComCSDBModel.RefProvince">
+              <MappingFragment StoreEntitySet="RefProvince">
+                <ScalarProperty Name="ProvinceName" ColumnName="ProvinceName" />
+                <ScalarProperty Name="ProvinceId" ColumnName="ProvinceId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Relation">
+            <EntityTypeMapping TypeName="ComCSDBModel.Relation">
+              <MappingFragment StoreEntitySet="Relation">
+                <ScalarProperty Name="RCId" ColumnName="RCId" />
+                <ScalarProperty Name="RSubjId" ColumnName="RSubjId" />
+                <ScalarProperty Name="RID" ColumnName="RID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SelectedEmployee">
+            <EntityTypeMapping TypeName="ComCSDBModel.SelectedEmployee">
+              <MappingFragment StoreEntitySet="SelectedEmployee">
+                <ScalarProperty Name="SelectedEmployeeIDs" ColumnName="SelectedEmployeeIDs" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Status">
+            <EntityTypeMapping TypeName="ComCSDBModel.Status">
+              <MappingFragment StoreEntitySet="Status">
+                <ScalarProperty Name="SRefProvince" ColumnName="SRefProvince" />
+                <ScalarProperty Name="SStatusName" ColumnName="SStatusName" />
+                <ScalarProperty Name="SIdStatus" ColumnName="SIdStatus" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Student">
+            <EntityTypeMapping TypeName="ComCSDBModel.Student">
+              <MappingFragment StoreEntitySet="Student">
+                <ScalarProperty Name="StuFStatus" ColumnName="StuFStatus" />
+                <ScalarProperty Name="StuMIncome" ColumnName="StuMIncome" />
+                <ScalarProperty Name="StuMJob" ColumnName="StuMJob" />
+                <ScalarProperty Name="StuMName" ColumnName="StuMName" />
+                <ScalarProperty Name="StuDIncome" ColumnName="StuDIncome" />
+                <ScalarProperty Name="StuDJob" ColumnName="StuDJob" />
+                <ScalarProperty Name="StuDName" ColumnName="StuDName" />
+                <ScalarProperty Name="StuTAdviser" ColumnName="StuTAdviser" />
+                <ScalarProperty Name="StuStatus" ColumnName="StuStatus" />
+                <ScalarProperty Name="StuOldEd" ColumnName="StuOldEd" />
+                <ScalarProperty Name="StuPic" ColumnName="StuPic" />
+                <ScalarProperty Name="StuZipcode" ColumnName="StuZipcode" />
+                <ScalarProperty Name="StuProvince_id" ColumnName="StuProvince_id" />
+                <ScalarProperty Name="StuAmphur" ColumnName="StuAmphur" />
+                <ScalarProperty Name="StuTambon" ColumnName="StuTambon" />
+                <ScalarProperty Name="StuRoad" ColumnName="StuRoad" />
+                <ScalarProperty Name="StuMoo" ColumnName="StuMoo" />
+                <ScalarProperty Name="StuHomeNo" ColumnName="StuHomeNo" />
+                <ScalarProperty Name="StuTel" ColumnName="StuTel" />
+                <ScalarProperty Name="StuEmail" ColumnName="StuEmail" />
+                <ScalarProperty Name="StuBDate" ColumnName="StuBDate" />
+                <ScalarProperty Name="StuSex" ColumnName="StuSex" />
+                <ScalarProperty Name="StuLName" ColumnName="StuLName" />
+                <ScalarProperty Name="StuFName" ColumnName="StuFName" />
+                <ScalarProperty Name="StuTitle" ColumnName="StuTitle" />
+                <ScalarProperty Name="StuPassword" ColumnName="StuPassword" />
+                <ScalarProperty Name="StuId" ColumnName="StuId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Subject">
+            <EntityTypeMapping TypeName="ComCSDBModel.Subject">
+              <MappingFragment StoreEntitySet="Subject">
+                <ScalarProperty Name="SubjCredit" ColumnName="SubjCredit" />
+                <ScalarProperty Name="SubjName" ColumnName="SubjName" />
+                <ScalarProperty Name="SubjDeId" ColumnName="SubjDeId" />
+                <ScalarProperty Name="SubjCode" ColumnName="SubjCode" />
+                <ScalarProperty Name="SubjId" ColumnName="SubjId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="T_Category">
+            <EntityTypeMapping TypeName="ComCSDBModel.T_Category">
+              <MappingFragment StoreEntitySet="T_Category">
+                <ScalarProperty Name="CA_NameCategory" ColumnName="CA_NameCategory" />
+                <ScalarProperty Name="CategoryID" ColumnName="CategoryID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="T_Distributor">
+            <EntityTypeMapping TypeName="ComCSDBModel.T_Distributor">
+              <MappingFragment StoreEntitySet="T_Distributor">
+                <ScalarProperty Name="Di_Status" ColumnName="Di_Status" />
+                <ScalarProperty Name="Di_Date" ColumnName="Di_Date" />
+                <ScalarProperty Name="DistributorID" ColumnName="DistributorID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="T_DistributorList">
+            <EntityTypeMapping TypeName="ComCSDBModel.T_DistributorList">
+              <MappingFragment StoreEntitySet="T_DistributorList">
+                <ScalarProperty Name="DL_KhruphanthID" ColumnName="DL_KhruphanthID" />
+                <ScalarProperty Name="DL_DistributorID" ColumnName="DL_DistributorID" />
+                <ScalarProperty Name="DistributorList" ColumnName="DistributorList" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="T_Khruphanth">
+            <EntityTypeMapping TypeName="ComCSDBModel.T_Khruphanth">
+              <MappingFragment StoreEntitySet="T_Khruphanth">
+                <ScalarProperty Name="Kh_StatusID" ColumnName="Kh_StatusID" />
+                <ScalarProperty Name="Kh_PlaceID" ColumnName="Kh_PlaceID" />
+                <ScalarProperty Name="Kh_QR_CODE" ColumnName="Kh_QR_CODE" />
+                <ScalarProperty Name="Kh_RequestLsitID" ColumnName="Kh_RequestLsitID" />
+                <ScalarProperty Name="KhruphanthID" ColumnName="KhruphanthID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="T_Place">
+            <EntityTypeMapping TypeName="ComCSDBModel.T_Place">
+              <MappingFragment StoreEntitySet="T_Place">
+                <ScalarProperty Name="PL_NamePlace" ColumnName="PL_NamePlace" />
+                <ScalarProperty Name="PlaceID" ColumnName="PlaceID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="T_RequestList">
+            <EntityTypeMapping TypeName="ComCSDBModel.T_RequestList">
+              <MappingFragment StoreEntitySet="T_RequestList">
+                <ScalarProperty Name="RL_PlaceID" ColumnName="RL_PlaceID" />
+                <ScalarProperty Name="RL_PictureKhru" ColumnName="RL_PictureKhru" />
+                <ScalarProperty Name="RL_DetailKhru" ColumnName="RL_DetailKhru" />
+                <ScalarProperty Name="RL_Price" ColumnName="RL_Price" />
+                <ScalarProperty Name="RL_Amount" ColumnName="RL_Amount" />
+                <ScalarProperty Name="RL_OnStart" ColumnName="RL_OnStart" />
+                <ScalarProperty Name="RL_NameKP" ColumnName="RL_NameKP" />
+                <ScalarProperty Name="RL_CategoryID" ColumnName="RL_CategoryID" />
+                <ScalarProperty Name="RL_TypeID" ColumnName="RL_TypeID" />
+                <ScalarProperty Name="RL_RequisitionID" ColumnName="RL_RequisitionID" />
+                <ScalarProperty Name="RequestLsitID" ColumnName="RequestLsitID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="T_Requisition">
+            <EntityTypeMapping TypeName="ComCSDBModel.T_Requisition">
+              <MappingFragment StoreEntitySet="T_Requisition">
+                <ScalarProperty Name="Re_StepID" ColumnName="Re_StepID" />
+                <ScalarProperty Name="Re_DateRequi" ColumnName="Re_DateRequi" />
+                <ScalarProperty Name="Re_TeaId" ColumnName="Re_TeaId" />
+                <ScalarProperty Name="RequisitionID" ColumnName="RequisitionID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="T_Stap">
+            <EntityTypeMapping TypeName="ComCSDBModel.T_Stap">
+              <MappingFragment StoreEntitySet="T_Stap">
+                <ScalarProperty Name="ST_StepName" ColumnName="ST_StepName" />
+                <ScalarProperty Name="StepID" ColumnName="StepID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="T_Status">
+            <EntityTypeMapping TypeName="ComCSDBModel.T_Status">
+              <MappingFragment StoreEntitySet="T_Status">
+                <ScalarProperty Name="Status_Name" ColumnName="Status_Name" />
+                <ScalarProperty Name="StatusID" ColumnName="StatusID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="T_Type">
+            <EntityTypeMapping TypeName="ComCSDBModel.T_Type">
+              <MappingFragment StoreEntitySet="T_Type">
+                <ScalarProperty Name="TY_CategoryID" ColumnName="TY_CategoryID" />
+                <ScalarProperty Name="TY_NameType" ColumnName="TY_NameType" />
+                <ScalarProperty Name="TypeID" ColumnName="TypeID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Teacher">
+            <EntityTypeMapping TypeName="ComCSDBModel.Teacher">
+              <MappingFragment StoreEntitySet="Teacher">
+                <ScalarProperty Name="TeaLvl" ColumnName="TeaLvl" />
+                <ScalarProperty Name="TeaImage" ColumnName="TeaImage" />
+                <ScalarProperty Name="TeaExport" ColumnName="TeaExport" />
+                <ScalarProperty Name="TeaIdCard" ColumnName="TeaIdCard" />
+                <ScalarProperty Name="TeaName" ColumnName="TeaName" />
+                <ScalarProperty Name="TeaTitle" ColumnName="TeaTitle" />
+                <ScalarProperty Name="TeaId" ColumnName="TeaId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Title">
+            <EntityTypeMapping TypeName="ComCSDBModel.Title">
+              <MappingFragment StoreEntitySet="Title">
+                <ScalarProperty Name="TName" ColumnName="TName" />
+                <ScalarProperty Name="TId" ColumnName="TId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="type_project">
+            <EntityTypeMapping TypeName="ComCSDBModel.type_project">
+              <MappingFragment StoreEntitySet="type_project">
+                <ScalarProperty Name="Type_name" ColumnName="Type_name" />
+                <ScalarProperty Name="Type_id" ColumnName="Type_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="View_DisKH">
+            <EntityTypeMapping TypeName="ComCSDBModel.View_DisKH">
+              <MappingFragment StoreEntitySet="View_DisKH">
+                <ScalarProperty Name="COPY_DATE" ColumnName="COPY_DATE" />
+                <ScalarProperty Name="Di_Date" ColumnName="Di_Date" />
+                <ScalarProperty Name="Re_DateRequi" ColumnName="Re_DateRequi" />
+                <ScalarProperty Name="TName" ColumnName="TName" />
+                <ScalarProperty Name="TId" ColumnName="TId" />
+                <ScalarProperty Name="Di_Status" ColumnName="Di_Status" />
+                <ScalarProperty Name="DL_KhruphanthID" ColumnName="DL_KhruphanthID" />
+                <ScalarProperty Name="DL_DistributorID" ColumnName="DL_DistributorID" />
+                <ScalarProperty Name="DistributorList" ColumnName="DistributorList" />
+                <ScalarProperty Name="DistributorID" ColumnName="DistributorID" />
+                <ScalarProperty Name="PL_NamePlace" ColumnName="PL_NamePlace" />
+                <ScalarProperty Name="PlaceID" ColumnName="PlaceID" />
+                <ScalarProperty Name="Kh_PlaceID" ColumnName="Kh_PlaceID" />
+                <ScalarProperty Name="Kh_RequestLsitID" ColumnName="Kh_RequestLsitID" />
+                <ScalarProperty Name="KhruphanthID" ColumnName="KhruphanthID" />
+                <ScalarProperty Name="RL_Price" ColumnName="RL_Price" />
+                <ScalarProperty Name="RL_NameKP" ColumnName="RL_NameKP" />
+                <ScalarProperty Name="RL_RequisitionID" ColumnName="RL_RequisitionID" />
+                <ScalarProperty Name="RequestLsitID" ColumnName="RequestLsitID" />
+                <ScalarProperty Name="Re_StepID" ColumnName="Re_StepID" />
+                <ScalarProperty Name="Re_TeaId" ColumnName="Re_TeaId" />
+                <ScalarProperty Name="RequisitionID" ColumnName="RequisitionID" />
+                <ScalarProperty Name="TeaName" ColumnName="TeaName" />
+                <ScalarProperty Name="TeaTitle" ColumnName="TeaTitle" />
+                <ScalarProperty Name="TeaId" ColumnName="TeaId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="View_Distributor">
+            <EntityTypeMapping TypeName="ComCSDBModel.View_Distributor">
+              <MappingFragment StoreEntitySet="View_Distributor">
+                <ScalarProperty Name="Converted" ColumnName="Converted" />
+                <ScalarProperty Name="Di_Date" ColumnName="Di_Date" />
+                <ScalarProperty Name="PL_NamePlace" ColumnName="PL_NamePlace" />
+                <ScalarProperty Name="RL_PlaceID" ColumnName="RL_PlaceID" />
+                <ScalarProperty Name="KhruphanthID" ColumnName="KhruphanthID" />
+                <ScalarProperty Name="RL_NameKP" ColumnName="RL_NameKP" />
+                <ScalarProperty Name="DL_KhruphanthID" ColumnName="DL_KhruphanthID" />
+                <ScalarProperty Name="DL_DistributorID" ColumnName="DL_DistributorID" />
+                <ScalarProperty Name="Di_Status" ColumnName="Di_Status" />
+                <ScalarProperty Name="DistributorID" ColumnName="DistributorID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="View_QRCODE">
+            <EntityTypeMapping TypeName="ComCSDBModel.View_QRCODE">
+              <MappingFragment StoreEntitySet="View_QRCODE">
+                <ScalarProperty Name="RL_RequisitionID" ColumnName="RL_RequisitionID" />
+                <ScalarProperty Name="Kh_StatusID" ColumnName="Kh_StatusID" />
+                <ScalarProperty Name="Kh_QR_CODE" ColumnName="Kh_QR_CODE" />
+                <ScalarProperty Name="KhruphanthID" ColumnName="KhruphanthID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="View_RemainRT_KH">
+            <EntityTypeMapping TypeName="ComCSDBModel.View_RemainRT_KH">
+              <MappingFragment StoreEntitySet="View_RemainRT_KH">
+                <ScalarProperty Name="TName" ColumnName="TName" />
+                <ScalarProperty Name="Converted" ColumnName="Converted" />
+                <ScalarProperty Name="PL_NamePlace" ColumnName="PL_NamePlace" />
+                <ScalarProperty Name="RL_Price" ColumnName="RL_Price" />
+                <ScalarProperty Name="RL_Amount" ColumnName="RL_Amount" />
+                <ScalarProperty Name="RL_NameKP" ColumnName="RL_NameKP" />
+                <ScalarProperty Name="RL_RequisitionID" ColumnName="RL_RequisitionID" />
+                <ScalarProperty Name="RequestLsitID" ColumnName="RequestLsitID" />
+                <ScalarProperty Name="Re_StepID" ColumnName="Re_StepID" />
+                <ScalarProperty Name="Re_DateRequi" ColumnName="Re_DateRequi" />
+                <ScalarProperty Name="TeaName" ColumnName="TeaName" />
+                <ScalarProperty Name="RequisitionID" ColumnName="RequisitionID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="View_Requisition">
+            <EntityTypeMapping TypeName="ComCSDBModel.View_Requisition">
+              <MappingFragment StoreEntitySet="View_Requisition">
+                <ScalarProperty Name="ConvetDateRei" ColumnName="ConvetDateRei" />
+                <ScalarProperty Name="Re_DateRequi" ColumnName="Re_DateRequi" />
+                <ScalarProperty Name="PL_NamePlace" ColumnName="PL_NamePlace" />
+                <ScalarProperty Name="PlaceID" ColumnName="PlaceID" />
+                <ScalarProperty Name="RL_PlaceID" ColumnName="RL_PlaceID" />
+                <ScalarProperty Name="RL_Price" ColumnName="RL_Price" />
+                <ScalarProperty Name="RL_Amount" ColumnName="RL_Amount" />
+                <ScalarProperty Name="RL_OnStart" ColumnName="RL_OnStart" />
+                <ScalarProperty Name="RL_NameKP" ColumnName="RL_NameKP" />
+                <ScalarProperty Name="CA_NameCategory" ColumnName="CA_NameCategory" />
+                <ScalarProperty Name="CategoryID" ColumnName="CategoryID" />
+                <ScalarProperty Name="TY_CategoryID" ColumnName="TY_CategoryID" />
+                <ScalarProperty Name="RL_CategoryID" ColumnName="RL_CategoryID" />
+                <ScalarProperty Name="TY_NameType" ColumnName="TY_NameType" />
+                <ScalarProperty Name="TypeID" ColumnName="TypeID" />
+                <ScalarProperty Name="RL_TypeID" ColumnName="RL_TypeID" />
+                <ScalarProperty Name="RL_RequisitionID" ColumnName="RL_RequisitionID" />
+                <ScalarProperty Name="RequestLsitID" ColumnName="RequestLsitID" />
+                <ScalarProperty Name="Re_TeaId" ColumnName="Re_TeaId" />
+                <ScalarProperty Name="RequisitionID" ColumnName="RequisitionID" />
+                <ScalarProperty Name="TeaName" ColumnName="TeaName" />
+                <ScalarProperty Name="TeaTitle" ColumnName="TeaTitle" />
+                <ScalarProperty Name="TeaId" ColumnName="TeaId" />
+                <ScalarProperty Name="TName" ColumnName="TName" />
+                <ScalarProperty Name="TId" ColumnName="TId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

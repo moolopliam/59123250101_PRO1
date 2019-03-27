@@ -1,0 +1,597 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="DataSet1" targetNamespace="http://tempuri.org/DataSet1.xsd" xmlns:mstns="http://tempuri.org/DataSet1.xsd" xmlns="http://tempuri.org/DataSet1.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Web.config" AppSettingsPropertyName="ComCSDBConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="ComCSDBConnectionString (Web.config)" ParameterPrefix="@" PropertyReference="AppConfig.System.Configuration.ConfigurationManager.0.ConnectionStrings.ComCSDBConnectionString.ConnectionString" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="View_DisKHTableAdapter" GeneratorDataComponentClassName="View_DisKHTableAdapter" Name="View_DisKH" UserDataComponentName="View_DisKHTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="ComCSDBConnectionString (Web.config)" DbObjectName="ComCSDB.dbo.View_DisKH" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT TeaId, TeaTitle, TeaName, RequisitionID, Re_TeaId, Re_StepID, RequestLsitID, RL_RequisitionID, RL_NameKP, RL_Price, KhruphanthID, Kh_RequestLsitID, Kh_PlaceID, PlaceID, PL_NamePlace, DistributorID, DistributorList, DL_DistributorID, DL_KhruphanthID, Di_Status, TId, TName, Re_DateRequi, Di_Date, COPY_DATE FROM dbo.View_DisKH</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="TeaId" DataSetColumn="TeaId" />
+              <Mapping SourceColumn="TeaTitle" DataSetColumn="TeaTitle" />
+              <Mapping SourceColumn="TeaName" DataSetColumn="TeaName" />
+              <Mapping SourceColumn="RequisitionID" DataSetColumn="RequisitionID" />
+              <Mapping SourceColumn="Re_TeaId" DataSetColumn="Re_TeaId" />
+              <Mapping SourceColumn="Re_StepID" DataSetColumn="Re_StepID" />
+              <Mapping SourceColumn="RequestLsitID" DataSetColumn="RequestLsitID" />
+              <Mapping SourceColumn="RL_RequisitionID" DataSetColumn="RL_RequisitionID" />
+              <Mapping SourceColumn="RL_NameKP" DataSetColumn="RL_NameKP" />
+              <Mapping SourceColumn="RL_Price" DataSetColumn="RL_Price" />
+              <Mapping SourceColumn="KhruphanthID" DataSetColumn="KhruphanthID" />
+              <Mapping SourceColumn="Kh_RequestLsitID" DataSetColumn="Kh_RequestLsitID" />
+              <Mapping SourceColumn="Kh_PlaceID" DataSetColumn="Kh_PlaceID" />
+              <Mapping SourceColumn="PlaceID" DataSetColumn="PlaceID" />
+              <Mapping SourceColumn="PL_NamePlace" DataSetColumn="PL_NamePlace" />
+              <Mapping SourceColumn="DistributorID" DataSetColumn="DistributorID" />
+              <Mapping SourceColumn="DistributorList" DataSetColumn="DistributorList" />
+              <Mapping SourceColumn="DL_DistributorID" DataSetColumn="DL_DistributorID" />
+              <Mapping SourceColumn="DL_KhruphanthID" DataSetColumn="DL_KhruphanthID" />
+              <Mapping SourceColumn="Di_Status" DataSetColumn="Di_Status" />
+              <Mapping SourceColumn="TId" DataSetColumn="TId" />
+              <Mapping SourceColumn="TName" DataSetColumn="TName" />
+              <Mapping SourceColumn="Re_DateRequi" DataSetColumn="Re_DateRequi" />
+              <Mapping SourceColumn="Di_Date" DataSetColumn="Di_Date" />
+              <Mapping SourceColumn="COPY_DATE" DataSetColumn="COPY_DATE" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="View_DistributorTableAdapter" GeneratorDataComponentClassName="View_DistributorTableAdapter" Name="View_Distributor" UserDataComponentName="View_DistributorTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="ComCSDBConnectionString (Web.config)" DbObjectName="ComCSDB.dbo.View_Distributor" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT DistributorID, Di_Status, DL_DistributorID, DL_KhruphanthID, RL_NameKP, KhruphanthID, RL_PlaceID, PL_NamePlace, Di_Date, Converted FROM dbo.View_Distributor</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="DistributorID" DataSetColumn="DistributorID" />
+              <Mapping SourceColumn="Di_Status" DataSetColumn="Di_Status" />
+              <Mapping SourceColumn="DL_DistributorID" DataSetColumn="DL_DistributorID" />
+              <Mapping SourceColumn="DL_KhruphanthID" DataSetColumn="DL_KhruphanthID" />
+              <Mapping SourceColumn="RL_NameKP" DataSetColumn="RL_NameKP" />
+              <Mapping SourceColumn="KhruphanthID" DataSetColumn="KhruphanthID" />
+              <Mapping SourceColumn="RL_PlaceID" DataSetColumn="RL_PlaceID" />
+              <Mapping SourceColumn="PL_NamePlace" DataSetColumn="PL_NamePlace" />
+              <Mapping SourceColumn="Di_Date" DataSetColumn="Di_Date" />
+              <Mapping SourceColumn="Converted" DataSetColumn="Converted" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="View_RequisitionTableAdapter" GeneratorDataComponentClassName="View_RequisitionTableAdapter" Name="View_Requisition" UserDataComponentName="View_RequisitionTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="ComCSDBConnectionString (Web.config)" DbObjectName="ComCSDB.dbo.View_Requisition" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT TId, TName, TeaId, TeaTitle, TeaName, RequisitionID, Re_TeaId, RequestLsitID, RL_RequisitionID, RL_TypeID, TypeID, TY_NameType, RL_CategoryID, TY_CategoryID, CategoryID, CA_NameCategory, RL_NameKP, RL_OnStart, RL_Amount, RL_Price, RL_PlaceID, PlaceID, PL_NamePlace, Re_DateRequi, ConvetDateRei FROM dbo.View_Requisition</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="TId" DataSetColumn="TId" />
+              <Mapping SourceColumn="TName" DataSetColumn="TName" />
+              <Mapping SourceColumn="TeaId" DataSetColumn="TeaId" />
+              <Mapping SourceColumn="TeaTitle" DataSetColumn="TeaTitle" />
+              <Mapping SourceColumn="TeaName" DataSetColumn="TeaName" />
+              <Mapping SourceColumn="RequisitionID" DataSetColumn="RequisitionID" />
+              <Mapping SourceColumn="Re_TeaId" DataSetColumn="Re_TeaId" />
+              <Mapping SourceColumn="RequestLsitID" DataSetColumn="RequestLsitID" />
+              <Mapping SourceColumn="RL_RequisitionID" DataSetColumn="RL_RequisitionID" />
+              <Mapping SourceColumn="RL_TypeID" DataSetColumn="RL_TypeID" />
+              <Mapping SourceColumn="TypeID" DataSetColumn="TypeID" />
+              <Mapping SourceColumn="TY_NameType" DataSetColumn="TY_NameType" />
+              <Mapping SourceColumn="RL_CategoryID" DataSetColumn="RL_CategoryID" />
+              <Mapping SourceColumn="TY_CategoryID" DataSetColumn="TY_CategoryID" />
+              <Mapping SourceColumn="CategoryID" DataSetColumn="CategoryID" />
+              <Mapping SourceColumn="CA_NameCategory" DataSetColumn="CA_NameCategory" />
+              <Mapping SourceColumn="RL_NameKP" DataSetColumn="RL_NameKP" />
+              <Mapping SourceColumn="RL_OnStart" DataSetColumn="RL_OnStart" />
+              <Mapping SourceColumn="RL_Amount" DataSetColumn="RL_Amount" />
+              <Mapping SourceColumn="RL_Price" DataSetColumn="RL_Price" />
+              <Mapping SourceColumn="RL_PlaceID" DataSetColumn="RL_PlaceID" />
+              <Mapping SourceColumn="PlaceID" DataSetColumn="PlaceID" />
+              <Mapping SourceColumn="PL_NamePlace" DataSetColumn="PL_NamePlace" />
+              <Mapping SourceColumn="Re_DateRequi" DataSetColumn="Re_DateRequi" />
+              <Mapping SourceColumn="ConvetDateRei" DataSetColumn="ConvetDateRei" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="View_RemainRT_KHTableAdapter" GeneratorDataComponentClassName="View_RemainRT_KHTableAdapter" Name="View_RemainRT_KH" UserDataComponentName="View_RemainRT_KHTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="ComCSDBConnectionString (Web.config)" DbObjectName="ComCSDB.dbo.View_RemainRT_KH" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT RequisitionID, TeaName, Re_DateRequi, Re_StepID, RequestLsitID, RL_RequisitionID, RL_NameKP, RL_Amount, RL_Price, PL_NamePlace, Converted, TName FROM dbo.View_RemainRT_KH</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="RequisitionID" DataSetColumn="RequisitionID" />
+              <Mapping SourceColumn="TeaName" DataSetColumn="TeaName" />
+              <Mapping SourceColumn="Re_DateRequi" DataSetColumn="Re_DateRequi" />
+              <Mapping SourceColumn="Re_StepID" DataSetColumn="Re_StepID" />
+              <Mapping SourceColumn="RequestLsitID" DataSetColumn="RequestLsitID" />
+              <Mapping SourceColumn="RL_RequisitionID" DataSetColumn="RL_RequisitionID" />
+              <Mapping SourceColumn="RL_NameKP" DataSetColumn="RL_NameKP" />
+              <Mapping SourceColumn="RL_Amount" DataSetColumn="RL_Amount" />
+              <Mapping SourceColumn="RL_Price" DataSetColumn="RL_Price" />
+              <Mapping SourceColumn="PL_NamePlace" DataSetColumn="PL_NamePlace" />
+              <Mapping SourceColumn="Converted" DataSetColumn="Converted" />
+              <Mapping SourceColumn="TName" DataSetColumn="TName" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="View_QRCODETableAdapter" GeneratorDataComponentClassName="View_QRCODETableAdapter" Name="View_QRCODE" UserDataComponentName="View_QRCODETableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="ComCSDBConnectionString (Web.config)" DbObjectName="ComCSDB.dbo.View_QRCODE" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT KhruphanthID, Kh_QR_CODE, Kh_StatusID, RL_RequisitionID FROM dbo.View_QRCODE</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="KhruphanthID" DataSetColumn="KhruphanthID" />
+              <Mapping SourceColumn="Kh_QR_CODE" DataSetColumn="Kh_QR_CODE" />
+              <Mapping SourceColumn="Kh_StatusID" DataSetColumn="Kh_StatusID" />
+              <Mapping SourceColumn="RL_RequisitionID" DataSetColumn="RL_RequisitionID" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="DataSet1" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="DataSet1" msprop:Generator_UserDSName="DataSet1">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="View_DisKH" msprop:Generator_TableClassName="View_DisKHDataTable" msprop:Generator_TableVarName="tableView_DisKH" msprop:Generator_TablePropName="View_DisKH" msprop:Generator_RowDeletingName="View_DisKHRowDeleting" msprop:Generator_RowChangingName="View_DisKHRowChanging" msprop:Generator_RowEvHandlerName="View_DisKHRowChangeEventHandler" msprop:Generator_RowDeletedName="View_DisKHRowDeleted" msprop:Generator_UserTableName="View_DisKH" msprop:Generator_RowChangedName="View_DisKHRowChanged" msprop:Generator_RowEvArgName="View_DisKHRowChangeEvent" msprop:Generator_RowClassName="View_DisKHRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="TeaId" msprop:Generator_ColumnVarNameInTable="columnTeaId" msprop:Generator_ColumnPropNameInRow="TeaId" msprop:Generator_ColumnPropNameInTable="TeaIdColumn" msprop:Generator_UserColumnName="TeaId">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="TeaTitle" msprop:Generator_ColumnVarNameInTable="columnTeaTitle" msprop:Generator_ColumnPropNameInRow="TeaTitle" msprop:Generator_ColumnPropNameInTable="TeaTitleColumn" msprop:Generator_UserColumnName="TeaTitle" type="xs:int" minOccurs="0" />
+              <xs:element name="TeaName" msprop:Generator_ColumnVarNameInTable="columnTeaName" msprop:Generator_ColumnPropNameInRow="TeaName" msprop:Generator_ColumnPropNameInTable="TeaNameColumn" msprop:Generator_UserColumnName="TeaName" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="RequisitionID" msprop:Generator_ColumnVarNameInTable="columnRequisitionID" msprop:Generator_ColumnPropNameInRow="RequisitionID" msprop:Generator_ColumnPropNameInTable="RequisitionIDColumn" msprop:Generator_UserColumnName="RequisitionID">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Re_TeaId" msprop:Generator_ColumnVarNameInTable="columnRe_TeaId" msprop:Generator_ColumnPropNameInRow="Re_TeaId" msprop:Generator_ColumnPropNameInTable="Re_TeaIdColumn" msprop:Generator_UserColumnName="Re_TeaId" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Re_StepID" msprop:Generator_ColumnVarNameInTable="columnRe_StepID" msprop:Generator_ColumnPropNameInRow="Re_StepID" msprop:Generator_ColumnPropNameInTable="Re_StepIDColumn" msprop:Generator_UserColumnName="Re_StepID" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="1" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="RequestLsitID" msprop:Generator_ColumnVarNameInTable="columnRequestLsitID" msprop:Generator_ColumnPropNameInRow="RequestLsitID" msprop:Generator_ColumnPropNameInTable="RequestLsitIDColumn" msprop:Generator_UserColumnName="RequestLsitID" type="xs:int" />
+              <xs:element name="RL_RequisitionID" msprop:Generator_ColumnVarNameInTable="columnRL_RequisitionID" msprop:Generator_ColumnPropNameInRow="RL_RequisitionID" msprop:Generator_ColumnPropNameInTable="RL_RequisitionIDColumn" msprop:Generator_UserColumnName="RL_RequisitionID" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="RL_NameKP" msprop:Generator_ColumnVarNameInTable="columnRL_NameKP" msprop:Generator_ColumnPropNameInRow="RL_NameKP" msprop:Generator_ColumnPropNameInTable="RL_NameKPColumn" msprop:Generator_UserColumnName="RL_NameKP" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="RL_Price" msprop:Generator_ColumnVarNameInTable="columnRL_Price" msprop:Generator_ColumnPropNameInRow="RL_Price" msprop:Generator_ColumnPropNameInTable="RL_PriceColumn" msprop:Generator_UserColumnName="RL_Price" type="xs:double" minOccurs="0" />
+              <xs:element name="KhruphanthID" msprop:Generator_ColumnVarNameInTable="columnKhruphanthID" msprop:Generator_ColumnPropNameInRow="KhruphanthID" msprop:Generator_ColumnPropNameInTable="KhruphanthIDColumn" msprop:Generator_UserColumnName="KhruphanthID">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Kh_RequestLsitID" msprop:Generator_ColumnVarNameInTable="columnKh_RequestLsitID" msprop:Generator_ColumnPropNameInRow="Kh_RequestLsitID" msprop:Generator_ColumnPropNameInTable="Kh_RequestLsitIDColumn" msprop:Generator_UserColumnName="Kh_RequestLsitID" type="xs:int" minOccurs="0" />
+              <xs:element name="Kh_PlaceID" msprop:Generator_ColumnVarNameInTable="columnKh_PlaceID" msprop:Generator_ColumnPropNameInRow="Kh_PlaceID" msprop:Generator_ColumnPropNameInTable="Kh_PlaceIDColumn" msprop:Generator_UserColumnName="Kh_PlaceID" type="xs:int" minOccurs="0" />
+              <xs:element name="PlaceID" msprop:Generator_ColumnVarNameInTable="columnPlaceID" msprop:Generator_ColumnPropNameInRow="PlaceID" msprop:Generator_ColumnPropNameInTable="PlaceIDColumn" msprop:Generator_UserColumnName="PlaceID" type="xs:int" />
+              <xs:element name="PL_NamePlace" msprop:Generator_ColumnVarNameInTable="columnPL_NamePlace" msprop:Generator_ColumnPropNameInRow="PL_NamePlace" msprop:Generator_ColumnPropNameInTable="PL_NamePlaceColumn" msprop:Generator_UserColumnName="PL_NamePlace" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="DistributorID" msprop:Generator_ColumnVarNameInTable="columnDistributorID" msprop:Generator_ColumnPropNameInRow="DistributorID" msprop:Generator_ColumnPropNameInTable="DistributorIDColumn" msprop:Generator_UserColumnName="DistributorID">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="DistributorList" msprop:Generator_ColumnVarNameInTable="columnDistributorList" msprop:Generator_ColumnPropNameInRow="DistributorList" msprop:Generator_ColumnPropNameInTable="DistributorListColumn" msprop:Generator_UserColumnName="DistributorList" type="xs:int" />
+              <xs:element name="DL_DistributorID" msprop:Generator_ColumnVarNameInTable="columnDL_DistributorID" msprop:Generator_ColumnPropNameInRow="DL_DistributorID" msprop:Generator_ColumnPropNameInTable="DL_DistributorIDColumn" msprop:Generator_UserColumnName="DL_DistributorID" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="DL_KhruphanthID" msprop:Generator_ColumnVarNameInTable="columnDL_KhruphanthID" msprop:Generator_ColumnPropNameInRow="DL_KhruphanthID" msprop:Generator_ColumnPropNameInTable="DL_KhruphanthIDColumn" msprop:Generator_UserColumnName="DL_KhruphanthID" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Di_Status" msprop:Generator_ColumnVarNameInTable="columnDi_Status" msprop:Generator_ColumnPropNameInRow="Di_Status" msprop:Generator_ColumnPropNameInTable="Di_StatusColumn" msprop:Generator_UserColumnName="Di_Status" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="15" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="TId" msprop:Generator_ColumnVarNameInTable="columnTId" msprop:Generator_ColumnPropNameInRow="TId" msprop:Generator_ColumnPropNameInTable="TIdColumn" msprop:Generator_UserColumnName="TId" type="xs:int" />
+              <xs:element name="TName" msprop:Generator_ColumnVarNameInTable="columnTName" msprop:Generator_ColumnPropNameInRow="TName" msprop:Generator_ColumnPropNameInTable="TNameColumn" msprop:Generator_UserColumnName="TName" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Re_DateRequi" msprop:Generator_ColumnVarNameInTable="columnRe_DateRequi" msprop:Generator_ColumnPropNameInRow="Re_DateRequi" msprop:Generator_ColumnPropNameInTable="Re_DateRequiColumn" msprop:Generator_UserColumnName="Re_DateRequi" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="Di_Date" msprop:Generator_ColumnVarNameInTable="columnDi_Date" msprop:Generator_ColumnPropNameInRow="Di_Date" msprop:Generator_ColumnPropNameInTable="Di_DateColumn" msprop:Generator_UserColumnName="Di_Date" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="COPY_DATE" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnCOPY_DATE" msprop:Generator_ColumnPropNameInRow="COPY_DATE" msprop:Generator_ColumnPropNameInTable="COPY_DATEColumn" msprop:Generator_UserColumnName="COPY_DATE" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="4000" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="View_Distributor" msprop:Generator_TableClassName="View_DistributorDataTable" msprop:Generator_TableVarName="tableView_Distributor" msprop:Generator_TablePropName="View_Distributor" msprop:Generator_RowDeletingName="View_DistributorRowDeleting" msprop:Generator_RowChangingName="View_DistributorRowChanging" msprop:Generator_RowEvHandlerName="View_DistributorRowChangeEventHandler" msprop:Generator_RowDeletedName="View_DistributorRowDeleted" msprop:Generator_UserTableName="View_Distributor" msprop:Generator_RowChangedName="View_DistributorRowChanged" msprop:Generator_RowEvArgName="View_DistributorRowChangeEvent" msprop:Generator_RowClassName="View_DistributorRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="DistributorID" msprop:Generator_ColumnVarNameInTable="columnDistributorID" msprop:Generator_ColumnPropNameInRow="DistributorID" msprop:Generator_ColumnPropNameInTable="DistributorIDColumn" msprop:Generator_UserColumnName="DistributorID">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Di_Status" msprop:Generator_ColumnVarNameInTable="columnDi_Status" msprop:Generator_ColumnPropNameInRow="Di_Status" msprop:Generator_ColumnPropNameInTable="Di_StatusColumn" msprop:Generator_UserColumnName="Di_Status" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="15" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="DL_DistributorID" msprop:Generator_ColumnVarNameInTable="columnDL_DistributorID" msprop:Generator_ColumnPropNameInRow="DL_DistributorID" msprop:Generator_ColumnPropNameInTable="DL_DistributorIDColumn" msprop:Generator_UserColumnName="DL_DistributorID" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="DL_KhruphanthID" msprop:Generator_ColumnVarNameInTable="columnDL_KhruphanthID" msprop:Generator_ColumnPropNameInRow="DL_KhruphanthID" msprop:Generator_ColumnPropNameInTable="DL_KhruphanthIDColumn" msprop:Generator_UserColumnName="DL_KhruphanthID" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="RL_NameKP" msprop:Generator_ColumnVarNameInTable="columnRL_NameKP" msprop:Generator_ColumnPropNameInRow="RL_NameKP" msprop:Generator_ColumnPropNameInTable="RL_NameKPColumn" msprop:Generator_UserColumnName="RL_NameKP" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="KhruphanthID" msprop:Generator_ColumnVarNameInTable="columnKhruphanthID" msprop:Generator_ColumnPropNameInRow="KhruphanthID" msprop:Generator_ColumnPropNameInTable="KhruphanthIDColumn" msprop:Generator_UserColumnName="KhruphanthID">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="RL_PlaceID" msprop:Generator_ColumnVarNameInTable="columnRL_PlaceID" msprop:Generator_ColumnPropNameInRow="RL_PlaceID" msprop:Generator_ColumnPropNameInTable="RL_PlaceIDColumn" msprop:Generator_UserColumnName="RL_PlaceID" type="xs:int" minOccurs="0" />
+              <xs:element name="PL_NamePlace" msprop:Generator_ColumnVarNameInTable="columnPL_NamePlace" msprop:Generator_ColumnPropNameInRow="PL_NamePlace" msprop:Generator_ColumnPropNameInTable="PL_NamePlaceColumn" msprop:Generator_UserColumnName="PL_NamePlace" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Di_Date" msprop:Generator_ColumnVarNameInTable="columnDi_Date" msprop:Generator_ColumnPropNameInRow="Di_Date" msprop:Generator_ColumnPropNameInTable="Di_DateColumn" msprop:Generator_UserColumnName="Di_Date" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="Converted" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnConverted" msprop:Generator_ColumnPropNameInRow="Converted" msprop:Generator_ColumnPropNameInTable="ConvertedColumn" msprop:Generator_UserColumnName="Converted" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="60" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="View_Requisition" msprop:Generator_TableClassName="View_RequisitionDataTable" msprop:Generator_TableVarName="tableView_Requisition" msprop:Generator_RowChangedName="View_RequisitionRowChanged" msprop:Generator_TablePropName="View_Requisition" msprop:Generator_RowDeletingName="View_RequisitionRowDeleting" msprop:Generator_RowChangingName="View_RequisitionRowChanging" msprop:Generator_RowEvHandlerName="View_RequisitionRowChangeEventHandler" msprop:Generator_RowDeletedName="View_RequisitionRowDeleted" msprop:Generator_RowClassName="View_RequisitionRow" msprop:Generator_UserTableName="View_Requisition" msprop:Generator_RowEvArgName="View_RequisitionRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="TId" msprop:Generator_ColumnVarNameInTable="columnTId" msprop:Generator_ColumnPropNameInRow="TId" msprop:Generator_ColumnPropNameInTable="TIdColumn" msprop:Generator_UserColumnName="TId" type="xs:int" />
+              <xs:element name="TName" msprop:Generator_ColumnVarNameInTable="columnTName" msprop:Generator_ColumnPropNameInRow="TName" msprop:Generator_ColumnPropNameInTable="TNameColumn" msprop:Generator_UserColumnName="TName" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="TeaId" msprop:Generator_ColumnVarNameInTable="columnTeaId" msprop:Generator_ColumnPropNameInRow="TeaId" msprop:Generator_ColumnPropNameInTable="TeaIdColumn" msprop:Generator_UserColumnName="TeaId">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="TeaTitle" msprop:Generator_ColumnVarNameInTable="columnTeaTitle" msprop:Generator_ColumnPropNameInRow="TeaTitle" msprop:Generator_ColumnPropNameInTable="TeaTitleColumn" msprop:Generator_UserColumnName="TeaTitle" type="xs:int" minOccurs="0" />
+              <xs:element name="TeaName" msprop:Generator_ColumnVarNameInTable="columnTeaName" msprop:Generator_ColumnPropNameInRow="TeaName" msprop:Generator_ColumnPropNameInTable="TeaNameColumn" msprop:Generator_UserColumnName="TeaName" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="RequisitionID" msprop:Generator_ColumnVarNameInTable="columnRequisitionID" msprop:Generator_ColumnPropNameInRow="RequisitionID" msprop:Generator_ColumnPropNameInTable="RequisitionIDColumn" msprop:Generator_UserColumnName="RequisitionID">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Re_TeaId" msprop:Generator_ColumnVarNameInTable="columnRe_TeaId" msprop:Generator_ColumnPropNameInRow="Re_TeaId" msprop:Generator_ColumnPropNameInTable="Re_TeaIdColumn" msprop:Generator_UserColumnName="Re_TeaId" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="RequestLsitID" msprop:Generator_ColumnVarNameInTable="columnRequestLsitID" msprop:Generator_ColumnPropNameInRow="RequestLsitID" msprop:Generator_ColumnPropNameInTable="RequestLsitIDColumn" msprop:Generator_UserColumnName="RequestLsitID" type="xs:int" />
+              <xs:element name="RL_RequisitionID" msprop:Generator_ColumnVarNameInTable="columnRL_RequisitionID" msprop:Generator_ColumnPropNameInRow="RL_RequisitionID" msprop:Generator_ColumnPropNameInTable="RL_RequisitionIDColumn" msprop:Generator_UserColumnName="RL_RequisitionID" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="RL_TypeID" msprop:Generator_ColumnVarNameInTable="columnRL_TypeID" msprop:Generator_ColumnPropNameInRow="RL_TypeID" msprop:Generator_ColumnPropNameInTable="RL_TypeIDColumn" msprop:Generator_UserColumnName="RL_TypeID" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="5" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="TypeID" msprop:Generator_ColumnVarNameInTable="columnTypeID" msprop:Generator_ColumnPropNameInRow="TypeID" msprop:Generator_ColumnPropNameInTable="TypeIDColumn" msprop:Generator_UserColumnName="TypeID">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="5" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="TY_NameType" msprop:Generator_ColumnVarNameInTable="columnTY_NameType" msprop:Generator_ColumnPropNameInRow="TY_NameType" msprop:Generator_ColumnPropNameInTable="TY_NameTypeColumn" msprop:Generator_UserColumnName="TY_NameType" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="RL_CategoryID" msprop:Generator_ColumnVarNameInTable="columnRL_CategoryID" msprop:Generator_ColumnPropNameInRow="RL_CategoryID" msprop:Generator_ColumnPropNameInTable="RL_CategoryIDColumn" msprop:Generator_UserColumnName="RL_CategoryID" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="5" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="TY_CategoryID" msprop:Generator_ColumnVarNameInTable="columnTY_CategoryID" msprop:Generator_ColumnPropNameInRow="TY_CategoryID" msprop:Generator_ColumnPropNameInTable="TY_CategoryIDColumn" msprop:Generator_UserColumnName="TY_CategoryID" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="5" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="CategoryID" msprop:Generator_ColumnVarNameInTable="columnCategoryID" msprop:Generator_ColumnPropNameInRow="CategoryID" msprop:Generator_ColumnPropNameInTable="CategoryIDColumn" msprop:Generator_UserColumnName="CategoryID">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="5" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="CA_NameCategory" msprop:Generator_ColumnVarNameInTable="columnCA_NameCategory" msprop:Generator_ColumnPropNameInRow="CA_NameCategory" msprop:Generator_ColumnPropNameInTable="CA_NameCategoryColumn" msprop:Generator_UserColumnName="CA_NameCategory" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="RL_NameKP" msprop:Generator_ColumnVarNameInTable="columnRL_NameKP" msprop:Generator_ColumnPropNameInRow="RL_NameKP" msprop:Generator_ColumnPropNameInTable="RL_NameKPColumn" msprop:Generator_UserColumnName="RL_NameKP" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="RL_OnStart" msprop:Generator_ColumnVarNameInTable="columnRL_OnStart" msprop:Generator_ColumnPropNameInRow="RL_OnStart" msprop:Generator_ColumnPropNameInTable="RL_OnStartColumn" msprop:Generator_UserColumnName="RL_OnStart" type="xs:int" minOccurs="0" />
+              <xs:element name="RL_Amount" msprop:Generator_ColumnVarNameInTable="columnRL_Amount" msprop:Generator_ColumnPropNameInRow="RL_Amount" msprop:Generator_ColumnPropNameInTable="RL_AmountColumn" msprop:Generator_UserColumnName="RL_Amount" type="xs:double" minOccurs="0" />
+              <xs:element name="RL_Price" msprop:Generator_ColumnVarNameInTable="columnRL_Price" msprop:Generator_ColumnPropNameInRow="RL_Price" msprop:Generator_ColumnPropNameInTable="RL_PriceColumn" msprop:Generator_UserColumnName="RL_Price" type="xs:double" minOccurs="0" />
+              <xs:element name="RL_PlaceID" msprop:Generator_ColumnVarNameInTable="columnRL_PlaceID" msprop:Generator_ColumnPropNameInRow="RL_PlaceID" msprop:Generator_ColumnPropNameInTable="RL_PlaceIDColumn" msprop:Generator_UserColumnName="RL_PlaceID" type="xs:int" minOccurs="0" />
+              <xs:element name="PlaceID" msprop:Generator_ColumnVarNameInTable="columnPlaceID" msprop:Generator_ColumnPropNameInRow="PlaceID" msprop:Generator_ColumnPropNameInTable="PlaceIDColumn" msprop:Generator_UserColumnName="PlaceID" type="xs:int" />
+              <xs:element name="PL_NamePlace" msprop:Generator_ColumnVarNameInTable="columnPL_NamePlace" msprop:Generator_ColumnPropNameInRow="PL_NamePlace" msprop:Generator_ColumnPropNameInTable="PL_NamePlaceColumn" msprop:Generator_UserColumnName="PL_NamePlace" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Re_DateRequi" msprop:Generator_ColumnVarNameInTable="columnRe_DateRequi" msprop:Generator_ColumnPropNameInRow="Re_DateRequi" msprop:Generator_ColumnPropNameInTable="Re_DateRequiColumn" msprop:Generator_UserColumnName="Re_DateRequi" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="ConvetDateRei" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnConvetDateRei" msprop:Generator_ColumnPropNameInRow="ConvetDateRei" msprop:Generator_ColumnPropNameInTable="ConvetDateReiColumn" msprop:Generator_UserColumnName="ConvetDateRei" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="60" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="View_RemainRT_KH" msprop:Generator_TableClassName="View_RemainRT_KHDataTable" msprop:Generator_TableVarName="tableView_RemainRT_KH" msprop:Generator_RowChangedName="View_RemainRT_KHRowChanged" msprop:Generator_TablePropName="View_RemainRT_KH" msprop:Generator_RowDeletingName="View_RemainRT_KHRowDeleting" msprop:Generator_RowChangingName="View_RemainRT_KHRowChanging" msprop:Generator_RowEvHandlerName="View_RemainRT_KHRowChangeEventHandler" msprop:Generator_RowDeletedName="View_RemainRT_KHRowDeleted" msprop:Generator_RowClassName="View_RemainRT_KHRow" msprop:Generator_UserTableName="View_RemainRT_KH" msprop:Generator_RowEvArgName="View_RemainRT_KHRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="RequisitionID" msprop:Generator_ColumnVarNameInTable="columnRequisitionID" msprop:Generator_ColumnPropNameInRow="RequisitionID" msprop:Generator_ColumnPropNameInTable="RequisitionIDColumn" msprop:Generator_UserColumnName="RequisitionID">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="TeaName" msprop:Generator_ColumnVarNameInTable="columnTeaName" msprop:Generator_ColumnPropNameInRow="TeaName" msprop:Generator_ColumnPropNameInTable="TeaNameColumn" msprop:Generator_UserColumnName="TeaName" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Re_DateRequi" msprop:Generator_ColumnVarNameInTable="columnRe_DateRequi" msprop:Generator_ColumnPropNameInRow="Re_DateRequi" msprop:Generator_ColumnPropNameInTable="Re_DateRequiColumn" msprop:Generator_UserColumnName="Re_DateRequi" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="Re_StepID" msprop:Generator_ColumnVarNameInTable="columnRe_StepID" msprop:Generator_ColumnPropNameInRow="Re_StepID" msprop:Generator_ColumnPropNameInTable="Re_StepIDColumn" msprop:Generator_UserColumnName="Re_StepID" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="1" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="RequestLsitID" msprop:Generator_ColumnVarNameInTable="columnRequestLsitID" msprop:Generator_ColumnPropNameInRow="RequestLsitID" msprop:Generator_ColumnPropNameInTable="RequestLsitIDColumn" msprop:Generator_UserColumnName="RequestLsitID" type="xs:int" />
+              <xs:element name="RL_RequisitionID" msprop:Generator_ColumnVarNameInTable="columnRL_RequisitionID" msprop:Generator_ColumnPropNameInRow="RL_RequisitionID" msprop:Generator_ColumnPropNameInTable="RL_RequisitionIDColumn" msprop:Generator_UserColumnName="RL_RequisitionID" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="RL_NameKP" msprop:Generator_ColumnVarNameInTable="columnRL_NameKP" msprop:Generator_ColumnPropNameInRow="RL_NameKP" msprop:Generator_ColumnPropNameInTable="RL_NameKPColumn" msprop:Generator_UserColumnName="RL_NameKP" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="RL_Amount" msprop:Generator_ColumnVarNameInTable="columnRL_Amount" msprop:Generator_ColumnPropNameInRow="RL_Amount" msprop:Generator_ColumnPropNameInTable="RL_AmountColumn" msprop:Generator_UserColumnName="RL_Amount" type="xs:double" minOccurs="0" />
+              <xs:element name="RL_Price" msprop:Generator_ColumnVarNameInTable="columnRL_Price" msprop:Generator_ColumnPropNameInRow="RL_Price" msprop:Generator_ColumnPropNameInTable="RL_PriceColumn" msprop:Generator_UserColumnName="RL_Price" type="xs:double" minOccurs="0" />
+              <xs:element name="PL_NamePlace" msprop:Generator_ColumnVarNameInTable="columnPL_NamePlace" msprop:Generator_ColumnPropNameInRow="PL_NamePlace" msprop:Generator_ColumnPropNameInTable="PL_NamePlaceColumn" msprop:Generator_UserColumnName="PL_NamePlace" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Converted" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnConverted" msprop:Generator_ColumnPropNameInRow="Converted" msprop:Generator_ColumnPropNameInTable="ConvertedColumn" msprop:Generator_UserColumnName="Converted" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="60" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="TName" msprop:Generator_ColumnVarNameInTable="columnTName" msprop:Generator_ColumnPropNameInRow="TName" msprop:Generator_ColumnPropNameInTable="TNameColumn" msprop:Generator_UserColumnName="TName" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="View_QRCODE" msprop:Generator_TableClassName="View_QRCODEDataTable" msprop:Generator_TableVarName="tableView_QRCODE" msprop:Generator_TablePropName="View_QRCODE" msprop:Generator_RowDeletingName="View_QRCODERowDeleting" msprop:Generator_RowChangingName="View_QRCODERowChanging" msprop:Generator_RowEvHandlerName="View_QRCODERowChangeEventHandler" msprop:Generator_RowDeletedName="View_QRCODERowDeleted" msprop:Generator_UserTableName="View_QRCODE" msprop:Generator_RowChangedName="View_QRCODERowChanged" msprop:Generator_RowEvArgName="View_QRCODERowChangeEvent" msprop:Generator_RowClassName="View_QRCODERow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="KhruphanthID" msprop:Generator_ColumnVarNameInTable="columnKhruphanthID" msprop:Generator_ColumnPropNameInRow="KhruphanthID" msprop:Generator_ColumnPropNameInTable="KhruphanthIDColumn" msprop:Generator_UserColumnName="KhruphanthID">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Kh_QR_CODE" msprop:Generator_ColumnVarNameInTable="columnKh_QR_CODE" msprop:Generator_ColumnPropNameInRow="Kh_QR_CODE" msprop:Generator_ColumnPropNameInTable="Kh_QR_CODEColumn" msprop:Generator_UserColumnName="Kh_QR_CODE" type="xs:base64Binary" minOccurs="0" />
+              <xs:element name="Kh_StatusID" msprop:Generator_ColumnVarNameInTable="columnKh_StatusID" msprop:Generator_ColumnPropNameInRow="Kh_StatusID" msprop:Generator_ColumnPropNameInTable="Kh_StatusIDColumn" msprop:Generator_UserColumnName="Kh_StatusID" type="xs:int" minOccurs="0" />
+              <xs:element name="RL_RequisitionID" msprop:Generator_ColumnVarNameInTable="columnRL_RequisitionID" msprop:Generator_ColumnPropNameInRow="RL_RequisitionID" msprop:Generator_ColumnPropNameInTable="RL_RequisitionIDColumn" msprop:Generator_UserColumnName="RL_RequisitionID" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:View_DisKH" />
+      <xs:field xpath="mstns:TeaId" />
+      <xs:field xpath="mstns:RequisitionID" />
+      <xs:field xpath="mstns:RequestLsitID" />
+      <xs:field xpath="mstns:KhruphanthID" />
+      <xs:field xpath="mstns:PlaceID" />
+      <xs:field xpath="mstns:DistributorID" />
+      <xs:field xpath="mstns:DistributorList" />
+      <xs:field xpath="mstns:TId" />
+    </xs:unique>
+    <xs:unique name="View_Requisition_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:View_Requisition" />
+      <xs:field xpath="mstns:TId" />
+      <xs:field xpath="mstns:TeaId" />
+      <xs:field xpath="mstns:RequisitionID" />
+      <xs:field xpath="mstns:RequestLsitID" />
+      <xs:field xpath="mstns:TypeID" />
+      <xs:field xpath="mstns:CategoryID" />
+      <xs:field xpath="mstns:PlaceID" />
+    </xs:unique>
+    <xs:unique name="View_QRCODE_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:View_QRCODE" />
+      <xs:field xpath="mstns:KhruphanthID" />
+    </xs:unique>
+  </xs:element>
+</xs:schema>

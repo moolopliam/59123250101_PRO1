@@ -1,0 +1,27 @@
+﻿@model Khruphanth.Models.T_Stap
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>T_Stap</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.ST_StepName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ST_StepName)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.StepID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

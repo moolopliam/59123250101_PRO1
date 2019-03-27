@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="bd39bf42346a4b1696a691a24a5bcd79" Name="Diagram1" ZoomLevel="75">
+        <EntityTypeShape EntityType="ComCSDBModel.Account" Width="1.5" PointX="0.75" PointY="10.75" />
+        <EntityTypeShape EntityType="ComCSDBModel.Course" Width="1.5" PointX="15" PointY="12.5" />
+        <EntityTypeShape EntityType="ComCSDBModel.Department" Width="1.5" PointX="12.75" PointY="9.25" />
+        <EntityTypeShape EntityType="ComCSDBModel.FStatus" Width="1.5" PointX="6" PointY="1.875" />
+        <EntityTypeShape EntityType="ComCSDBModel.Job" Width="1.5" PointX="6" PointY="15.875" />
+        <EntityTypeShape EntityType="ComCSDBModel.OldED" Width="1.5" PointX="6" PointY="4.25" />
+        <EntityTypeShape EntityType="ComCSDBModel.project_list" Width="1.5" PointX="10.5" PointY="5.75" />
+        <EntityTypeShape EntityType="ComCSDBModel.RefProvince" Width="1.5" PointX="6" PointY="13.25" />
+        <EntityTypeShape EntityType="ComCSDBModel.Relation" Width="1.5" PointX="17.25" PointY="9.125" />
+        <EntityTypeShape EntityType="ComCSDBModel.SelectedEmployee" Width="1.5" PointX="0.75" PointY="0.75" />
+        <EntityTypeShape EntityType="ComCSDBModel.Status" Width="1.5" PointX="6" PointY="10.625" />
+        <EntityTypeShape EntityType="ComCSDBModel.Student" Width="1.5" PointX="8.25" PointY="3.75" />
+        <EntityTypeShape EntityType="ComCSDBModel.Subject" Width="1.5" PointX="15" PointY="9" />
+        <EntityTypeShape EntityType="ComCSDBModel.T_Category" Width="1.5" PointX="6" PointY="18.625" />
+        <EntityTypeShape EntityType="ComCSDBModel.T_Distributor" Width="1.5" PointX="12.75" PointY="5.875" />
+        <EntityTypeShape EntityType="ComCSDBModel.T_DistributorList" Width="1.5" PointX="15" PointY="1.75" />
+        <EntityTypeShape EntityType="ComCSDBModel.T_Khruphanth" Width="1.5" PointX="12.75" PointY="1.5" />
+        <EntityTypeShape EntityType="ComCSDBModel.T_Place" Width="1.5" PointX="8.25" PointY="13.125" />
+        <EntityTypeShape EntityType="ComCSDBModel.T_RequestList" Width="1.5" PointX="10.5" PointY="0.75" />
+        <EntityTypeShape EntityType="ComCSDBModel.T_Requisition" Width="1.5" PointX="5.25" PointY="6.625" />
+        <EntityTypeShape EntityType="ComCSDBModel.T_Stap" Width="1.5" PointX="3" PointY="3" />
+        <EntityTypeShape EntityType="ComCSDBModel.T_Status" Width="1.5" PointX="10.5" PointY="11" />
+        <EntityTypeShape EntityType="ComCSDBModel.T_Type" Width="1.5" PointX="8.25" PointY="18.5" />
+        <EntityTypeShape EntityType="ComCSDBModel.Teacher" Width="1.5" PointX="3" PointY="6.125" />
+        <EntityTypeShape EntityType="ComCSDBModel.Title" Width="1.5" PointX="0.75" PointY="6.875" />
+        <EntityTypeShape EntityType="ComCSDBModel.type_project" Width="1.5" PointX="8.25" PointY="1" />
+        <EntityTypeShape EntityType="ComCSDBModel.View_DisKH" Width="1.5" PointX="2.75" PointY="10.75" />
+        <EntityTypeShape EntityType="ComCSDBModel.View_Distributor" Width="1.5" PointX="10.75" PointY="13.75" />
+        <EntityTypeShape EntityType="ComCSDBModel.View_QRCODE" Width="1.5" PointX="14.75" PointY="4.75" />
+        <EntityTypeShape EntityType="ComCSDBModel.View_RemainRT_KH" Width="1.5" PointX="16.75" PointY="4.75" />
+        <EntityTypeShape EntityType="ComCSDBModel.View_Requisition" Width="1.5" PointX="12.75" PointY="16.75" />
+        <AssociationConnector Association="ComCSDBModel.FK_Relation_Course" />
+        <AssociationConnector Association="ComCSDBModel.FK_Subject_Department" />
+        <AssociationConnector Association="ComCSDBModel.FK_Student_FStatus" />
+        <AssociationConnector Association="ComCSDBModel.FK_Student_Job" />
+        <AssociationConnector Association="ComCSDBModel.FK_Student_Job1" />
+        <AssociationConnector Association="ComCSDBModel.FK_Student_OldED" />
+        <AssociationConnector Association="ComCSDBModel.FK_project_list_Student" />
+        <AssociationConnector Association="ComCSDBModel.FK_project_list_Teacher" />
+        <AssociationConnector Association="ComCSDBModel.FK_project_list_type_project" />
+        <AssociationConnector Association="ComCSDBModel.FK_Status_RefProvince" />
+        <AssociationConnector Association="ComCSDBModel.FK_Student_RefProvince" />
+        <AssociationConnector Association="ComCSDBModel.FK_Relation_Subject" />
+        <AssociationConnector Association="ComCSDBModel.FK_Student_Status" />
+        <AssociationConnector Association="ComCSDBModel.FK_Student_Teacher" />
+        <AssociationConnector Association="ComCSDBModel.FK_Student_Title" />
+        <AssociationConnector Association="ComCSDBModel.FK_T_Type_T_Category1" />
+        <AssociationConnector Association="ComCSDBModel.FK_T_DistributorList_T_Distributor" />
+        <AssociationConnector Association="ComCSDBModel.FK_T_DistributorList_T_Khruphanth" />
+        <AssociationConnector Association="ComCSDBModel.FK_T_Khruphanth_T_RequestList" />
+        <AssociationConnector Association="ComCSDBModel.FK_T_Khruphanth_T_Status1" />
+        <AssociationConnector Association="ComCSDBModel.FK_T_RequestList_T_Place1" />
+        <AssociationConnector Association="ComCSDBModel.FK_T_RequestList_T_Requisition" />
+        <AssociationConnector Association="ComCSDBModel.FK_T_RequestList_T_Type1" />
+        <AssociationConnector Association="ComCSDBModel.FK_T_Requisition_T_Stap" />
+        <AssociationConnector Association="ComCSDBModel.FK_T_Requisition_Teacher1" />
+        <AssociationConnector Association="ComCSDBModel.FK_Teacher_Title" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
